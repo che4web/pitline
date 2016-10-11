@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Name>pitline_test2</Name>
+    <RootNamespace>pitline_test2</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>893e99d2-410b-4f99-8f30-b2ca773f22b6</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>manage.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <LaunchProvider>Django launcher</LaunchProvider>
+    <OutputPath>.</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="app\admin.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="app\forms.py" />
+    <Compile Include="app\models.py" />
+    <Compile Include="app\tests.py" />
+    <Compile Include="app\views.py" />
+    <Compile Include="app\__init__.py" />
+    <Compile Include="app\migrations\__init__.py" />
+    <Compile Include="locksmith\admin.py" />
+    <Compile Include="locksmith\apps.py" />
+    <Compile Include="locksmith\migrations\__init__.py" />
+    <Compile Include="locksmith\models.py" />
+    <Compile Include="locksmith\tests.py" />
+    <Compile Include="locksmith\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="locksmith\views.py" />
+    <Compile Include="locksmith\__init__.py" />
+    <Compile Include="manage.py" />
+    <Compile Include="pitline_test2\__init__.py" />
+    <Compile Include="pitline_test2\settings.py" />
+    <Compile Include="pitline_test2\urls.py" />
+    <Compile Include="pitline_test2\wsgi.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="app\" />
+    <Folder Include="app\migrations\" />
+    <Folder Include="app\static\" />
+    <Folder Include="app\static\app\" />
+    <Folder Include="app\static\app\ajax.googleapis.com\ajax\" />
+    <Folder Include="app\static\app\ajax.googleapis.com\ajax\libs\" />
+    <Folder Include="app\static\app\ajax.googleapis.com\ajax\libs\jquery\" />
+    <Folder Include="app\static\app\ajax.googleapis.com\ajax\libs\jquery\1.9.1\" />
+    <Folder Include="app\static\app\content\" />
+    <Folder Include="app\static\app\fonts\" />
+    <Folder Include="app\static\app\images\" />
+    <Folder Include="app\static\app\js\" />
+    <Folder Include="app\static\app\js\fancybox\" />
+    <Folder Include="app\static\app\ajax.googleapis.com\" />
+    <Folder Include="app\static\app\code.jquery.com\" />
+    <Folder Include="app\static\app\scripts\" />
+    <Folder Include="app\templates\" />
+    <Folder Include="app\templates\app\" />
+    <Folder Include="locksmith\" />
+    <Folder Include="locksmith\migrations\" />
+    <Folder Include="locksmith\templates\" />
+    <Folder Include="locksmith\templates\locksmith\" />
+    <Folder Include="pitline_test2\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\static\app\ajax.googleapis.com\ajax\libs\jquery\1.9.1\jquery.min.js" />
+    <Content Include="app\static\app\ajax.googleapis.com\ajax\libs\jquery\1.9.1\jquery.min.map" />
+    <Content Include="app\static\app\ajax.googleapis.com\ajax\libs\jquery\1.9.1\jquery.min.map.js" />
+    <Content Include="app\static\app\code.jquery.com\jquery-migrate-1.2.1.js" />
+    <Content Include="app\static\app\content\fonts.css" />
+    <Content Include="app\static\app\content\reset.css" />
+    <Content Include="app\static\app\content\style.css" />
+    <Content Include="app\static\app\fonts\pfdintextcondpro-bold-webfont.eot" />
+    <Content Include="app\static\app\fonts\pfdintextcondpro-bold-webfont.svg" />
+    <Content Include="app\static\app\fonts\pfdintextcondpro-bold-webfont.ttf" />
+    <Content Include="app\static\app\fonts\pfdintextcondpro-bold-webfont.woff" />
+    <Content Include="app\static\app\fonts\pfdintextcondpro-bold-webfontd41d.eot" />
+    <Content Include="app\static\app\fonts\PFDinTextCondPro-Light.eot" />
+    <Content Include="app\static\app\fonts\PFDinTextCondPro-Light.svg" />
+    <Content Include="app\static\app\fonts\PFDinTextCondPro-Light.ttf" />
+    <Content Include="app\static\app\fonts\PFDinTextCondPro-Light.woff" />
+    <Content Include="app\static\app\fonts\PFDinTextCondPro-Lightd41d.eot" />
+    <Content Include="app\static\app\fonts\ptc55f.eot" />
+    <Content Include="app\static\app\fonts\ptc55f.ttf" />
+    <Content Include="app\static\app\fonts\ptc55f.woff" />
+    <Content Include="app\static\app\fonts\ptc55fd41d.eot" />
+    <Content Include="app\static\app\fonts\ptc75f.eot" />
+    <Content Include="app\static\app\fonts\ptc75f.ttf" />
+    <Content Include="app\static\app\fonts\ptc75f.woff" />
+    <Content Include="app\static\app\fonts\ptc75fd41d.eot" />
+    <Content Include="app\static\app\fonts\ptf55f.eot" />
+    <Content Include="app\static\app\fonts\ptf55f.ttf" />
+    <Content Include="app\static\app\fonts\ptf55f.woff" />
+    <Content Include="app\static\app\fonts\ptf55fd41d.eot" />
+    <Content Include="app\static\app\fonts\ptf56f.eot" />
+    <Content Include="app\static\app\fonts\ptf56f.ttf" />
+    <Content Include="app\static\app\fonts\ptf56f.woff" />
+    <Content Include="app\static\app\fonts\ptf56fd41d.eot" />
+    <Content Include="app\static\app\fonts\ptf75f.eot" />
+    <Content Include="app\static\app\fonts\ptf75f.ttf" />
+    <Content Include="app\static\app\fonts\ptf75f.woff" />
+    <Content Include="app\static\app\fonts\ptf75fd41d.eot" />
+    <Content Include="app\static\app\fonts\ptf76f.eot" />
+    <Content Include="app\static\app\fonts\ptf76f.ttf" />
+    <Content Include="app\static\app\fonts\ptf76f.woff" />
+    <Content Include="app\static\app\fonts\ptf76fd41d.eot" />
+    <Content Include="app\static\app\fonts\ptn57f.eot" />
+    <Content Include="app\static\app\fonts\ptn57f.ttf" />
+    <Content Include="app\static\app\fonts\ptn57f.woff" />
+    <Content Include="app\static\app\fonts\ptn57fd41d.eot" />
+    <Content Include="app\static\app\fonts\ptn77f.eot" />
+    <Content Include="app\static\app\fonts\ptn77f.ttf" />
+    <Content Include="app\static\app\fonts\ptn77f.woff" />
+    <Content Include="app\static\app\fonts\ptn77fd41d.eot" />
+    <Content Include="app\static\app\fonts\pts55f.eot" />
+    <Content Include="app\static\app\fonts\pts55f.ttf" />
+    <Content Include="app\static\app\fonts\pts55f.woff" />
+    <Content Include="app\static\app\fonts\pts55fd41d.eot" />
+    <Content Include="app\static\app\fonts\pts56f.eot" />
+    <Content Include="app\static\app\fonts\pts56f.ttf" />
+    <Content Include="app\static\app\fonts\pts56f.woff" />
+    <Content Include="app\static\app\fonts\pts56fd41d.eot" />
+    <Content Include="app\static\app\fonts\pts75f.eot" />
+    <Content Include="app\static\app\fonts\pts75f.ttf" />
+    <Content Include="app\static\app\fonts\pts75f.woff" />
+    <Content Include="app\static\app\fonts\pts75fd41d.eot" />
+    <Content Include="app\static\app\fonts\pts76f.eot" />
+    <Content Include="app\static\app\fonts\pts76f.ttf" />
+    <Content Include="app\static\app\fonts\pts76f.woff" />
+    <Content Include="app\static\app\fonts\pts76fd41d.eot" />
+    <Content Include="app\static\app\fonts\ptz55f.eot" />
+    <Content Include="app\static\app\fonts\ptz55f.ttf" />
+    <Content Include="app\static\app\fonts\ptz55f.woff" />
+    <Content Include="app\static\app\fonts\ptz55fd41d.eot" />
+    <Content Include="app\static\app\fonts\ptz56f.eot" />
+    <Content Include="app\static\app\fonts\ptz56f.ttf" />
+    <Content Include="app\static\app\fonts\ptz56f.woff" />
+    <Content Include="app\static\app\fonts\ptz56fd41d.eot" />
+    <Content Include="app\static\app\images\apple-touch-icon.png" />
+    <Content Include="app\static\app\images\auto_bttns.png" />
+    <Content Include="app\static\app\images\bttn.png" />
+    <Content Include="app\static\app\images\bttn2.png" />
+    <Content Include="app\static\app\images\c1.png" />
+    <Content Include="app\static\app\images\c2.png" />
+    <Content Include="app\static\app\images\c3.png" />
+    <Content Include="app\static\app\images\c4.png" />
+    <Content Include="app\static\app\images\contacts.jpg" />
+    <Content Include="app\static\app\images\contacts_phone.png" />
+    <Content Include="app\static\app\images\contacts_text.png" />
+    <Content Include="app\static\app\images\counts.jpg" />
+    <Content Include="app\static\app\images\cp_mc.png" />
+    <Content Include="app\static\app\images\favicon.ico" />
+    <Content Include="app\static\app\images\favicon.png" />
+    <Content Include="app\static\app\images\footer.jpg" />
+    <Content Include="app\static\app\images\gale1.png" />
+    <Content Include="app\static\app\images\ho.png" />
+    <Content Include="app\static\app\images\hww.png" />
+    <Content Include="app\static\app\images\hww_a.png" />
+    <Content Include="app\static\app\images\input_email.png" />
+    <Content Include="app\static\app\images\input_name.png" />
+    <Content Include="app\static\app\images\input_phone.png" />
+    <Content Include="app\static\app\images\locksmith_back1.jpg" />
+    <Content Include="app\static\app\images\logo.png" />
+    <Content Include="app\static\app\images\mai1n.jpg" />
+    <Content Include="app\static\app\images\main.jpg" />
+    <Content Include="app\static\app\images\manager.png" />
+    <Content Include="app\static\app\images\map.jpg" />
+    <Content Include="app\static\app\images\mb.png" />
+    <Content Include="app\static\app\images\mc.png" />
+    <Content Include="app\static\app\images\mi_email.png" />
+    <Content Include="app\static\app\images\mi_name.png" />
+    <Content Include="app\static\app\images\mi_phone.png" />
+    <Content Include="app\static\app\images\modal.jpg" />
+    <Content Include="app\static\app\images\mokselle.png" />
+    <Content Include="app\static\app\images\o1.png" />
+    <Content Include="app\static\app\images\o2.png" />
+    <Content Include="app\static\app\images\o3_1.png" />
+    <Content Include="app\static\app\images\o4.png" />
+    <Content Include="app\static\app\images\o5.png" />
+    <Content Include="app\static\app\images\o6.png" />
+    <Content Include="app\static\app\images\o6_1.png" />
+    <Content Include="app\static\app\images\offer_a.png" />
+    <Content Include="app\static\app\images\oo_a.png" />
+    <Content Include="app\static\app\images\order.jpg" />
+    <Content Include="app\static\app\images\order2.jpg" />
+    <Content Include="app\static\app\images\order_img.png" />
+    <Content Include="app\static\app\images\order_img2.png" />
+    <Content Include="app\static\app\images\order_photo1.png" />
+    <Content Include="app\static\app\images\p1.png" />
+    <Content Include="app\static\app\images\p2.png" />
+    <Content Include="app\static\app\images\p3.png" />
+    <Content Include="app\static\app\images\pd1.png" />
+    <Content Include="app\static\app\images\pd2.png" />
+    <Content Include="app\static\app\images\pd3.png" />
+    <Content Include="app\static\app\images\pd4.png" />
+    <Content Include="app\static\app\images\pd5.png" />
+    <Content Include="app\static\app\images\pd6.png" />
+    <Content Include="app\static\app\images\pd7.png" />
+    <Content Include="app\static\app\images\pd8.png" />
+    <Content Include="app\static\app\images\pr1.png" />
+    <Content Include="app\static\app\images\price.jpg" />
+    <Content Include="app\static\app\images\price_descr.png" />
+    <Content Include="app\static\app\images\projects.jpg" />
+    <Content Include="app\static\app\images\project_date.png" />
+    <Content Include="app\static\app\images\project_price.png" />
+    <Content Include="app\static\app\images\r1.png" />
+    <Content Include="app\static\app\images\r2.png" />
+    <Content Include="app\static\app\images\r3.png" />
+    <Content Include="app\static\app\images\r4.png" />
+    <Content Include="app\static\app\images\ra.png" />
+    <Content Include="app\static\app\images\rn1.png" />
+    <Content Include="app\static\app\images\rn2.png" />
+    <Content Include="app\static\app\images\rq.png" />
+    <Content Include="app\static\app\images\timer.png" />
+    <Content Include="app\static\app\images\timer_block1.png" />
+    <Content Include="app\static\app\images\tpage_a.png" />
+    <Content Include="app\static\app\images\w1.png" />
+    <Content Include="app\static\app\images\w2.png" />
+    <Content Include="app\static\app\images\w3.png" />
+    <Content Include="app\static\app\images\w4.png" />
+    <Content Include="app\static\app\images\w5.png" />
+    <Content Include="app\static\app\images\w6.png" />
+    <Content Include="app\static\app\images\w7.png" />
+    <Content Include="app\static\app\images\why1.jpg" />
+    <Content Include="app\static\app\images\why2.jpg" />
+    <Content Include="app\static\app\js\fancybox\blank.gif" />
+    <Content Include="app\static\app\js\fancybox\fancybox_loading.gif" />
+    <Content Include="app\static\app\js\fancybox\jquery.fancybox8cbb.css" />
+    <Content Include="app\static\app\js\fancybox\jquery.fancybox8cbb.js" />
+    <Content Include="app\static\app\js\fancybox\sprite.jpg" />
+    <Content Include="app\static\app\js\jquery-migrate-1.2.1.js" />
+    <Content Include="app\static\app\js\jquery.leanModal.min.js" />
+    <Content Include="app\static\app\js\jquery.maphilight.js" />
+    <Content Include="app\static\app\js\jquery.min.js" />
+    <Content Include="app\static\app\js\scripts.js" />
+    <Content Include="app\static\app\js\validator.js" />
+    <Content Include="locksmith\templates\locksmith\index.html" />
+    <Content Include="requirements.txt" />
+    <Content Include="db.sqlite3" />
+    <Content Include="app\static\app\content\bootstrap.css" />
+    <Content Include="app\static\app\content\bootstrap.min.css" />
+    <Content Include="app\static\app\content\site.css" />
+    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="app\static\app\scripts\bootstrap.js" />
+    <Content Include="app\static\app\scripts\bootstrap.min.js" />
+    <Content Include="app\static\app\scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="app\static\app\scripts\jquery-1.10.2.js" />
+    <Content Include="app\static\app\scripts\jquery-1.10.2.min.js" />
+    <Content Include="app\static\app\scripts\jquery-1.10.2.min.map" />
+    <Content Include="app\static\app\scripts\jquery.validate-vsdoc.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.min.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="app\static\app\scripts\modernizr-2.6.2.js" />
+    <Content Include="app\static\app\scripts\respond.js" />
+    <Content Include="app\static\app\scripts\respond.min.js" />
+    <Content Include="app\static\app\scripts\_references.js" />
+    <Content Include="app\templates\app\about.html" />
+    <Content Include="app\templates\app\contact.html" />
+    <Content Include="app\templates\app\index.html" />
+    <Content Include="app\templates\app\layout.html" />
+    <Content Include="app\templates\app\login.html" />
+    <Content Include="app\templates\app\loginpartial.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="readme.mht">
+      <SubType>WebBrowser</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

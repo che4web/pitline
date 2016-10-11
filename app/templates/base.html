@@ -1,0 +1,67 @@
+﻿
+
+<!DOCTYPE html>
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+
+<title>Pit Line - Кузовной ремонт в Перми</title>
+{% load staticfiles %}
+<link rel="icon" type="image/png" href="images/favicon.png" />
+<link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+<link rel="apple-touch-icon" href="{% static 'app/images/apple-touch-icon.png' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/site.css' %}" />
+
+<script type="text/javascript" src="{% static 'app/ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'app/code.jquery.com/jquery-migrate-1.2.1.js' %}"></script>
+<script type="text/javascript" src="{% static 'app/js/jquery.leanModal.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'app/js/scripts.js' %}"></script>
+<script type="text/javascript" src="{% static 'app/js/validator.js' %}"></script>
+<script type="text/javascript" src="{% static 'app/js/fancybox/jquery.fancybox8cbb.js' %}"></script>
+<script type="text/javascript" src="{% static 'app/js/jquery.maphilight.js' %}"></script>
+<link rel="stylesheet" href="{% static 'app/js/fancybox/jquery.fancybox8cbb.css' %}" />
+
+<!--<script type="text/javascript" src="ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>  
+<script type="text/javascript" src="code.jquery.com/jquery-migrate-1.2.1.js"></script>
+<script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
+<script type="text/javascript" src="js/scripts.js"></script>
+<script type="text/javascript" src="js/validator.js"></script>
+<script type="text/javascript" src="js/fancybox/jquery.fancybox8cbb.js"></script>
+<script type="text/javascript" src="js/jquery.maphilight.js"></script>
+<link rel="stylesheet" href="js/fancybox/jquery.fancybox8cbb.css" />
+<link rel="stylesheet" href="css/reset.css" />
+<link rel="stylesheet" href="css/fonts.css" />
+<link rel="stylesheet" href="css/style.css" />-->
+
+<link rel="stylesheet" href="{% static 'app/content/reset.css' %}" />
+<link rel="stylesheet" href="{% static 'app/content/fonts.css' %}" />
+<link rel="stylesheet" href="{% static 'app/content/style.css' %}" />
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand"><img src="{%static 'app/images/logo2.png'%}"></a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="{% url 'home' %}">Кузовные работы</a></li>
+                    <li><a href="{% url 'locksmith-index' %}">Слесарные работы</a></li>
+                </ul>
+                {% include 'app/loginpartial.html' %}
+            </div>
+        </div>
+    </div>
+
+
+{% block content %}{% endblock %}
+    <script src="{% static 'app/scripts/bootstrap.js' %}"></script>
+    </body>
+    </html>
+
