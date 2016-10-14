@@ -4,7 +4,7 @@
 
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
-
+ <link href="https://fonts.googleapis.com/css?family=Open+Sans:300&amp;subset=cyrillic" rel="stylesheet">
 <title>Pit Line - Кузовной ремонт в Перми</title>
 {% load staticfiles %}
 <link rel="icon" type="image/png" href="images/favicon.png" />
@@ -47,26 +47,28 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="/" class="navbar-brand"><img src="{%static 'app/images/logo2.png'%}"></a>
-                <div class="header__addres"> ул. Шоссе Космонавтов 310Г</div>
+                <a href="/" class="navbar-brand"><img src="{%static 'app/images/logo.png'%}"></a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="{% url 'home' %}">Кузовные работы</a></li>
                     <li><a href="{% url 'locksmith-index' %}">Слесарные работы</a></li>
+                   
                 </ul>
-
-			<div class="t_phone">
-				 +7(342) 288 11 91  &nbsp;
-				<a id="go" rel="leanModal" name="callback" href="#callback" class="mc">заказать звонок</a>
-			</div>
+                 <div class="head__phone">
+				         <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>+7(342) 288 11 91
+			        </div>
+			
             </div>
 
-                <ul class="nav navbar-nav navbar-nav-small" id="sidebar">
+
+        </div>
+          <div class="">
+                        <ul class="nav navbar-nav navbar-nav-small" id="sidebar">
                     {%block navbar-small%}
                     {%endblock%}
                 </ul>
-        </div>
+                  </div>
     </div>
 
 
@@ -115,9 +117,8 @@ $('a[href^="#"]').on('click', function (e) {
          menu = target;
          $target = $(target);
        $('html, body').stop().animate({
-            'scrollTop': $target.offset().top+2
+            'scrollTop': $target.offset().top-100
         }, 600, 'swing', function () {
-            window.location.hash = target;
             $(document).on("scroll", onScroll);
         });
     });

@@ -1,4 +1,5 @@
 ﻿body {
+ 
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -39,4 +40,39 @@ input[type="checkbox"].input-validation-error {
 
 .validation-summary-valid {
     display: none;
+}
+
+.head__phone{
+    font-size:13pt;
+    float:right;
+    height:50px;
+    text-align:center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.navbar-brand img{
+    height:50px;
+}
+.row-right .col-md-4,.row-right .col-md-8 {
+    float:right;
+}
+.service__row {
+padding-top:30px;
+padding-bottom:30px;
+    line-height: 1.7;
+}
+.row-right {
+    background-color: #d8cbcb;
+}
+.service__row h3 {
+    color: #000000;
+    font-size: 22pt;
+    line-height: 56px;
+          margin-bottom: 40px;
+  
+            letter-spacing: 2px;
+            text-transform:uppercase;
+}
+.service__image {
+    width:100%;
 }
