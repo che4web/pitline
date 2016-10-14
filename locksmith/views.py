@@ -12,5 +12,6 @@ def home(request):
         request,
         'locksmith/index.html',
         {
+
         }
     )
