@@ -2066,7 +2066,7 @@ map {
 }
 
 .active{
-    color:#ff0000
+    color:#ffdddd!important
     }
 
 
@@ -2076,9 +2076,45 @@ map {
 .navbar-nav{
         color:#ffffff;
         font-size:18pt;
+         text-align:center;
+         width:50%;
 }
-.navbar-nav-svall{
+.navbar-nav-small{
         color:#ffffff;
-        font-size:12pt;
+        font-size:16pt;
+        width:100%;
+        text-align:center
+
 }
 
+.nav > li {
+   float:none;
+    display: inline-block;;
+}
+.nav.navbar-nav-small > li {
+   float:none;
+    display: inline-block;;
+    border-width: 0px 1px 0px 0px;
+    border-style: solid;
+    border-color: #FFFFFF;
+    margin-top: 15px;   
+    margin-bottom: 15px;
+
+}
+.navbar-nav.navbar-nav-small > li > a {
+    padding-top: 0px;   
+    padding-bottom: 0px;
+}
+.navbar .t_phone{
+width: 320px;
+float: right;
+font-size: 30px;
+line-height: 30px;
+color: #095892;
+font-family: 'pt_bold';
+text-align: right;
+margin: 0px 0px 0 0;
+}
+.navbar-brand{
+    padding: 0px 15px;
+}

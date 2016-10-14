@@ -56,16 +56,16 @@
                     <li><a href="{% url 'locksmith-index' %}">Слесарные работы</a></li>
                 </ul>
 
-                <ul class="nav navbar-nav navbar-nav-svall">
-                    {%block navbar-small%}
-                    {%endblock%}
-                </ul>
 			<div class="t_phone">
 				 +7(342) 288 11 91  &nbsp;
 				<a id="go" rel="leanModal" name="callback" href="#callback" class="mc">заказать звонок</a>
 			</div>
             </div>
 
+                <ul class="nav navbar-nav navbar-nav-small" id="sidebar">
+                    {%block navbar-small%}
+                    {%endblock%}
+                </ul>
         </div>
     </div>
 
