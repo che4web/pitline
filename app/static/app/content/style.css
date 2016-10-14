@@ -23,7 +23,7 @@ body {
 }
 
 .body-locksmith {
-	background:#fff url(../images/locksmith_back1.jpg) no-repeat center top!important;
+#	background:#fff url(../images/locksmith_back1.jpg) no-repeat center top!important;
 }
 
 b {
@@ -584,6 +584,45 @@ h2 {
 	color:#ff8012;
 	padding-left:40px;
 }
+.os1 {
+	background:url(../images/sls/o1.png) no-repeat center 80px;
+}
+
+.os2 {
+	background:url(../images/sls/o2.png) no-repeat center 80px;
+	margin:0 79px;
+}
+
+.os3 {
+	background:url(../images/sls/o3_1.png) no-repeat center 80px;
+}
+
+.os4 {
+	background:url(../images/sls/o4.png) no-repeat center 80px;
+}
+
+.os5 {
+	background:url(../images/sls/o5.png) no-repeat center 80px;
+	margin:0 79px;
+}
+
+.os6 {
+	background:url(../images/sls/o6.png) no-repeat center 80px;
+}
+
+.os4 .offer_text em, .o5 .offer_text em, .o6 .offer_text em {
+	line-height:55px;
+}
+
+.os6 .offer_text em {
+	display:block;
+	background:url(../images/sls/o6_1.png) no-repeat 43px 9px;
+	color:#ff8012;
+	padding-left:40px;
+}
+
+
+
 
 .offer_one a {
 	display:block;
@@ -2025,3 +2064,21 @@ map {
     padding:15px;
     border-radius:10px
 }
+
+.active{
+    color:#ff0000
+    }
+
+
+.header__addres{
+        color:#ffffff;
+}
+.navbar-nav{
+        color:#ffffff;
+        font-size:18pt;
+}
+.navbar-nav-svall{
+        color:#ffffff;
+        font-size:12pt;
+}
+

@@ -48,20 +48,97 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a href="/" class="navbar-brand"><img src="{%static 'app/images/logo2.png'%}"></a>
+                <div class="header__addres"> ул. Шоссе Космонавтов 310Г</div>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="{% url 'home' %}">Кузовные работы</a></li>
                     <li><a href="{% url 'locksmith-index' %}">Слесарные работы</a></li>
                 </ul>
-                {% include 'app/loginpartial.html' %}
+
+                <ul class="nav navbar-nav navbar-nav-svall">
+                    {%block navbar-small%}
+                    {%endblock%}
+                </ul>
+			<div class="t_phone">
+				 +7(342) 288 11 91  &nbsp;
+				<a id="go" rel="leanModal" name="callback" href="#callback" class="mc">заказать звонок</a>
+			</div>
             </div>
+
         </div>
     </div>
 
 
 {% block content %}{% endblock %}
     <script src="{% static 'app/scripts/bootstrap.js' %}"></script>
+    <script >
+
+
+
+
+ $(document).ready(function(){
+$('a[href*=#]').bind("click", function(e){
+var anchor = $(this);
+$('html, body').stop().animate({
+scrollTop: $(anchor.attr('href')).offset().top
+}, 1000);
+e.preventDefault();
+});
+return false;
+}); 
+
+
+
+$(document).ready(function () {
+$(window).scroll(function(){
+        var window_top = $(window).scrollTop() + 12; 
+       // the "12" should equal the margin-top value for nav.stickydiv
+        var div_top = $('#checkdiv').offset().top;
+        if (window_top >= div_top) {
+                $('nav').addClass('stickydiv');
+            } else {
+                $('nav').removeClass('stickydiv');
+            }
+    });  
+
+  $(document).on("scroll", onScroll);
+
+$('a[href^="#"]').on('click', function (e) {
+      e.preventDefault();
+        $(document).off("scroll");
+         $('a').each(function () {
+            $(this).removeClass('active');
+        })
+        $(this).addClass('active');
+         var target = this.hash,
+         menu = target;
+         $target = $(target);
+       $('html, body').stop().animate({
+            'scrollTop': $target.offset().top+2
+        }, 600, 'swing', function () {
+            window.location.hash = target;
+            $(document).on("scroll", onScroll);
+        });
+    });
+});
+
+function onScroll(event){
+    var scrollPos = $(document).scrollTop();
+    $('#sidebar a').each(function () {
+        var currLink = $(this);
+       var refElement = $(currLink.attr("href"));
+        if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+            $('#sidebar ul li a').removeClass("active");
+            currLink.addClass("active");
+        }
+        else{
+            currLink.removeClass("active");
+        }
+    });
+}
+    </script>
+
     </body>
     </html>
 

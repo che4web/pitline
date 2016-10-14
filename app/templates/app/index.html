@@ -1,13 +1,17 @@
 ﻿{% extends "base.html" %}
  {% load staticfiles %}
-{% block content %}
-<ul class="nav nav-pills nav-stacked sidebar">
+
+ {% block navbar-small %}
     <li><a href="#offer">Наши услуги</a></li>
     <li><a href="#price">стоимость работ</a></li>
     <li><a href="#work">Как мы работаем</a></li>
-    <li><a href="#reviews1">Отзывы наших клиентов</a></li>
-    <li><a href="#progect">ВЫПОЛНЕННЫЕ ПРОЕКТЫ</a></li>
+    <li><a href="#reviews1">Отзывы</a></li>
+    <li><a href="#progect">Проекты</a></li>
     <li><a href=></a></li>
+
+ {%endblock%}
+{% block content %}
+ <ul class="nav nav-pills nav-stacked sidebar" id="sidebar">
 </ul>
 
 
