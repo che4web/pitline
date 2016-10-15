@@ -6,9 +6,12 @@ from datetime import datetime
 from django.conf.urls import url
 import django.contrib.auth.views
 
+from django.conf.urls.static import static
+from django.conf import settings
+
 import app.forms
 import app.views
-
+from action.views import ActionListView
 # Uncomment the next lines to enable the admin:
 from django.conf.urls import include
 from django.contrib import admin
@@ -19,6 +22,7 @@ urlpatterns = [
     url(r'^$', app.views.home, name='home'),
     url(r'^contact$', app.views.contact, name='contact'),
     url(r'^about', app.views.about, name='about'),
+    url(r'^akcii', ActionListView.as_view(), name='action-index'),
     url(r'^slesarnye-raboty/', include('locksmith.urls')),
     url(r'^login/$',
         django.contrib.auth.views.login,
@@ -45,3 +49,4 @@ urlpatterns = [
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
 ]
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

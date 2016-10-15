@@ -76,3 +76,44 @@ padding-bottom:30px;
 .service__image {
     width:100%;
 }
+.body-content-main {
+margin-top:50px;
+
+}
+.action__text {
+    margin-bottom: 22px;
+    color: #111;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.75;
+}
+.action__img img {
+    width: 100%;
+
+}
+.action__date {
+    margin-bottom: 10px;
+    font-size: 13px;
+    text-decoration: none;
+    color: #aaa;
+    -webkit-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+    -moz-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+    -o-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+    -ms-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+    transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+}
+.action__title {
+    color: #555;
+    text-decoration: none;
+    -webkit-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+    -moz-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+    -o-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+    -ms-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+    transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+        font-size: 20px;
+    font-weight: 300;
+}
+.action__card {
+
+        
+}

@@ -10,8 +10,8 @@
 <link rel="icon" type="image/png" href="images/favicon.png" />
 <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
 <link rel="apple-touch-icon" href="{% static 'app/images/apple-touch-icon.png' %}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'app/content/bootstrap.min.css' %}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'app/content/site.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'app/content/bootstrap.min.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'app/content/site.css' %}" />
 
 <script type="text/javascript" src="{% static 'app/ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'app/code.jquery.com/jquery-migrate-1.2.1.js' %}"></script>
@@ -39,42 +39,44 @@
 <link rel="stylesheet" href="{% static 'app/content/style.css' %}" />
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="/" class="navbar-brand"><img src="{%static 'app/images/logo.png'%}"></a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="{% url 'home' %}">Кузовные работы</a></li>
-                    <li><a href="{% url 'locksmith-index' %}">Слесарные работы</a></li>
-                   
-                </ul>
-                 <div class="head__phone">
-				         <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>+7(342) 288 11 91
-			        </div>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="/" class="navbar-brand"><img src="{%static 'app/images/logo.png'%}"></a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="{% url 'home' %}">Кузовные работы</a></li>
+					<li><a href="{% url 'locksmith-index' %}">Слесарные работы</a></li>
+					 <li><a href="{% url 'action-index' %}">Акции</a></li>
+				   
+				</ul>
+				 <div class="head__phone">
+						 <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>+7(342) 288 11 91
+					</div>
 			
-            </div>
+			</div>
 
 
-        </div>
-          <div class="">
-                        <ul class="nav navbar-nav navbar-nav-small" id="sidebar">
-                    {%block navbar-small%}
-                    {%endblock%}
-                </ul>
-                  </div>
-    </div>
+		</div>
+		  <div class="">
+						<ul class="nav navbar-nav navbar-nav-small" id="sidebar">
+					{%block navbar-small%}
+					{%endblock%}
+				</ul>
+				  </div>
+	</div>
 
-
+	<div class="body-content-main ">
 {% block content %}{% endblock %}
-    <script src="{% static 'app/scripts/bootstrap.js' %}"></script>
-    <script >
+		</div>
+	<script src="{% static 'app/scripts/bootstrap.js' %}"></script>
+	<script >
 
 
 
@@ -94,52 +96,52 @@ return false;
 
 $(document).ready(function () {
 $(window).scroll(function(){
-        var window_top = $(window).scrollTop() + 12; 
-       // the "12" should equal the margin-top value for nav.stickydiv
-        var div_top = $('#checkdiv').offset().top;
-        if (window_top >= div_top) {
-                $('nav').addClass('stickydiv');
-            } else {
-                $('nav').removeClass('stickydiv');
-            }
-    });  
+		var window_top = $(window).scrollTop() + 12; 
+	   // the "12" should equal the margin-top value for nav.stickydiv
+		var div_top = $('#checkdiv').offset().top;
+		if (window_top >= div_top) {
+				$('nav').addClass('stickydiv');
+			} else {
+				$('nav').removeClass('stickydiv');
+			}
+	});  
 
   $(document).on("scroll", onScroll);
 
 $('a[href^="#"]').on('click', function (e) {
-      e.preventDefault();
-        $(document).off("scroll");
-         $('a').each(function () {
-            $(this).removeClass('active');
-        })
-        $(this).addClass('active');
-         var target = this.hash,
-         menu = target;
-         $target = $(target);
-       $('html, body').stop().animate({
-            'scrollTop': $target.offset().top-100
-        }, 600, 'swing', function () {
-            $(document).on("scroll", onScroll);
-        });
-    });
+	  e.preventDefault();
+		$(document).off("scroll");
+		 $('a').each(function () {
+			$(this).removeClass('active');
+		})
+		$(this).addClass('active');
+		 var target = this.hash,
+		 menu = target;
+		 $target = $(target);
+	   $('html, body').stop().animate({
+			'scrollTop': $target.offset().top-100
+		}, 600, 'swing', function () {
+			$(document).on("scroll", onScroll);
+		});
+	});
 });
 
 function onScroll(event){
-    var scrollPos = $(document).scrollTop();
-    $('#sidebar a').each(function () {
-        var currLink = $(this);
-       var refElement = $(currLink.attr("href"));
-        if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
-            $('#sidebar ul li a').removeClass("active");
-            currLink.addClass("active");
-        }
-        else{
-            currLink.removeClass("active");
-        }
-    });
+	var scrollPos = $(document).scrollTop();
+	$('#sidebar a').each(function () {
+		var currLink = $(this);
+	   var refElement = $(currLink.attr("href"));
+		if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+			$('#sidebar ul li a').removeClass("active");
+			currLink.addClass("active");
+		}
+		else{
+			currLink.removeClass("active");
+		}
+	});
 }
-    </script>
+	</script>
 
-    </body>
-    </html>
+	</body>
+	</html>
 

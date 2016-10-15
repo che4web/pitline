@@ -1,0 +1,41 @@
+﻿{%extends 'base.html'%}
+
+{%block navbar-small%}
+{%endblock%}
+
+
+{%block content%}
+<div class="container">
+	<div class="row">
+	 {%for act in object_list%}
+		<div class="col-md-4 ">
+			<div class="action__card">
+			<div class="action__img"><img src={{act.img.url}}></div>
+			<div class="action__title">{{act.title}}</div>
+			<div class="action__date">{{act.date}}</div>
+			<div class="action__text">{{act.text}}</div>
+		</div>
+	  </div>
+		{%endfor%}
+	</div>
+
+</div>
+<script>
+	function setEqualHeight(columns) {
+		var tallestcolumn = 0;
+		columns.each(
+		function () {
+			currentHeight = $(this).height();
+			if (currentHeight > tallestcolumn) {
+				tallestcolumn = currentHeight;
+			}
+		}
+		);
+		columns.height(tallestcolumn);
+	}
+	$(document).ready(function () {
+		setEqualHeight($(".action__card"));
+	});
+
+</script>
+{%endblock%}

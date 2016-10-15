@@ -27,6 +27,13 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="action\admin.py" />
+    <Compile Include="action\apps.py" />
+    <Compile Include="action\migrations\__init__.py" />
+    <Compile Include="action\models.py" />
+    <Compile Include="action\tests.py" />
+    <Compile Include="action\views.py" />
+    <Compile Include="action\__init__.py" />
     <Compile Include="app\admin.py">
       <SubType>Code</SubType>
     </Compile>
@@ -53,6 +60,10 @@
     <Compile Include="pitline_test2\wsgi.py" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="action\" />
+    <Folder Include="action\migrations\" />
+    <Folder Include="action\templates\" />
+    <Folder Include="action\templates\action\" />
     <Folder Include="app\" />
     <Folder Include="app\migrations\" />
     <Folder Include="app\static\" />
@@ -78,6 +89,8 @@
     <Folder Include="pitline_test2\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="action\templates\action\action_list.html" />
+    <Content Include="action\templates\index.html" />
     <Content Include="app\static\app\ajax.googleapis.com\ajax\libs\jquery\1.9.1\jquery.min.js" />
     <Content Include="app\static\app\ajax.googleapis.com\ajax\libs\jquery\1.9.1\jquery.min.map" />
     <Content Include="app\static\app\ajax.googleapis.com\ajax\libs\jquery\1.9.1\jquery.min.map.js" />

@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'app',
     'locksmith',
+	'action',
     # Add your apps here to enable them
     'django.contrib.admin',
     'django.contrib.auth',
@@ -125,3 +126,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = 'D:/VS_Projects/python/pitline_test2/pitline/media'
