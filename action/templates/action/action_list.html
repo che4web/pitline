@@ -10,16 +10,20 @@
 	 {%for act in object_list%}
 		<div class="col-md-4 ">
 			<div class="action__card">
-			<div class="action__img"><img src={{act.img.url}}></div>
-			<div class="action__title">{{act.title}}</div>
-			<div class="action__date">{{act.date}}</div>
-			<div class="action__text">{{act.text}}</div>
-		</div>
+			    <div class="action__img"><img src={{act.img.url}}></div>
+			    <div class="action__title">{{act.title}}</div>
+			    <div class="action__date">{{act.date}}</div>
+			    <div class="action__text">{{act.text}}</div>
+                <div class="action__btn">
+                    <button type="button" class="btn btn-default">воспользоваться</button>
+                </div>
+		    </div>
 	  </div>
 		{%endfor%}
 	</div>
 
 </div>
+
 <script>
 	function setEqualHeight(columns) {
 		var tallestcolumn = 0;

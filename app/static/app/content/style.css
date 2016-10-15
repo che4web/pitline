@@ -14,12 +14,12 @@ body {
 	font-size:16px;
 	line-height: 1;
 	color:#3b3b3b;
-       font-family: "Open Sans";
-	background:#fff url(../images/main.jpg) no-repeat center top fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+    font-family: "Open Sans";
+	/*background:#fff url(../images/main.jpg) no-repeat center top fixed;*/ 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
 }
 
 .body-locksmith {
