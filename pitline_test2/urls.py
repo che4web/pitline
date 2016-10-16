@@ -22,6 +22,7 @@ urlpatterns = [
     url(r'^$', app.views.home, name='home'),
     url(r'^contact$', app.views.contact, name='contact'),
     url(r'^about', app.views.about, name='about'),
+    url(r'^sender', app.views.ContactView.as_view(), name='sender'),
     url(r'^akcii', ActionListView.as_view(), name='action-index'),
     url(r'^slesarnye-raboty/', include('locksmith.urls')),
     url(r'^login/$',
