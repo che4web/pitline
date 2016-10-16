@@ -123,12 +123,14 @@ $(document).ready(function() {
 		var page = $('input[name="page"]').val().match(/(?:\/)(.{1})(?:\/.*)$/i);
 		/* utm */
 		var request_url = '\n'+$('input[name="ref_url"]').val().toString().replace(/&/g, '\n');
-		/* - */
+		/* -
 		if(page == null) {
 			var url = "sender.php";
 		} else {
 			var url = "../sender.php";
 		}
+        */
+		var url = "../sender";
 		var answer = checkForm($(this).parent().get(0));
 		if(answer != false)
 		{
@@ -156,6 +158,15 @@ $(document).ready(function() {
 			});
 		}
 	});
+
+    $('.button-send').click(function(){
+        var form = $(this).parents('form:first');
+        form.ajaxSubmit({url: 'sender', type: 'post',sucess:function(){
+              
+            }});
+         $("#succesModal").modal('toggle');
+        return false;
+    });
 
 	$('.up').change(function() {
 		$(this).addClass('uploaded');
