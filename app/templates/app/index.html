@@ -20,7 +20,7 @@
 			Заказать звонок
 			<span>заполните форму и мы вам обязательно перезвоним!</span>
 		</div>
-		<form id="callbacks" name="callbacks" action="/sender.php">
+		<form id="callbacks" name="callbacks" action="/sender">
 			<input type="hidden" name="referer" value="http://pitline59.ru/">
 			<label class="name top required"><input type="text" name="name" class="input_name" placeholder="ваше имя" /></label>
 			<label class="phone top required"><input type="text" name="phone" class="input_phone" placeholder="ваш телефон" /></label>
@@ -34,12 +34,13 @@
 			Рассчитать стоимость
 			<span>заполните форму и мы вам обязательно перезвоним!</span>
 		</div>
-		<form id="callbacks" name="callbacks" action="/sender.php">
+		<form id="callbacks" name="callbacks" action="/sender" method="POST">
+            {%csrf-token%}
 			<input type="hidden" class="formname" name="name" value="">
 			<input type="hidden" name="referer" value="http://pitline59.ru/">
 			<label class="name left required"><input type="text" name="name" class="input_name" placeholder="ваше имя" /></label>
 			<label class="phone left required"><input type="text" name="phone" class="input_phone" placeholder="ваш телефон" /></label>
-			<label class="email left"><input type="text" name="send" class="input_email" placeholder="ваш e-mail" /></label>
+			<label class="email left"><input type="text" name="enail" class="input_email" placeholder="ваш e-mail" /></label>
 			<input class="bttn button" type="button" name="request" value="Оставить заявку" />
 		</form>
 	</div>
