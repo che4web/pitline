@@ -1,6 +1,93 @@
-{% extends "app/layout.html" %}
+{% extends "base.html" %}
+{% load staticfiles %}
 
 {% block content %}
+<meta charset="utf-8" />
+<section class="contact-page">
+    <div class="container relative">
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-lg-4">
+                <div class="">
+                    <div class="alt-features-icon-1">
+                        <i class="glyphicon glyphicon-earphone"></i>
+                    </div>
+                    <h3 class="alt-features-title-1">Телефон</h3>
+                    <div class="alt-features-descr-1">
+                        +7(902) 800-90-66
+                        <br>
+                    </div>
+                </div>
+            </div>
+
+                    <div class="col-sm-6 col-md-4 col-lg-4" itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
+
+                        <div class="alt-features-item-1 align-center">
+
+                            <div class="alt-features-icon-1">
+
+                                <i class="glyphicon glyphicon-home"></i>
+
+                            </div>
+
+                            <h3 class="alt-features-title-1">Адрес</h3>
+
+                            <div class="alt-features-descr-1">
+
+                                г. <span itemprop="addressLocality">Пермь</span>, улица <span itemprop="streetAddress" content="Стахановская, 54И">Стахановская, 54, литер И</span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- End Contact Item -->
+
+                
+                
+                    <!-- Contact Item-->
+
+                    <div class="col-sm-6 col-md-4 col-lg-4">
+
+                        <div class="alt-features-item-1 align-center">
+
+                            <div class="alt-features-icon-1">
+
+                                <i class="fa fa-envelope"></i>
+
+                            </div>
+
+                            <h3 class="alt-features-title-1">Почта</h3>
+
+                            <div class="alt-features-descr-1 email-link">
+
+                                <a href="mailto:hello@vienn.ru"><span itemprop="email">hello@vienn.ru</span></a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- End Contact Item -->
+
+                
+            </div>
+
+            <!-- End Contact Information -->
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+</section>
 
 <h2>{{ title }}.</h2>
 <h3>{{ message }}</h3>

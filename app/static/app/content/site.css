@@ -161,3 +161,36 @@ background: #e5e5e5;
 .navbar-inverse {
     border-color: #e5e5e5;
 }
+
+.contact-page{
+    background-color:#444444;
+    color:#FFFFFF;
+    margin-top:150px;
+}
+
+.alt-features-title-1 {
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.alt-features-descr-1 {
+    font-size: 19px;
+    font-weight: 300;
+}
+
+.alt-features-icon-1 {
+    width: 64px;
+    height: 64px;
+    /*display: inline-block;*/
+    font-size: 28px;
+    line-height: 64px;
+    color: #fff;
+    background: #ff9524;
+    margin-top: 15px;
+    text-align:center;
+    -webkit-border-radius: 90%;
+    -moz-border-radius: 90%;
+    border-radius: 90%;
+}
+
