@@ -41,7 +41,7 @@
 			<label class="name left required"><input type="text" name="name" class="input_name" placeholder="ваше имя" /></label>
 			<label class="phone left required"><input type="text" name="phone" class="input_phone" placeholder="ваш телефон" /></label>
 			<label class="email left"><input type="text" name="enail" class="input_email" placeholder="ваш e-mail" /></label>
-			<input class="bttn button" type="button" name="request" value="Оставить заявку" />
+			<input class="bttn button" type="button" name="sender" value="Оставить заявку" />
 		</form>
 	</div>
 </div>
@@ -57,7 +57,7 @@
 			<label class="name left required"><input type="text" name="name" class="input_name" placeholder="ваше имя" /></label>
 			<label class="phone left required"><input type="text" name="phone" class="input_phone" placeholder="ваш телефон" /></label>
 			<label class="email left"><input type="text" name="send" class="input_email" placeholder="ваш e-mail" /></label>
-			<input class="bttn button" type="button" name="request" value="Оставить заявку" />
+			<input class="bttn button" type="button" name="sender" value="Оставить заявку" />
 		</form>
 	</div>
 </div>
@@ -123,13 +123,14 @@
 				<span>Оставьте заявку</span>
 				и получите <b>бесплатную полировку</b><br />фар вашего автомобиля!
         -->
-				<form id="callbacks" name="callbacks" action="/sender.php">
+				<form id="callbacks" name="callbacks" action="/sender.php" method="POST">
+                    {%csrf_token%}
 					<input type="hidden" class="formname" name="mname" value="">
 					<input type="hidden" name="referer" value="http://pitline59.ru/">
 					<label class="name left required"><input type="text" name="name" class="input_name" placeholder="имя" /></label>
 					<label class="phone left required"><input type="text" name="phone" class="input_phone" placeholder="телефон" /></label>
-					<label class="email left"><input type="text" name="send" class="input_email" placeholder="e-mail" /></label>
-					<input type="button" class="bttn button" name="request" value="Отправить заявку" />
+					<label class="email left"><input type="text" name="email" class="input_email" placeholder="e-mail" /></label>
+					<input type="Submit" class="bttn button-send" name="sender" value="Отправить заявку" />
 				</form>
 			</div>
 		</div>

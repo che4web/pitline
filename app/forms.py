@@ -29,7 +29,7 @@ class ContactForm(forms.Form):
     name = forms.CharField()
     phone = forms.CharField()
     email = forms.EmailField()
-    message = forms.CharField(widget=forms.Textarea)
+    message = forms.CharField(widget=forms.Textarea,required=False)
 
     def send_email(self):
         # send email using the self.cleaned_data dictionary
