@@ -4,94 +4,52 @@
 {% block content %}
 <meta charset="utf-8" />
 <section class="contact-page">
-    <div class="container relative">
+    <div class="container relative contact-page__contacts">
         <div class="row">
             <div class="col-sm-6 col-md-4 col-lg-4">
-                <div class="">
-                    <div class="alt-features-icon-1">
+                <div>
+                    <div class="contact-page__contacts__icon">
                         <i class="glyphicon glyphicon-earphone"></i>
                     </div>
-                    <h3 class="alt-features-title-1">Телефон</h3>
-                    <div class="alt-features-descr-1">
-                        +7(902) 800-90-66
+                    <h3 class="contact-page__contacts__title">Телефон</h3>
+                    <div class="contact-page__contacts__descr">
+                        +7(342) 288-11-91
                         <br>
                     </div>
                 </div>
             </div>
 
-                    <div class="col-sm-6 col-md-4 col-lg-4" itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
-
-                        <div class="alt-features-item-1 align-center">
-
-                            <div class="alt-features-icon-1">
-
-                                <i class="glyphicon glyphicon-home"></i>
-
-                            </div>
-
-                            <h3 class="alt-features-title-1">Адрес</h3>
-
-                            <div class="alt-features-descr-1">
-
-                                г. <span itemprop="addressLocality">Пермь</span>, улица <span itemprop="streetAddress" content="Стахановская, 54И">Стахановская, 54, литер И</span>
-
-                            </div>
-
-                        </div>
-
+            <div class="col-sm-6 col-md-4 col-lg-4">
+                <div class="alt-features-item-1 align-center">
+                    <div class="contact-page__contacts__icon">
+                        <i class="glyphicon glyphicon-home"></i>
                     </div>
-
-                    <!-- End Contact Item -->
-
-                
-                
-                    <!-- Contact Item-->
-
-                    <div class="col-sm-6 col-md-4 col-lg-4">
-
-                        <div class="alt-features-item-1 align-center">
-
-                            <div class="alt-features-icon-1">
-
-                                <i class="fa fa-envelope"></i>
-
-                            </div>
-
-                            <h3 class="alt-features-title-1">Почта</h3>
-
-                            <div class="alt-features-descr-1 email-link">
-
-                                <a href="mailto:hello@vienn.ru"><span itemprop="email">hello@vienn.ru</span></a>
-
-                            </div>
-
-                        </div>
-
+                    <h3 class="contact-page__contacts__title">Адрес</h3>
+                    <div class="contact-page__contacts__descr">
+                        г. <span itemprop="addressLocality">Пермь</span>, улица <span itemprop="streetAddress" content="Стахановская, 54И">Шоссе Космонавтов 310Г</span>
                     </div>
-
-                    <!-- End Contact Item -->
-
-                
+                </div>
             </div>
 
-            <!-- End Contact Information -->
-
-
-
-
-
-
-
-
-
-
-
+            <div class="col-sm-6 col-md-4 col-lg-4">
+                <div class="alt-features-item-1 align-center">
+                    <div class="contact-page__contacts__icon">
+                        <i class="glyphicon glyphicon-credit-card"></i>
+                            </div>
+                            <h3 class="contact-page__contacts__title">Почта</h3>
+                            <div class="contact-page__contacts__descr">
+                                <a href="mailto:pit-line@bk.ru"><span itemprop="email">pit-line@bk.ru</span></a>
+                            </div>
+                        </div>
+            </div>
         </div>
+    </div>
+
+    <div class="contact-page__map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2116.9809936290876!2d56.109888616001264!3d57.95427798119893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43e8bed4edf7b43b%3A0x1c314cb9b99f0e3f!2z0YguINCa0L7RgdC80L7QvdCw0LLRgtC-0LIsIDMxMCwg0J_QtdGA0LzRjCwg0J_QtdGA0LzRgdC60LjQuSDQutGA0LDQuSwgNjE0NTAw!5e0!3m2!1sru!2sru!4v1476628025382" frameborder="0" style="border:0" allowfullscreen></iframe>
+	</div>
 </section>
-
-<h2>{{ title }}.</h2>
-<h3>{{ message }}</h3>
-
+<!--
 <address>
     One Microsoft Way<br />
     Redmond, WA 98052-6399<br />
@@ -103,5 +61,5 @@
     <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
     <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
 </address>
-
+-->
 {% endblock %}
