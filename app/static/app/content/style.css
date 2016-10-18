@@ -2130,3 +2130,8 @@ margin: 0px 0px 0 0;
 .navbar-inverse .navbar-nav-small>li>a{
     color:#ffffff;
 }
+
+
+.navbar-inverse .navbar-nav > li > a:hover{
+    color:#E54A3B;
+}
