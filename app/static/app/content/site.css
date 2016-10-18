@@ -82,10 +82,32 @@ input[type="checkbox"].input-validation-error {
     background-color: #d8cbcb;
     border-width:2px;
     border-radius: 1px;
+    color: #FFFFFF;
+    font-weight:bold;
+    border-color:#828282 ;
+}
+
+.service__row button:hover{
+    margin:15px 0px 15px 0px;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    border-width:2px;
+    border-radius: 1px;
+    background-color: #FFFFFF;
+    color: #000000;
+    font-weight:bold;
 }
 
 .row-right button{
     background-color: #FFFFFF;
+    color: #000000;
+    font-weight:bold;
+}
+
+.row-right button:hover{
+   background-color: #d8cbcb;
+    color: #FFFFFF;
 }
 
 .service__image {
@@ -98,6 +120,10 @@ input[type="checkbox"].input-validation-error {
 
 .body-content-main .main{
     background:#fff url(../images/main.jpg) no-repeat center top fixed;
+}
+
+.body-content-main .main.mslesar{
+    background:#fff url(../images/main-slesar.jpg) no-repeat center top fixed;
 }
 
 

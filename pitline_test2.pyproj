@@ -190,6 +190,7 @@
     <Content Include="app\static\app\images\locksmith_back1.jpg" />
     <Content Include="app\static\app\images\logo.png" />
     <Content Include="app\static\app\images\mai1n.jpg" />
+    <Content Include="app\static\app\images\main-slesar.jpg" />
     <Content Include="app\static\app\images\main.jpg" />
     <Content Include="app\static\app\images\manager.png" />
     <Content Include="app\static\app\images\map.jpg" />
