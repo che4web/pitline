@@ -267,4 +267,18 @@ background: #e5e5e5;
     color: #FFFFFF;
  }
 
+.schedule{
+    /*margin-left:30px;*/
+    margin-right:30px;
+    margin-top:10px;
+    font-size:14px;
+    /*padding-left:15px;
+    padding-right:15px;*/
+    /*float:right;*/
+    /*background:url('logo.png') no-repeat 0 0 0 10 ;*/
+}
+
+.container{
+    max-width:1300px;
+}
 
