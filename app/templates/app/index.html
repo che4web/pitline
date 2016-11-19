@@ -587,30 +587,18 @@
 		<h2>Отзывы наших клиентов</h2>
 		<div class="wrap scroll-animate">
 			<a name="reviews2"></a>
-			<div class="review r1 fade">
-				<div class="review_img"></div>
-				<span>«Второй раз, и снова на высоте»</span>
-				<p>Приезжаю в эту компанию второй раз и снова очень доволен скоростью обслуживания и качеством работ.</p>
-				<p>Была вмятина на крыле и содрана краска на бампере. Автомобиль BMW X3.<br /><b> Оставил авто рано утром, а вечером уже ехал домой на отремонтированом коне.</b> В обычных малярках, мне говорили 3-4 дня, а тут и скорость и качество на высоте.<br /></p>
-				<p>Спасибо!</p>
+            {%for item in feedback_list%}
+            <div class="review {% cycle "r1" "r2"%} fade">
+                <div class="review_img"><img src="{{item.get_foto}}"></div>
+                <span>{{item.title}}</span>
+                {{item.text}}
 				<div class="review_name">
 					<div class="rn"></div>
 					<div class="rnn"></div>
-					<em>Александр, 44 года, BMW X3 </em>
+                    <em>{{item.name}}</em>
 				</div>
 			</div>
-			<a name="reviews3"></a>
-			<div class="review r2 fade">
-				<div class="review_img"></div>
-				<span>«Пускай цена выше, зато не подкапаешься»</span>
-				<p>На майские праздники решил обновить авто и отдал его на покраску сколов и вмятин.</p> 
-				<p><b>Сделали все ровно. Друзья пытались подкопаться, но не нашли ни одного изьяна.</b> Что касается цены, да, выше чем во многих сервисах, но зато можно быть уверенным в качестве. Есть знакомые перекупы, советую этот сервис им, они "перепродают" авто люксовые, эти ребята знают как с ними обращаться.</p>
-				<div class="review_name">
-					<div class="rn"></div>
-					<div class="rnn"></div>
-					<em>Дмитрий, 32 года, Hyundai Sonata</em>
-				</div>
-			</div>
+            {%endfor%}
 			<a name="reviews4"></a>
 			<div class="review r3 fade">
 				<div class="review_img"></div>

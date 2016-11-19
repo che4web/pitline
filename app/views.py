@@ -13,6 +13,7 @@ from django.views.generic.edit import FormView
 from django.shortcuts import HttpResponse
 import json
 from django.http import HttpResponseBadRequest
+from app.models import Feedback
 def home(request):
     """Renders the home page."""
     assert isinstance(request, HttpRequest)
@@ -21,6 +22,7 @@ def home(request):
         'app/index.html',
         {
             'title':'Home Page',
+            'feedback_list':Feedback.objects.filter(active=True),
             'year':datetime.now().year,
         }
     )
