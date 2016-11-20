@@ -63,8 +63,13 @@ class ContactView(FormView):
         # This method is called when valid form data has been POSTed.
         # It should return an HttpResponse.
         form.send_email()
-        return HttpResponse('OK')
+        return HttpResponse('{"data": "OK"}')
 
     def form_invalid(self, form):
         errors_dict = json.dumps(dict([(k, [e for e in v]) for k, v in form.errors.items()]))
-        return HttpResponseBadRequest(json.dumps(errors_dict))
+        #error_list=[]
+        #for k, v in form.errors.items():
+        #    for e in v:
+        #        error_list.append(e)
+        #errors_dict =','.join(error_list)
+        return HttpResponseBadRequest(errors_dict)

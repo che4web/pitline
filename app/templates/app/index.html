@@ -40,6 +40,7 @@
 			<input type="hidden" name="referer" value="http://pitline59.ru/">
 			<label class="name left required"><input type="text" name="name" class="input_name" placeholder="ваше имя" /></label>
 			<label class="phone left required"><input type="text" name="phone" class="input_phone" placeholder="ваш телефон" /></label>
+             <div class="error_field email_error ">  </div>
 			<label class="email left"><input type="text" name="enail" class="input_email" placeholder="ваш e-mail" /></label>
 			<input class="bttn button" type="button" name="sender" value="Оставить заявку" />
 		</form>
@@ -51,13 +52,19 @@
 			Оставить заявку
 			<span>заполните форму и мы обязательно свяжемся с вами!</span>
 		</div>
-		<form id="callbacks" name="callbacks" action="/sender.php">
-			<input type="hidden" class="formname" name="name" value="">
+        
+		<form id="callbacks" name="callbacks" action="/sender.php" method="POST">
+            <div class="error_field nonfielderror"> </div>
+            {%csrf_token%}
+			<input type="hidden" class="formname" name="message" value="">
 			<input type="hidden" name="referer" value="http://pitline59.ru/">
+             <div class="error_field name_error ">  </div>
 			<label class="name left required"><input type="text" name="name" class="input_name" placeholder="ваше имя" /></label>
+             <div class="error_field phone_error ">  </div>
 			<label class="phone left required"><input type="text" name="phone" class="input_phone" placeholder="ваш телефон" /></label>
-			<label class="email left"><input type="text" name="send" class="input_email" placeholder="ваш e-mail" /></label>
-			<input class="bttn button" type="button" name="sender" value="Оставить заявку" />
+             <div class="error_field email_error ">  </div>
+			<label class="email left"><input type="text" name="email" class="input_email" placeholder="ваш e-mail" /></label>
+			<input class="bttn button-send" type="button" name="sender" value="Оставить заявку" />
 		</form>
 	</div>
 </div>
@@ -125,12 +132,15 @@
         -->
 				<form id="callbacks" name="callbacks" action="/sender.php" method="POST">
                     {%csrf_token%}
-					<input type="hidden" class="formname" name="mname" value="">
+					<input type="hidden" class="formname" name="mname" value="скидку 1 000 руб.">
 					<input type="hidden" name="referer" value="http://pitline59.ru/">
+                   <div class="error_field email_namer ">  </div>
 					<label class="name left required"><input type="text" name="name" class="input_name" placeholder="имя" /></label>
+                   <div class="error_field email_phone ">  </div>
 					<label class="phone left required"><input type="text" name="phone" class="input_phone" placeholder="телефон" /></label>
+                   <div class="error_field email_error ">  </div>
 					<label class="email left"><input type="text" name="email" class="input_email" placeholder="e-mail" /></label>
-					<input type="Submit" class="bttn button-send" name="sender" value="Отправить заявку" />
+					<input type="button" class="bttn button-send" name="sender" value="Отправить заявку" />
 				</form>
 			</div>
 		</div>
