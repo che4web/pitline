@@ -525,7 +525,8 @@ h2 {
 	font-size:24px;
 	font-family:'pt_bold';
 	line-height:30px;
-	margin-bottom:255px;
+	margin-bottom:265px;
+    height:90px;
 }
 
 .offer_text {
@@ -549,29 +550,42 @@ h2 {
 }
 
 .o1 {
-	background:url(../images/o1.png) no-repeat center 80px;
+	background:url(../images/o2.png) no-repeat center 90px;
 }
 
 .o2 {
-	background:url(../images/o2.png) no-repeat center 80px;
+	background:url(../images/o1.png) no-repeat center 90px;
 	margin:0 79px;
 }
 
 .o3 {
-	background:url(../images/o3_1.png) no-repeat center 80px;
+	background:url(../images/o2.png) no-repeat center 90px;
 }
 
 .o4 {
-	background:url(../images/o4.png) no-repeat center 80px;
+	background:url(../images/o5.png) no-repeat center 90px;
 }
 
 .o5 {
-	background:url(../images/o5.png) no-repeat center 80px;
+	background:url(../images/o4.png) no-repeat center 90px;
 	margin:0 79px;
 }
 
 .o6 {
-	background:url(../images/o6.png) no-repeat center 80px;
+	background:url(../images/o6.png) no-repeat center 90px;
+}
+
+.o7 {
+	background:url(../images/o3_1.png) no-repeat center 90px;
+}
+
+.o8 {
+	background:url(../images/o6.png) no-repeat center 90px;
+    margin:0 79px;
+}
+
+.o9 {
+	background:url(../images/o6.png) no-repeat center 90px;
 }
 
 .o4 .offer_text em, .o5 .offer_text em, .o6 .offer_text em {
