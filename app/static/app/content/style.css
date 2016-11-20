@@ -1730,19 +1730,19 @@ h2 {
 
 footer {
 	height:113px;
-	background:url(../images/footer.jpg) repeat-x center;
+	/*background:url(../images/footer.jpg) repeat-x center;*/
 	border-top:#023c65 solid 2px;
 	font-family:'din_light';
 }
 
 .f_phone {
-	width:230px;
+	/*width:230px;*/
 	float:left;
 	font-size:32px;
 	line-height:20px;
 	color:#ffa400;
 	text-align:right;
-	margin:33px 0px 0 0;
+	/*margin:33px 0px 0 0;*/
 	text-shadow:0px 1px 0px #013e69;
 }
 
@@ -1775,9 +1775,9 @@ a.copyright {
 a.conf {
 	display:inline-block;
 	float:left;
-	margin:50px 0 0 105px;
+	/*margin:50px 0 0 105px;*/
 	color:#fff;
-	font-size:18px;
+	font-size:10px;
 	line-height:14px;
 	font-family:'pt_bold';
 	text-transform:uppercase;

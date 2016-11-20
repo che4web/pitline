@@ -10,8 +10,10 @@
 <link rel="icon" type="image/png" href="images/favicon.png" />
 <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
 <link rel="apple-touch-icon" href="{% static 'app/images/apple-touch-icon.png' %}" />
-	<link rel="stylesheet" type="text/css" href="{% static 'app/content/bootstrap.min.css' %}" />
-	<link rel="stylesheet" type="text/css" href="{% static 'app/content/site.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'app/content/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/font-awesome/css/font-awesome.min.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'app/content/site.css' %}" />
+
 
 <script type="text/javascript" src="{% static 'app/ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'app/code.jquery.com/jquery-migrate-1.2.1.js' %}"></script>
@@ -63,7 +65,7 @@
 				<ul class="nav navbar-nav">
 					<li><a href="{% url 'home' %}">Кузовные работы</a></li>
 					<li><a href="{% url 'locksmith-index' %}">Слесарные работы</a></li>
-					<li><a href="{% url 'action-index' %}">Акции</a></li>
+					{#<li><a href="{% url 'action-index' %}">Акции</a></li>#}
                     <li><a href="{% url 'contact' %}">Контакты</a></li>
 				</ul>
 				 <div class="head__phone">
