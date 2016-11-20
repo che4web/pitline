@@ -1,12 +1,12 @@
 ﻿{% extends "base.html" %}
  {% load staticfiles %}
-
  {% block navbar-small %}
     <li><a href="#offer">Наши услуги</a></li>
     <li><a href="#price">Цены</a></li>
     <li><a href="#work">Как мы работаем</a></li>
     <li><a href="#reviews">Отзывы</a></li>
     <li><a href="#project">Проекты</a></li>
+    <li><a href="{% url 'action-index' %}">Акции</a></li>
     <li><a href=""></a></li>
  {%endblock%}
 
@@ -795,34 +795,83 @@
 		</div>
 	</section>
 	<section class="maps">
-		<div class="wrap">
-			<div class="map_block">
-			<b>---------------------Пермь---------------------</b><br />
-				<b>Адрес:</b> ул. Шоссе Космонавтов 310Г<br />
-				<b>Телефон:</b> +7(342) 288-11-91<br />
-				<b>Время работы:</b> c 9:00 до 20:00<br />
-				<div class="mb"></div>
-			</div>
-				</div>
+        <div class="contact-page__map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2116.9809936290876!2d56.109888616001264!3d57.95427798119893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43e8bed4edf7b43b%3A0x1c314cb9b99f0e3f!2z0YguINCa0L7RgdC80L7QvdCw0LLRgtC-0LIsIDMxMCwg0J_QtdGA0LzRjCwg0J_QtdGA0LzRgdC60LjQuSDQutGA0LDQuSwgNjE0NTAw!5e0!3m2!1sru!2sru!4v1476628025382" frameborder="0" style="border:0" allowfullscreen></iframe>
+	        </div>
 	</section>
-		<section class="any_q">
+		<!--<section class="any_q">
 		<div class="wrap">
-			<h2>ОСТАЛИСЬ <em>ВОПРОСЫ?</em></h2>
+			<h3>ОСТАЛИСЬ <em>ВОПРОСЫ?</em></h3>
 			<a id="go" rel="leanModal" name="question" href="#question">задайте их менеджеру</a>
 			<div class="clear"></div>
 		</div>
 	</section>
+            -->
+    <footer>
+        <div class="wrap">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="f_phone">
+				         +7(342) 288-11-91<br />
+				        <a id="go" rel="leanModal" name="callback" href="#callback" class="mc">заказать звонок</a>
+			        </div>
+                </div>
+                <div class="col-md-2 footer_q">
+			            <h3>ОСТАЛИСЬ ВОПРОСЫ?</h3>
+			            <a id="go" rel="leanModal" name="question" href="#question">задайте их менеджеру</a>
+                </div>
+                <div class="col-md-2">
+                    <a href="conf.pdf" target="_blank" class="conf">Политика конфиденциальности</a>
+                </div>
+                <div class="col-md-3 icons">
+                    <div class="row">
+                        <div class="icons_vk">
+                                <a href="http://vk.com/perm.pitline" target="_blank" title="мы в VK">
+                                    <i class="fa fa-vk fa-1x" aria-hidden="true"></i>
+                                </a>
+                            
+                        </div>
+                        <div class="icons_insta">
+                            <a href="http://instagram.com/pitline_perm" target="_blank" title="instagram">
+                                <i class="fa fa-instagram fa-1x" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div class="icons_fb">
+                            <a href="# target="_blank" title="будет ссылка на facebook">
+                                <i class="fa fa-facebook fa-1x" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!--
 	<footer>
 		<div class="wrap">
 			<div class="f_phone">
 				 +7(342) 288-11-91 
 				<a id="go" rel="leanModal" name="callback" href="#callback" class="mc">заказать звонок</a>
 			</div>
-			<div>
             <div>
-            	<a href="conf.pdf" target="_blank" class="conf" style="margin-top: 38px;">Политика конфиденциальности</a>
+                ОСТАЛИСЬ ВОПРОСЫ?
+			    <a id="go" rel="leanModal" name="question" href="#question">задайте их менеджеру</a>
+			    <div class="clear"></div>
+            </div>
+			<div>
+                <div>
+                    <div class="row" style="margin-top: 38px;">
+                        <div class="col-md-6">
+            	            ОСТАЛИСЬ ВОПРОСЫ?
+                        </div>
+                        <div class="col-md-6">
+                            <a href="conf.pdf" target="_blank" class="conf">Политика конфиденциальности</a>
+                        </div>
+                    </div>
              	</div>
-          </div>
+            </div>
           <div>
                       </div>
 			<a href="http://vk.com/perm.pitline" target="_blank" class="copyright"><b>Pit Line--:</b></a>
@@ -830,6 +879,7 @@
 			<div class="clear"></div>
 		</div>
 	</footer>
+-->
 </div>
 <script type="text/javascript">
 </script>

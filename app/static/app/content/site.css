@@ -239,7 +239,13 @@ background: #e5e5e5;
     height:450px;
     padding-left:2px;
     padding-right:2px;
-    /*margin-top:150px;*/
+    
+}
+
+.maps{padding-bottom:70px;}
+
+.any_q h3{
+    color:red;
 }
 
 .contact-page__contacts{
@@ -280,5 +286,61 @@ background: #e5e5e5;
 
 .container{
     max-width:1300px;
+}
+
+.action_title{
+    font-family: 'Russo One', sans-serif;
+    font-size: 25pt;
+    margin-top:30px;
+}
+
+footer{
+    background-color:#01579B;
+}
+
+footer .wrap{
+    margin:45px auto 30px auto;
+    width:1500px;
+}
+
+.footer_q{
+    color:white;
+    float: left;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.footer_q h3{
+    color: #ffa400;
+}
+
+.footer_q a {
+        display: inline-block;
+        font-size: 18px;
+        line-height: 18px;
+        border-bottom: #fff dashed 1px;
+        color: #fff;
+    }
+
+.icons{
+    float:left;
+}
+.icons_fb, .icons_vk, .icons_insta{
+    line-height:30px!important;
+    text-align:center;
+    width:30px;
+    height:30px;
+    background-color:transparent;
+    border-radius:50%;
+    border: 1px solid #ffa400;
+    float:left;
+    margin-left:10px;
+    font-weight:bold;
+    color:white;
+    
+}
+.icons_fb i,.icons_vk i,.icons_insta i{
+    padding-top:5px;
+    padding-bottom:5px;
 }
 
