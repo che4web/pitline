@@ -40,6 +40,7 @@
 			<input type="hidden" name="referer" value="http://pitline59.ru/">
 			<label class="name left required"><input type="text" name="name" class="input_name" placeholder="ваше имя" /></label>
 			<label class="phone left required"><input type="text" name="phone" class="input_phone" placeholder="ваш телефон" /></label>
+             <div class="error_field email_error ">  </div>
 			<label class="email left"><input type="text" name="enail" class="input_email" placeholder="ваш e-mail" /></label>
 			<input class="bttn button" type="button" name="sender" value="Оставить заявку" />
 		</form>
@@ -51,13 +52,19 @@
 			Оставить заявку
 			<span>заполните форму и мы обязательно свяжемся с вами!</span>
 		</div>
-		<form id="callbacks" name="callbacks" action="/sender.php">
-			<input type="hidden" class="formname" name="name" value="">
+        
+		<form id="callbacks" name="callbacks" action="/sender.php" method="POST">
+            <div class="error_field nonfielderror"> </div>
+            {%csrf_token%}
+			<input type="hidden" class="formname" name="message" value="">
 			<input type="hidden" name="referer" value="http://pitline59.ru/">
+             <div class="error_field name_error ">  </div>
 			<label class="name left required"><input type="text" name="name" class="input_name" placeholder="ваше имя" /></label>
+             <div class="error_field phone_error ">  </div>
 			<label class="phone left required"><input type="text" name="phone" class="input_phone" placeholder="ваш телефон" /></label>
-			<label class="email left"><input type="text" name="send" class="input_email" placeholder="ваш e-mail" /></label>
-			<input class="bttn button" type="button" name="sender" value="Оставить заявку" />
+             <div class="error_field email_error ">  </div>
+			<label class="email left"><input type="text" name="email" class="input_email" placeholder="ваш e-mail" /></label>
+			<input class="bttn button-send" type="button" name="sender" value="Оставить заявку" />
 		</form>
 	</div>
 </div>
@@ -125,12 +132,15 @@
         -->
 				<form id="callbacks" name="callbacks" action="/sender.php" method="POST">
                     {%csrf_token%}
-					<input type="hidden" class="formname" name="mname" value="">
+					<input type="hidden" class="formname" name="mname" value="скидку 1 000 руб.">
 					<input type="hidden" name="referer" value="http://pitline59.ru/">
+                   <div class="error_field email_namer ">  </div>
 					<label class="name left required"><input type="text" name="name" class="input_name" placeholder="имя" /></label>
+                   <div class="error_field email_phone ">  </div>
 					<label class="phone left required"><input type="text" name="phone" class="input_phone" placeholder="телефон" /></label>
+                   <div class="error_field email_error ">  </div>
 					<label class="email left"><input type="text" name="email" class="input_email" placeholder="e-mail" /></label>
-					<input type="Submit" class="bttn button-send" name="sender" value="Отправить заявку" />
+					<input type="button" class="bttn button-send" name="sender" value="Отправить заявку" />
 				</form>
 			</div>
 		</div>
@@ -660,30 +670,27 @@
 	<section class="projects" id="project">
 		<h2>ВЫПОЛНЕННЫЕ ПРОЕКТЫ</h2>
 		<div class="wrap">
-			<div class="project p1">
+            {%for item in projects%}
+            <div class="project p1">
 				<div class="project_name">
-					Ремонт и покраска двух деталей
+                    {{item.title}}
 				</div>
-				<div class="project_img"></div>
+				<div class="project_img">
+                    <img src="{{item.foto_befo.url}}">
+                    <img src="{{item.foto_after.url}}">
+                </div>
 				<div class="project_text">
 					<span>Проблемы у автомобиля до ремонта:</span>
-					<div class="pt_col">
-						- Поврежден бампер
-					</div>
-					<div class="pt_col">
-						- Повреждено крыло
-					</div>
-					<div class="pt_col">
-						- Сломан поворотник
-					</div>
+                    {{item.text}}
 					<div class="clear"></div>
 				</div>
 				<div class="project_det">
-					<div class="project_date">Срок выполнения: <em>1 день</em></div>
-					<div class="project_price">Цена: <em>10 000 р.</em></div>
+                    <div class="project_date">Срок выполнения: <em>{{item.time}}</em></div>
+                    <div class="project_price">Цена: <em>{{item.cost}}</em></div>
 					<div class="clear"></div>
 				</div>
 			</div>
+            {%endfor%}
 			<a name="proect2"></a>
 			<div class="project p2">
 				<div class="project_name">
@@ -844,10 +851,20 @@
                         <div class="icons_fb">
                             <a href="# target="_blank" title="будет ссылка на facebook">
                                 <i class="fa fa-facebook fa-1x" aria-hidden="true"></i>
-                            </a>
+                              
+                           </a>
                         </div>
                     </div>
                 </div>
+                <div class="col-md-2">
+                <script type="text/javascript" src="//vk.com/js/api/openapi.js?136"></script>
+
+<!-- VK Widget -->
+<div id="vk_groups"></div>
+<script type="text/javascript">
+VK.Widgets.Group("vk_groups", {mode: 3, width: "220"}, 20003922);
+</script>
+            </div>
             </div>
         </div>
     </footer>
@@ -880,6 +897,7 @@
           <div>
                       </div>
 			<a href="http://vk.com/perm.pitline" target="_blank" class="copyright"><b>Pit Line--:</b></a>
+            
             
 			<div class="clear"></div>
 		</div>

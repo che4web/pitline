@@ -1,0 +1,44 @@
+Content-Type: multipart/alternative;
+ boundary="===============2561492147449892187=="
+MIME-Version: 1.0
+Subject: 
+ =?utf-8?b?0J/RgNC40YjQu9CwINC30LDRj9Cy0LrQsCDRgSDRgdCw0LnRgtCwINCf0LjRgtCb?=
+ =?utf-8?b?0LDQudC9NTk=?=
+From: webmaster@localhost
+To: pit-line@bk.ru
+Date: Sun, 20 Nov 2016 14:43:12 -0000
+Message-ID: <20161120144312.1964.1494@che-pc>
+
+--===============2561492147449892187==
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+
+
+<h2 class="mdl-card__title-text">Новый заказ с сайта pitline59.ru</h2>
+           
+<div class="">
+    <p>Заказчик: dfgh</p>
+    <p>телефон:фывфыsda</p>
+    <p>emailsdgsd@dfgsdfg.sd</p>
+   <p> ПОЛИРОВКА</p>
+    </div>
+
+--===============2561492147449892187==
+Content-Type: text/html; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+
+
+<h2 class="mdl-card__title-text">Новый заказ с сайта pitline59.ru</h2>
+           
+<div class="">
+    <p>Заказчик: dfgh</p>
+    <p>телефон:фывфыsda</p>
+    <p>emailsdgsd@dfgsdfg.sd</p>
+   <p> ПОЛИРОВКА</p>
+    </div>
+
+--===============2561492147449892187==--
+
+-------------------------------------------------------------------------------

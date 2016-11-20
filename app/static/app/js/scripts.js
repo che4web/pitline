@@ -133,7 +133,7 @@ $(document).ready(function() {
 		var url = "../sender";
 		var answer = checkForm($(this).parent().get(0));
 		if(answer != false)
-		{
+		{/*
 			var $form = $(this).parent(),
 				name = $('input[name="name"]', $form).val(),
 				phone = $('input[name="phone"]', $form).val(),
@@ -143,11 +143,11 @@ $(document).ready(function() {
 				sbt = $('input[type="button"]', $form).attr("name"),
 				ref = $('input[name="referer"]', $form).val(),
 				submit = $('input[name='+sbt+']', $form).val();
+               
 			var ref = ref+request_url;
 			$.ajax({
 				type: "POST",
 				url: url,
-				dataType: "json",
 				data: "name="+name+"&phone="+phone+"&"+sbt+"="+submit+"&email="+email+"&ques="+ques+"&formname="+formname+"&ref="+ref
 			}).always(function() {
 				if(page == null) {
@@ -156,15 +156,34 @@ $(document).ready(function() {
 					document.location.href = '../'+sbt+'.php';
 				}
 			});
+           */
 		}
 	});
 
     $('.button-send').click(function(){
         var form = $(this).parents('form:first');
-        form.ajaxSubmit({url: 'sender', type: 'post',sucess:function(){
-              
-            }});
-         $("#succesModal").modal('toggle');
+        //var errorField = $(this).siblings('.error_field')
+        var errorFieldName = $(this).siblings('.name_error')
+        var errorFieldPhone = $(this).siblings('.phone_error')
+        var errorFieldEmail = $(this).siblings('.email_error')
+        errorFieldName.html('');
+        errorFieldEmail.html('');
+        errorFieldPhone.html('');
+        form.ajaxSubmit({url: 'sender', 
+                        type: 'post',
+                        dataType: 'json',
+                        success:function(data,textStatus){
+                                $('#lean_overlay').hide();
+                                $('#makeorder').hide();
+                                $("#succesModal").modal('toggle');
+                                },
+                        error:function(jqXHR, textStatus, errorThrown){
+                          var responseJSON =  $.parseJSON(jqXHR.responseText)
+                         errorFieldName.html(responseJSON.name);
+                         errorFieldEmail.html(responseJSON.email);
+                         errorFieldPhone.html(responseJSON.phone);
+                        }
+            });
         return false;
     });
 
