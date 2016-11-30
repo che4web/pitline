@@ -222,7 +222,8 @@
 			</div>
             <div class="fade">
 				<div class="reason rq">
-					Новый бампер стоит дорого?
+                    
+					Новый бампер <br />стоит дорого?
 				</div>
 				<div class="reason ra">
 					<span>Восстановление</span>
@@ -255,7 +256,7 @@
 			<div class="offer_one o1 scale">
 				<span><br />дефектовка после ДТП</span>
 				<div class="offer_text">
-					<em>от 2 000 руб.</em>
+					<em>2 000 руб.</em>
 					(локальная покраска)
 				</div>
 				<a id="go" onClick="popup('makeorder', 'ПОКРАСКА');" rel="leanModal" name="makeorder" href="#makeorder">Заказать покраску</a>
@@ -369,10 +370,10 @@
         <div class="car_classes">
             <h3>выберите класс авто</h3>
             <div class="row">
-                <input type="radio" class="car_classes_class" name="car_classes_class" id="Aclass" title="Extra Small (daewoo Matiz, Kia Picanto, Suzuki Splash, итд)" checked/>
-                <label for="Aclass" title="Extra Small (daewoo Matiz, Kia Picanto, Suzuki Splash, итд)">Extra Small</label>
-                <input type="radio" class="car_classes_class" name="car_classes_class" id="Bclass" title="Small( Mazda2, Opel Corsa, Citroen C3 и др.)" />
-                <label for="Bclass" title="Small( Mazda2, Opel Corsa, Citroen C3 и др.)">Small</label>
+                <input type="radio" class="car_classes_class" name="car_classes_class" id="Aclass" title="Extra Small (daewoo Matiz, Kia Picanto, Suzuki Splash, итд)" onclick="cbCarClass_click('ExtraSmall')" checked/>
+                <label for="Aclass" title="Extra Small (daewoo Matiz, Kia Picanto, Suzuki Splash, итд)" onclick="cbCarClass_click('ExtraSmall')">Extra Small</label>
+                <input type="radio" class="car_classes_class" name="car_classes_class" id="Bclass" title="Small( Mazda2, Opel Corsa, Citroen C3 и др.)" onclick="cbCarClass_click('Small')"  />
+                <label for="Bclass" title="Small( Mazda2, Opel Corsa, Citroen C3 и др.)" onclick="cbCarClass_click('Small')">Small</label>
                 <input type="radio" class="car_classes_class" name="car_classes_class" id="Cclass" title="Standart (Volkswagen Golf, Toyota Corolla, Shkoda Oktavia, Subaru impreza и др.)" />
                 <label for="Cclass" title="Standart (Volkswagen Golf, Toyota Corolla, Shkoda Oktavia, Subaru impreza и др.)">Standart</label>
                 <input type="radio" class="car_classes_class" name="car_classes_class" id="Dclass" title="Maxi (Kia Sportage, Audi Q3, BMW X3, Mitsubishi ASX, и др.)" />
@@ -398,8 +399,8 @@
 			<div class="pr1">
 				<div class="price_descr hood_desc">
 					<!-- <div class="" -->
-					Покраска капота от <b>7500р</b> до <b>11200р</b><br />
-					Ремонт капота от <b>4000р</b><br />
+
+					
 					<!--<a id="go" onClick="popup('makeorder', 'капот');" rel="leanModal" name="makeorder" href="#makeorder">оставить заявку</a>-->
                     <a href="#tr1">подробнее</a>
 					<div class="pd"></div>
@@ -944,6 +945,19 @@ VK.Widgets.Group("vk_groups", {mode: 3, width: "220"}, 20003922);
 	</footer>
 -->
 </div>
+<script type="text/javascript">
+    function cbCarClass_click(type) {
+        switch (type)
+        {
+            case 'ExtraSmall':
+                $(".hood_desc").html('Эконом - <b>7800р.</b><br />Стандарт - <b>8840р.</b><br />Вип - <b>10920р.</b><br />');
+                break;
+            case 'Small':
+                $(".hood_desc").html('Эконом - <b>8775р.</b><br />Стандарт - <b>9945р.</b><br />Вип - <b>12285р.</b><br />');
+                break;
+        }
+    }
+</script>
 <script type="text/javascript">
 </script>
 <!-- Yandex.Metrika counter -->
