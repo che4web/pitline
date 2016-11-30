@@ -401,18 +401,21 @@
 					<!-- <div class="" -->
 
 					
-					<!--<a id="go" onClick="popup('makeorder', 'капот');" rel="leanModal" name="makeorder" href="#makeorder">оставить заявку</a>-->
+					<!--<a id="go" onClick="popup('makeorder', 'капот');" rel="leanModal" name="makeorder" href="#makeorder">оставить заявку</a>
                     <a href="#tr1">подробнее</a>
 					<div class="pd"></div>
+                        -->
 				</div>
 			</div>
 			<div class="pr2">
 				<div class="price_descr roof_desc">
+                    <!--
 					Покраска крыши от <b>12000р</b><br />
 					Ремонт крыши от <b>4000р</b><br />
 					<!--<a id="go" onClick="popup('makeorder', 'крыша');" rel="leanModal" name="makeorder" href="#makeorder">оставить заявку</a>-->
-					<a href="#tr2">подробнее</a>
+					<!--<a href="#tr2">подробнее</a>-->
                     <div class="pd"></div>
+                    
 				</div>
 			</div>
 			<div class="pr3">
@@ -950,10 +953,12 @@ VK.Widgets.Group("vk_groups", {mode: 3, width: "220"}, 20003922);
         switch (type)
         {
             case 'ExtraSmall':
-                $(".hood_desc").html('Эконом - <b>7800р.</b><br />Стандарт - <b>8840р.</b><br />Вип - <b>10920р.</b><br />');
+                $(".hood_desc").html('Эконом - <b>7800р.</b><br />Стандарт - <b>8840р.</b><br />Вип - <b>10920р.</b><br /><div class="pd"></div>');
+                $(".roof_desc").html('Эконом - <b>10200р.</b><br />Стандарт - <b>11560р.</b><br />Вип - <b>14280р.</b><br /><div class="pd"></div>');
                 break;
             case 'Small':
-                $(".hood_desc").html('Эконом - <b>8775р.</b><br />Стандарт - <b>9945р.</b><br />Вип - <b>12285р.</b><br />');
+                $(".hood_desc").html('Эконом - <b>8775р.</b><br />Стандарт - <b>9945р.</b><br />Вип - <b>12285р.</b><br /><div class="pd"></div>');
+                $(".roof_desc").html('Эконом - <b>11475р.</b><br />Стандарт - <b>13005р.</b><br />Вип - <b>16065р.</b><br /><div class="pd"></div>');
                 break;
         }
     }
