@@ -57,6 +57,7 @@
             <div class="error_field nonfielderror"> </div>
             {%csrf_token%}
 			<input type="hidden" class="formname" name="message" value="">
+            <input type="hidden" class="add_message" name="additionalMsg" value="">
 			<input type="hidden" name="referer" value="http://pitline59.ru/">
              <div class="error_field name_error ">  </div>
 			<label class="name left required"><input type="text" name="name" class="input_name" placeholder="ваше имя" /></label>
@@ -257,9 +258,8 @@
 				<span><br />дефектовка после ДТП</span>
 				<div class="offer_text">
 					<em>2 000 руб.</em>
-					(локальная покраска)
 				</div>
-				<a id="go" onClick="popup('makeorder', 'ПОКРАСКА');" rel="leanModal" name="makeorder" href="#makeorder">Заказать покраску</a>
+				<a id="go" onClick="popup('makeorder', 'УСЛУГИ', 'Заявка с блока УСЛУГИ. Дефектовка после ДТП')" rel="leanModal" name="makeorder" href="#makeorder">Заказать дефектовку</a>
 			</div>
 			<div class="offer_one o2 scale">
 				<span><br />Покраска</span>
@@ -267,7 +267,7 @@
 					<em> от 4000 руб.</em>
 					(одной детали)
 				</div>
-				<a id="go" onClick="popup('makeorder', 'ПОЛИРОВКА');" rel="leanModal" name="makeorder" href="#makeorder">Заказать полировку</a>
+				<a id="go" onClick="popup('makeorder', 'УСЛУГИ', 'Заявка с блока УСЛУГИ. Покраска');" rel="leanModal" name="makeorder" href="#makeorder">Заказать покраску</a>
 			</div>
 			<div class="offer_one o3 scale">
 				<span><br />Локальный ремонт</span>
