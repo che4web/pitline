@@ -398,9 +398,10 @@ $(document).ready(function() {
 
 });
   
-function popup(id, form)
+function popup(id, form,form2)
 {
 	$('#'+id).find(".formname").attr("value", form);
+	$('#'+id).find(".add_message").attr("value", form2);
 }
 
 function popup_photo(form) {
