@@ -31,6 +31,7 @@ class ContactForm(forms.Form):
     phone = forms.CharField()
     email = forms.EmailField()
     message = forms.CharField(widget=forms.Textarea,required=False)
+    add_message = forms.CharField(widget=forms.Textarea,required=False)
 
     def send_email(self):
         # send email using the self.cleaned_data dictionary
@@ -38,11 +39,13 @@ class ContactForm(forms.Form):
         b= {'name':self.cleaned_data['name'],
             'phone':self.cleaned_data['phone'],
             'email':self.cleaned_data['email'],
-            'text':self.cleaned_data['message']}
+            'text':self.cleaned_data['message'],
+            'add_message':self.cleaned_data['add_message']}
         message_body = plaintext.render(b)
-        email = EmailMultiAlternatives('Пришла заявка с сайта ПитЛайн59',
+        email = EmailMultiAlternatives('Заявка с ПитЛайн59',
                          message_body,
-                         to=['pit-line@bk.ru',
+                         to=['tanuffko24@gmail.com'
+                         #to=['pit-line@bk.ru',
                              ])
         email.attach_alternative(message_body, "text/html")
 
