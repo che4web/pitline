@@ -9,9 +9,9 @@ def send_first_mail(form):
         'phone':form['phone'],
         'order':form['order']}
     message_body = plaintext.render(b)
-    email = EmailMultiAlternatives('ришла заявка с сайта ПитЛайн59',
+    email = EmailMultiAlternatives('Пришла заявка с сайта ПитЛайн59',
                          message_body,
-                         to=['pit-line@bk.ru',
+                         to=['tanuffko24@gmail.com',
                              ])
     email.attach_alternative(message_body, "text/html")
     email.send()
