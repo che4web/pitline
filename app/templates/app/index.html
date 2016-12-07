@@ -97,7 +97,7 @@
 			<h1 style="text-transform:uppercase">
                 Профессиональный центр кузовного ремонта <br /> 
 				<!--ЦЕНТР ЛОКАЛЬНОГО КУЗОВНОГО РЕМОНТА <br />-->
-                <span>с гарантией на все виды работ (от 1года до пожизненной)</span>
+                <span>с гарантией на все виды работ (от 1 года до пожизненной)</span>
 				<!--<span>У нас нет фиксированной цены за деталь, наше основное отличие - индивидуальный подход к клиенту<br><b>Ждем всех по адресу: ул. Шоссе Космонавтов 310Г</b>
                 </span>-->
 			</h1>
@@ -273,9 +273,8 @@
 				<span><br />Локальный ремонт</span>
 				<div class="offer_text">
 					<em>от 2 800 руб.</em>
-					(точечный ремон интерьера)
                  				</div>
-				<a id="go" onClick="popup('makeorder', 'Покраска жидкой резиной');" rel="leanModal" name="makeorder" href="#makeorder">Заказать ремонт салона</a>
+				<a id="go" onClick="popup('makeorder', 'УСЛУГИ', 'Заявка с блока УСЛУГИ. Локальный ремонт');" rel="leanModal" name="makeorder" href="#makeorder">Заказать ремонт</a>
 			</div>
 			<div class="clear"></div>
 			<a name="product2"></a>
@@ -284,21 +283,21 @@
 				<div class="offer_text">
 					<em>от 500 руб.</em>
 				</div>
-				<a id="go" onClick="popup('makeorder', 'РЕМОНТ БАМПЕРОВ');" rel="leanModal" name="makeorder" href="#makeorder">Заказать ремонт бампера</a>
+				<a id="go" onClick="popup('makeorder', 'УСЛУГИ', 'Заявка с блока УСЛУГИ. Ремонт кузова');" rel="leanModal" name="makeorder" href="#makeorder">Заказать ремонт кузова</a>
 			</div>
 			<div class="offer_one o5 scale">
 				<span><br />Ремонт бамперов</span>
 				<div class="offer_text">
 					<em>от 800 руб.</em>
 				</div>
-				<a id="go" onClick="popup('makeorder', 'РЕМОНТ КУЗОВОВ');" rel="leanModal" name="makeorder" href="#makeorder">Заказать ремонт кузова</a>
+				<a id="go" onClick="popup('makeorder', 'УСЛУГИ', 'Заявка с блока УСЛУГИ. Ремонт бампера');" rel="leanModal" name="makeorder" href="#makeorder">Заказать ремонт бампера</a>
 			</div>
 			<div class="offer_one o6 scale">
 			<span><br />Полировка кузова и оптики</span>
 							<div class="offer_text">
 					<em>от 300 руб.</em>
 				</div>
-				<a id="go" onClick="popup('makeorder', 'Подбор автозапчастей');" rel="leanModal" name="makeorder" href="#makeorder">Заказать ремонт авто</a>
+				<a id="go" onClick="popup('makeorder', 'УСЛУГИ', 'Заявка с блока УСЛУГИ. Полировка кузова и оптики');" rel="leanModal" name="makeorder" href="#makeorder">Заказать полировку</a>
 			</div>
             <!--==================-->
             <div class="clear"></div>
@@ -308,21 +307,21 @@
 				<div class="offer_text">
 					<em>от 1 000 руб.</em>
 				</div>
-				<a id="go" onClick="popup('makeorder', 'РЕМОНТ БАМПЕРОВ');" rel="leanModal" name="makeorder" href="#makeorder">Заказать ремонт бампера</a>
+				<a id="go" onClick="popup('makeorder', 'УСЛУГИ', 'Заявка с блока УСЛУГИ. Ремонт салона');" rel="leanModal" name="makeorder" href="#makeorder">Заказать ремонт салона</a>
 			</div>
 			<div class="offer_one o8 scale">
 				<span><br />Выправление вмятин без покраски</span>
 				<div class="offer_text">
 					<em>от 1 500 руб.</em>
 				</div>
-				<a id="go" onClick="popup('makeorder', 'РЕМОНТ КУЗОВОВ');" rel="leanModal" name="makeorder" href="#makeorder">Заказать ремонт кузова</a>
+				<a id="go" onClick="popup('makeorder', 'УСЛУГИ', 'Заявка с блока УСЛУГИ. Выправление вмятин без покраски');" rel="leanModal" name="makeorder" href="#makeorder">Заказать выправление</a>
 			</div>
 			<div class="offer_one o9 scale">
 			<span><br />    Нанесение защитных покрытий на кузов</span>
 							<div class="offer_text">
 					<em>от 4 280 руб.</em>
 				</div>
-				<a id="go" onClick="popup('makeorder', 'Подбор автозапчастей');" rel="leanModal" name="makeorder" href="#makeorder">Заказать ремонт авто</a>
+				<a id="go" onClick="popup('makeorder', 'УСЛУГИ', 'Заявка с блока УСЛУГИ. Нанесение защитных покрытий на кузов');" rel="leanModal" name="makeorder" href="#makeorder">Заказать нанесение</a>
 			</div>
             <!--==================-->
 			<div class="clear"></div>
@@ -367,6 +366,8 @@
 	</section>
 	<section class="price" id="price">
 		<h2>стоимость работ</h2>
+        <h3 class="price-h3">покраска</h3>
+        
         <div class="car_classes">
             <h3>выберите класс авто</h3>
             <div class="row">
@@ -374,27 +375,22 @@
                 <label for="Aclass" title="Extra Small (daewoo Matiz, Kia Picanto, Suzuki Splash, итд)" onclick="cbCarClass_click('ExtraSmall')">Extra Small</label>
                 <input type="radio" class="car_classes_class" name="car_classes_class" id="Bclass" title="Small( Mazda2, Opel Corsa, Citroen C3 и др.)" onclick="cbCarClass_click('Small')"  />
                 <label for="Bclass" title="Small( Mazda2, Opel Corsa, Citroen C3 и др.)" onclick="cbCarClass_click('Small')">Small</label>
-                <input type="radio" class="car_classes_class" name="car_classes_class" id="Cclass" title="Standart (Volkswagen Golf, Toyota Corolla, Shkoda Oktavia, Subaru impreza и др.)" />
-                <label for="Cclass" title="Standart (Volkswagen Golf, Toyota Corolla, Shkoda Oktavia, Subaru impreza и др.)">Standart</label>
-                <input type="radio" class="car_classes_class" name="car_classes_class" id="Dclass" title="Maxi (Kia Sportage, Audi Q3, BMW X3, Mitsubishi ASX, и др.)" />
-                <label for="Dclass" title="Maxi (Kia Sportage, Audi Q3, BMW X3, Mitsubishi ASX, и др.)">Maxi</label>
-                <input type="radio" class="car_classes_class" name="car_classes_class" id="Eclass" title="Long( Chevrolet tacho, VW Toureg, Toyota Tundra и тд.)" />
-                <label for="Eclass" title="Long( Chevrolet tacho, VW Toureg, Toyota Tundra и тд.)">Long</label>
+                <input type="radio" class="car_classes_class" name="car_classes_class" id="Cclass" title="Standart (Volkswagen Golf, Toyota Corolla, Shkoda Oktavia, Subaru impreza и др.)"  onclick="cbCarClass_click('Standart')" />
+                <label for="Cclass" title="Standart (Volkswagen Golf, Toyota Corolla, Shkoda Oktavia, Subaru impreza и др.)" onclick="cbCarClass_click('Standart')">Standart</label>
+                <input type="radio" class="car_classes_class" name="car_classes_class" id="Dclass" title="Maxi (Kia Sportage, Audi Q3, BMW X3, Mitsubishi ASX, и др.)" onclick="cbCarClass_click('Maxi')" />
+                <label for="Dclass" title="Maxi (Kia Sportage, Audi Q3, BMW X3, Mitsubishi ASX, и др.)" onclick="cbCarClass_click('Maxi')">Maxi</label>
+                <input type="radio" class="car_classes_class" name="car_classes_class" id="Eclass" title="Long( Chevrolet tacho, VW Toureg, Toyota Tundra и тд.)" onclick="cbCarClass_click('Long')" />
+                <label for="Eclass" title="Long( Chevrolet tacho, VW Toureg, Toyota Tundra и тд.)" onclick="cbCarClass_click('Long')">Long</label>
             </div>
         </div>
 
-
-        <h4>Костя!!!!!!!!!!!!!! 1. нужны цены в таблицу</h4>
-        <h4>2. расписывать покраску и ремонт отедльно в таблице? кое где в самой машине оставила и ремонт и покраску - напиши как лучше</h4>
-        <h4>3. в самой машине просто сделать от и до из таблицы или всю строку из таблицы впихнуть? - посмотри</h4>
-        <h4>4. переход из машины в таблицу по ссылке к нужной строке сделала - посмотри</h4>
 		<div class="wrap">
 			<div class="price_a pa1 hood_btn noselect">Капот</div>
 			<div class="price_a pa2 roof_btn noselect">Крыша</div>
 			<div class="price_a pa3 wing1_btn noselect">Крыло</div>
 			<div class="price_a pa4 door_btn noselect">Двери</div>
 			<div class="price_a pa5 wing2_btn noselect">Крыло</div>
-			<div class="price_a pa6 lights_btn noselect">Фара</div>
+			<div class="price_a pa6 lights_btn noselect">Бампер</div>
 			<div class="price_a pa7 bumper2_btn noselect">Бампер</div>
 			<div class="pr1">
 				<div class="price_descr hood_desc">
@@ -413,61 +409,62 @@
 					Покраска крыши от <b>12000р</b><br />
 					Ремонт крыши от <b>4000р</b><br />
 					<!--<a id="go" onClick="popup('makeorder', 'крыша');" rel="leanModal" name="makeorder" href="#makeorder">оставить заявку</a>-->
-					<!--<a href="#tr2">подробнее</a>-->
-                    <div class="pd"></div>
+					<!--<a href="#tr2">подробнее</a>
+                    <div class="pd"></div>-->
                     
 				</div>
 			</div>
 			<div class="pr3">
 				<div class="price_descr wing1_desc">
+                    <!--
 					Покраска переднего крыла от <b>6000р</b><br />
 					Ремонт переднего крыла от <b>1000р</b><br />
 					<!--<a id="go" onClick="popup('makeorder', 'переднее крыло');" rel="leanModal" name="makeorder" href="#makeorder">оставить заявку</a>-->
-                    <a href="#tr3">подробнее</a>
-					<div class="pd"></div>
+                    <!--<a href="#tr3">подробнее</a>
+					<div class="pd"></div>-->
 				</div>
 			</div>
 			<div class="pr4">
 				<div class="price_descr door_desc">
-					Покраска двери от <b>7500р</b> до <b>11200р</b><br />
-					<!--Ремонт двери от <b>2000р</b><br />-->
-										<!--<a id="go" onClick="popup('makeorder', 'дверь');" rel="leanModal" name="makeorder" href="#makeorder">оставить заявку</a>-->
+					<!--Покраска двери от <b>7500р</b> до <b>11200р</b><br />
+					Ремонт двери от <b>2000р</b><br />-->
+										<!--<a id="go" onClick="popup('makeorder', 'дверь');" rel="leanModal" name="makeorder" href="#makeorder">оставить заявку</a>
                     <a href="#tr4">подробнее</a>
-					<div class="pd"></div>
+					<div class="pd"></div>-->
 				</div>
 			</div>
-			<div class="pr3">
+			<div class="pr5">
 				<div class="price_descr wing2_desc">
-					Покраска заднего крыла от <b>7500р</b><br />
-					<!--Ремонт заднего крыла от <b>2000р</b><br />-->
-										<!--<a id="go" onClick="popup('makeorder', 'заднее крыло');" rel="leanModal" name="makeorder" href="#makeorder">оставить заявку</a>-->
-                    <a href="#tr5">подробнее</a>
+					<!--Покраска заднего крыла от <b>7500р</b><br />
+					Ремонт заднего крыла от <b>2000р</b><br />-->
+										<!--<a id="go" onClick="popup('makeorder', 'заднее крыло');" rel="leanModal" name="makeorder" href="#makeorder">оставить заявку</a>
+                    <a href="#tr5">подробнее</a>-->
 					<div class="pd"></div>
 				</div>
 			</div>
 			<div class="pr6">
 				<div class="price_descr lights_desc">
-					Полировка фар от <b>1000р</b><br />
+					<!--Полировка фар от <b>1000р</b><br />
 					<!--<a id="go" onClick="popup('makeorder', 'фара');" rel="leanModal" name="makeorder" href="#makeorder">оставить заявку</a>-->
-                    <a href="#tr5">подробнее</a>
+                    <!--<a href="#tr5">подробнее</a>-->
 					<div class="pd"></div>
 				</div>
 			</div>
 			<div class="pr7">
 				<div class="price_descr bumper1_desc">
-					Покраска бампера от <b>6500р</b><br />
+					<!--Покраска бампера от <b>6500р</b><br />>-->
 					<!--Ремонт бампера от <b>500р</b><br />-->
 					<!--<a id="go" onClick="popup('makeorder', 'передний бампер');" rel="leanModal" name="makeorder" href="#makeorder">оставить заявку</a>-->
-                    <a href="#tr6">подробнее</a>
+                    <!--<a href="#tr6">подробнее</a>>-->
 					<div class="pd"></div>
 				</div>
 			</div>
 			<div class="pr8">
 				<div class="price_descr bumper2_desc">
-					Покраска бампера от <b>6500р</b><br />
-					<!--Ремонт бампера от <b>300р</b><br />-->
-					<!--<a id="go" onClick="popup('makeorder', 'задний бампер');" rel="leanModal" name="makeorder" href="#makeorder">оставить заявку</a>-->
-                    <a href="#tr7">подробнее</a>
+					<!--Покраска бампера от <b>6500р</b><br />
+					Ремонт бампера от <b>300р</b><br />-->
+					<!--<a id="go" onClick="popup('makeorder', 'задний бампер');" rel="leanModal" name="makeorder" href="#makeorder">оставить заявку</a>
+                    <a href="#tr7">подробнее</a>-->
 					<div class="pd"></div>
 				</div>
 			</div>
@@ -484,6 +481,7 @@
 				<area shape="poly" id="bumper2" coords="534,377,523,376,513,374,508,374,505,375,507,380,510,388,511,391,512,396,520,398,530,399,541,401,558,403,571,404,583,404,587,403,591,403,599,402,608,401,613,397,626,388,637,379,649,368,656,359,667,346,675,336,682,325,689,314,694,305,697,297,700,288,701,282,703,274,704,264,703,256,702,250,700,246,699,244,697,241,696,246,693,246,692,247,688,252,684,259,681,263,682,267,686,275,682,284,677,293,671,302,663,311,656,319,647,328,640,335,632,341,632,341,627,337,626,338,619,341,607,346,600,348,592,351,584,352,575,353,570,353,565,359,559,366,554,371,550,375,547,377,543,378">
 			</map>
 		</div>
+        <!--
         <div class="price__table">
         <table class="table table-bordered table-hover">
           <thead>
@@ -568,45 +566,20 @@
               </tr>
             </tbody>
             </table>
-        </div>
+        </div>-->
 	</section>
 
 	<a name="promo2"></a>
+    
 	<section class="order">
 		<div class="wrap">
-			<div class="order_img"></div>
+			<!--<div class="order_img"></div>-->
 			<div class="timer_block">
-				<span>Оставьте заявку</span>
-        и получите<br><b>скидку 1 000 руб.</b><br>на любые виды услуг
-        <!--
-				и получите<br><b>скидку на 1 000 руб.</b><br>на любые виды услуг
-        -->
-				<div class="timer">
-					<div class="pt-contain">
-						<div class="days">
-							<span class="flip day1Play">0</span>
-							<span class="flip dayPlay">0</span>
-							<em>&nbsp;дней</em>
-						</div>
-						<div class="hours">
-							<span class="flip hour2Play"></span>
-							<span class="flip hourPlay"></span>
-							<em>&nbsp;часов</em>
-						</div>
-						<div class="minutes">
-							<span class="flip minute6Play"></span>
-							<span class="flip minutePlay"></span>
-							<em>&nbsp;минут</em>
-						</div>
-						<div class="seconds">
-							<span class="flip second6Play"></span>
-							<span class="flip secondPlay"></span>
-							<em>&nbsp;секунд</em>
-						</div>
-					</div>
-				</div>
+                <br />
+				<span>Оценка по фото</span>
+                <br />пришлите фотографии<br>и мы оценим вам ремонт
 			</div>
-			<div class="order_block">
+			<div class="order_block order_block_photo">
         <!--
 				<span>Оставьте заявку</span>
 				и получите <b>бесплатную полировку</b><br />фар вашего автомобиля!
@@ -617,6 +590,8 @@
 					<label class="name left required"><input type="text" name="name" class="input_name" placeholder="имя" /></label>
 					<label class="phone left required"><input type="text" name="phone" class="input_phone" placeholder="телефон" /></label>
 					<label class="email left"><input type="text" name="email" class="input_email" placeholder="e-mail" /></label>
+                    <br/>
+                       <button type="button" class="bttn-photo" name="load-photo" data-toggle="tooltip" data-placement="right" title="Добавить фото"><span class="glyphicon glyphicon-import"></span></button>
 					<input type="button" class="bttn button" name="request" value="Отправить заявку" />
 				</form>
 			</div>
@@ -955,16 +930,69 @@ VK.Widgets.Group("vk_groups", {mode: 3, width: "auto"}, 52545395);
 -->
 </div>
 <script type="text/javascript">
+    window.onload = function () {
+        $(".hood_desc").html('<b>7800р.</b><br /><div class="pd"></div>');
+        $(".roof_desc").html('<b>10200р.</b><br /><div class="pd"></div>');
+        $(".wing1_desc").html('<b>5400р.</b><br /><div class="pd"></div>');
+        $(".door_desc").html('<b>6000р.</b><br /><div class="pd"></div>');
+        $(".wing2_desc").html('<b>6000р.</b><br /><div class="pd"></div>');
+        $(".lights_desc").html('<b>6000р.</b><br /><div class="pd"></div>');
+        $(".bumper1_desc").html('<b>6000р.</b><br /><div class="pd"></div>');
+        $(".bumper2_desc").html('<b>5700р.</b><br /><div class="pd"></div>');
+    }
+
     function cbCarClass_click(type) {
         switch (type)
         {
             case 'ExtraSmall':
-                $(".hood_desc").html('Эконом - <b>7800р.</b><br />Стандарт - <b>8840р.</b><br />Вип - <b>10920р.</b><br /><div class="pd"></div>');
-                $(".roof_desc").html('Эконом - <b>10200р.</b><br />Стандарт - <b>11560р.</b><br />Вип - <b>14280р.</b><br /><div class="pd"></div>');
+                $(".hood_desc").html('<b>7800р.</b><br /><div class="pd"></div>');
+                $(".roof_desc").html('<b>10200р.</b><br /><div class="pd"></div>');
+                $(".wing1_desc").html('<b>5400р.</b><br /><div class="pd"></div>');
+                $(".door_desc").html('<b>6000р.</b><br /><div class="pd"></div>');
+                $(".wing2_desc").html('<b>6000р.</b><br /><div class="pd"></div>');
+                $(".lights_desc").html('<b>6000р.</b><br /><div class="pd"></div>');
+                $(".bumper1_desc").html('<b>6000р.</b><br /><div class="pd"></div>');
+                $(".bumper2_desc").html('<b>5700р.</b><br /><div class="pd"></div>');
                 break;
             case 'Small':
-                $(".hood_desc").html('Эконом - <b>8775р.</b><br />Стандарт - <b>9945р.</b><br />Вип - <b>12285р.</b><br /><div class="pd"></div>');
-                $(".roof_desc").html('Эконом - <b>11475р.</b><br />Стандарт - <b>13005р.</b><br />Вип - <b>16065р.</b><br /><div class="pd"></div>');
+                $(".hood_desc").html('<b>8775р.</b><br /><div class="pd"></div>');
+                $(".roof_desc").html('<b>11475р.</b><br /><div class="pd"></div>');
+                $(".wing1_desc").html('<b>6075р.</b><br /><div class="pd"></div>');
+                $(".door_desc").html('<b>6750р.</b><br /><div class="pd"></div>');
+                $(".wing2_desc").html('<b>6750р.</b><br /><div class="pd"></div>');
+                $(".lights_desc").html('<b>6750р.</b><br /><div class="pd"></div>');
+                $(".bumper1_desc").html('<b>6750р.</b><br /><div class="pd"></div>');
+                $(".bumper2_desc").html('<b>6412,5р.</b><br /><div class="pd"></div>');
+                break;
+            case 'Standart':
+                $(".hood_desc").html('<b>7500р.</b><br /><div class="pd"></div>');
+                $(".roof_desc").html('<b>12750р.</b><br /><div class="pd"></div>');
+                $(".wing1_desc").html('<b>6750р.</b><br /><div class="pd"></div>');
+                $(".door_desc").html('<b>7500р.</b><br /><div class="pd"></div>');
+                $(".wing2_desc").html('<b>7500р.</b><br /><div class="pd"></div>');
+                $(".lights_desc").html('<b>7500р.</b><br /><div class="pd"></div>');
+                $(".bumper1_desc").html('<b>7500р.</b><br /><div class="pd"></div>');
+                $(".bumper2_desc").html('<b>7125р.</b><br /><div class="pd"></div>');
+                break;
+            case 'Maxi':
+                $(".hood_desc").html('<b>11700р.</b><br /><div class="pd"></div>');
+                $(".roof_desc").html('<b>15300р.</b><br /><div class="pd"></div>');
+                $(".wing1_desc").html('<b>8100р.</b><br /><div class="pd"></div>');
+                $(".door_desc").html('<b>9000р.</b><br /><div class="pd"></div>');
+                $(".wing2_desc").html('<b>9000р.</b><br /><div class="pd"></div>');
+                $(".lights_desc").html('<b>9000р.</b><br /><div class="pd"></div>');
+                $(".bumper1_desc").html('<b>9000р.</b><br /><div class="pd"></div>');
+                $(".bumper2_desc").html('<b>8550р.</b><br /><div class="pd"></div>');
+                break;
+            case 'Long':
+                $(".hood_desc").html('<b>13650р.</b><br /><div class="pd"></div>');
+                $(".roof_desc").html('<b>17850р.</b><br /><div class="pd"></div>');
+                $(".wing1_desc").html('<b>9450р.</b><br /><div class="pd"></div>');
+                $(".door_desc").html('<b>9000р.</b><br /><div class="pd"></div>');
+                $(".wing2_desc").html('<b>10500р.</b><br /><div class="pd"></div>');
+                $(".lights_desc").html('<b>10500р.</b><br /><div class="pd"></div>');
+                $(".bumper1_desc").html('<b>10500р.</b><br /><div class="pd"></div>');
+                $(".bumper2_desc").html('<b>9975р.</b><br /><div class="pd"></div>');
                 break;
         }
     }
