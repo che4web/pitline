@@ -1,372 +1,373 @@
 ﻿{% extends "base.html" %}
-{% load staticfiles %}
-{% block navbar-small %}
-<li><a href="#offer">Наши услуги</a></li>
-<li><a href="#price">Цены</a></li>
-<li><a href="#work">Как мы работаем</a></li>
-<li><a href="#reviews">Отзывы</a></li>
-<li><a href="#project">Проекты</a></li>
-<li><a href="{% url 'action-index' %}">Акции</a></li>
-<li><a href=""></a></li>
-{%endblock%}
+ {% load staticfiles %}
+ {% block navbar-small %}
+    <li><a href="#offer">Наши услуги</a></li>
+    <li><a href="#price">Цены</a></li>
+    <li><a href="#work">Как мы работаем</a></li>
+    <li><a href="#reviews">Отзывы</a></li>
+    <li><a href="#project">Проекты</a></li>
+    <li><a href="{% url 'action-index' %}">Акции</a></li>
+    <li><a href=""></a></li>
+ {%endblock%}
 
 {% block content %}
 <input type="hidden" name="first_thumb" class="first_thumb" value="true">
 <input type="hidden" name="page" value="/a/">
 <input type="hidden" name="ref_url" value="">
 <div id="callback" class="modal callback">
-    <div class="modal-box">
-        <div class="modal-title">
-            Заказать звонок
-            <span>заполните форму и мы вам обязательно перезвоним!</span>
-        </div>
-        <form id="callbacks" name="callbacks" action="/sender">
-            <input type="hidden" name="referer" value="http://pitline59.ru/">
-            <label class="name top required"><input type="text" name="name" class="input_name" placeholder="ваше имя" /></label>
-            <label class="phone top required"><input type="text" name="phone" class="input_phone" placeholder="ваш телефон" /></label>
-            <input class="bttn button" type="button" name="callback" value="Оставить заявку" />
-        </form>
-    </div>
+	<div class="modal-box">
+		<div class="modal-title">
+			Заказать звонок
+			<span>заполните форму и мы вам обязательно перезвоним!</span>
+		</div>
+		<form id="callbacks" name="callbacks" action="/sender">
+			<input type="hidden" name="referer" value="http://pitline59.ru/">
+			<label class="name top required"><input type="text" name="name" class="input_name" placeholder="ваше имя" /></label>
+			<label class="phone top required"><input type="text" name="phone" class="input_phone" placeholder="ваш телефон" /></label>
+			<input class="bttn button" type="button" name="callback" value="Оставить заявку" />
+		</form>
+	</div>
 </div>
 <div id="photo" class="modal photo">
-    <div class="modal-box">
-        <div class="modal-title">
-            Рассчитать стоимость
-            <span>заполните форму и мы вам обязательно перезвоним!</span>
-        </div>
-        <form id="callbacks" name="callbacks" action="/sender" method="POST">
+	<div class="modal-box">
+		<div class="modal-title">
+			Рассчитать стоимость
+			<span>заполните форму и мы вам обязательно перезвоним!</span>
+		</div>
+		<form id="callbacks" name="callbacks" action="/sender" method="POST">
             {%csrf_token%}
-            <input type="hidden" class="formname" name="name" value="">
-            <input type="hidden" name="referer" value="http://pitline59.ru/">
-            <label class="name left required"><input type="text" name="name" class="input_name" placeholder="ваше имя" /></label>
-            <label class="phone left required"><input type="text" name="phone" class="input_phone" placeholder="ваш телефон" /></label>
-            <div class="error_field email_error ">  </div>
-            <label class="email left"><input type="text" name="enail" class="input_email" placeholder="ваш e-mail" /></label>
-            <input class="bttn button" type="button" name="sender" value="Оставить заявку" />
-        </form>
-    </div>
+			<input type="hidden" class="formname" name="name" value="">
+			<input type="hidden" name="referer" value="http://pitline59.ru/">
+			<label class="name left required"><input type="text" name="name" class="input_name" placeholder="ваше имя" /></label>
+			<label class="phone left required"><input type="text" name="phone" class="input_phone" placeholder="ваш телефон" /></label>
+             <div class="error_field email_error ">  </div>
+			<label class="email left"><input type="text" name="enail" class="input_email" placeholder="ваш e-mail" /></label>
+			<input class="bttn button" type="button" name="sender" value="Оставить заявку" />
+		</form>
+	</div>
 </div>
 <div id="makeorder" class="modal makeorder">
-    <div class="modal-box">
-        <div class="modal-title">
-            Оставить заявку
-            <span>заполните форму и мы обязательно свяжемся с вами!</span>
-        </div>
-
-        <form id="callbacks" name="callbacks" action="/sender.php" method="POST">
+	<div class="modal-box">
+		<div class="modal-title">
+			Оставить заявку
+			<span>заполните форму и мы обязательно свяжемся с вами!</span>
+		</div>
+        
+		<form id="callbacks" name="callbacks" action="/sender.php" method="POST">
             <div class="error_field nonfielderror"> </div>
             {%csrf_token%}
-            <input type="hidden" class="formname" name="message" value="">
+			<input type="hidden" class="formname" name="message" value="">
             <input type="hidden" class="add_message" name="add_message" value="типа пусто">
-            <input type="hidden" name="referer" value="http://pitline59.ru/">
-            <div class="error_field name_error ">  </div>
-            <label class="name left required"><input type="text" name="name" class="input_name" placeholder="ваше имя" /></label>
-            <div class="error_field phone_error ">  </div>
-            <label class="phone left required"><input type="text" name="phone" class="input_phone" placeholder="ваш телефон" /></label>
-            <div class="error_field email_error ">  </div>
-            <label class="email left"><input type="text" name="email" class="input_email" placeholder="ваш e-mail" /></label>
-            <input class="bttn button-send" type="button" name="sender" value="Оставить заявку" />
-        </form>
-    </div>
+			<input type="hidden" name="referer" value="http://pitline59.ru/">
+             <div class="error_field name_error ">  </div>
+			<label class="name left required"><input type="text" name="name" class="input_name" placeholder="ваше имя" /></label>
+             <div class="error_field phone_error ">  </div>
+			<label class="phone left required"><input type="text" name="phone" class="input_phone" placeholder="ваш телефон" /></label>
+             <div class="error_field email_error ">  </div>
+			<label class="email left"><input type="text" name="email" class="input_email" placeholder="ваш e-mail" /></label>
+			<input class="bttn button-send" type="button" name="sender" value="Оставить заявку" />
+		</form>
+	</div>
 </div>
 <div id="question" class="modal question">
-    <div class="modal-box">
-        <div class="modal-title">
-            Задать вопрос
-            <span>заполните форму и мы обязательно свяжемся с вами!</span>
-        </div>
-        <form id="callbacks" name="callbacks" action="/sender.php">
-            <input type="hidden" name="referer" value="http://pitline59.ru/">
-            <div class="form_left">
-                <label class="name right required"><input type="text" name="name" class="input_name" placeholder="ваше имя" /></label>
-                <label class="email right"><input type="text" name="send" class="input_email" placeholder="ваш e-mail" /></label>
-                <label class="phone right required"><input type="text" name="phone" class="input_phone" placeholder="ваш телефон" /></label>
-            </div>
-            <div class="form_right">
-                <textarea placeholder="ваш вопрос"></textarea>
-            </div>
-            <div class="clear"></div>
-            <input class="bttn button" type="button" name="question" value="Задать вопрос" />
-        </form>
-    </div>
+	<div class="modal-box">
+		<div class="modal-title">
+			Задать вопрос
+			<span>заполните форму и мы обязательно свяжемся с вами!</span>
+		</div>
+		<form id="callbacks" name="callbacks" action="/sender.php">
+			<input type="hidden" name="referer" value="http://pitline59.ru/">
+			<div class="form_left">
+				<label class="name right required"><input type="text" name="name" class="input_name" placeholder="ваше имя" /></label>
+				<label class="email right"><input type="text" name="send" class="input_email" placeholder="ваш e-mail" /></label>
+				<label class="phone right required"><input type="text" name="phone" class="input_phone" placeholder="ваш телефон" /></label>
+			</div>
+			<div class="form_right">
+				<textarea placeholder="ваш вопрос"></textarea>
+			</div>
+			<div class="clear"></div>
+			<input class="bttn button" type="button" name="question" value="Задать вопрос" />
+		</form>
+	</div>
 </div>
 <div class="page">
-
-    <section class="main">
-        <div class="wrap">
-            <h1 style="text-transform:uppercase">
+	
+	<section class="main">
+		<div class="wrap">
+			<h1 style="text-transform:uppercase">
                 Профессиональный центр кузовного ремонта <br /> 
-                <!--ЦЕНТР ЛОКАЛЬНОГО КУЗОВНОГО РЕМОНТА <br />-->
-                <span>с гарантией на все виды работ (от 1года до пожизненной)</span>
-                <!--<span>У нас нет фиксированной цены за деталь, наше основное отличие - индивидуальный подход к клиенту<br><b>Ждем всех по адресу: ул. Шоссе Космонавтов 310Г</b>
-                    </span>-->
-            </h1>
-            <div class="timer_block first_timer">
-                <span>Оставьте заявку</span>
-                и получите<br><b>скидку 1 000 руб.</b><br>на любые виды услуг
-                <div class="timer">
-                    <div class="pt-contain">
-                        <div class="days">
-                            <span class="flip day1Play">0</span>
-                            <span class="flip dayPlay">0</span>
-                            <em>&nbsp;дней</em>
-                        </div>
-                        <div class="hours">
-                            <span class="flip hour2Play"></span>
-                            <span class="flip hourPlay"></span>
-                            <em>&nbsp;часов</em>
-                        </div>
-                        <div class="minutes">
-                            <span class="flip minute6Play"></span>
-                            <span class="flip minutePlay"></span>
-                            <em>&nbsp;минут</em>
-                        </div>
-                        <div class="seconds">
-                            <span class="flip second6Play"></span>
-                            <span class="flip secondPlay"></span>
-                            <em>&nbsp;секунд</em>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="order_block first_order">
-                <!--
-                    <span>Оставьте заявку</span>
-                    и получите <b>бесплатную полировку</b><br />фар вашего автомобиля!
-                -->
-                <form id="callbacks" name="callbacks" action="/sender.php" method="POST">
+				<!--ЦЕНТР ЛОКАЛЬНОГО КУЗОВНОГО РЕМОНТА <br />-->
+                <span>с гарантией на все виды работ (от 1 года до пожизненной)</span>
+				<!--<span>У нас нет фиксированной цены за деталь, наше основное отличие - индивидуальный подход к клиенту<br><b>Ждем всех по адресу: ул. Шоссе Космонавтов 310Г</b>
+                </span>-->
+			</h1>
+			<div class="timer_block first_timer">
+				<span>Оставьте заявку</span>
+				и получите<br><b>скидку 1 000 руб.</b><br>на любые виды услуг
+				<div class="timer">
+					<div class="pt-contain">
+						<div class="days">
+							<span class="flip day1Play">0</span>
+							<span class="flip dayPlay">0</span>
+							<em>&nbsp;дней</em>
+						</div>
+						<div class="hours">
+							<span class="flip hour2Play"></span>
+							<span class="flip hourPlay"></span>
+							<em>&nbsp;часов</em>
+						</div>
+						<div class="minutes">
+							<span class="flip minute6Play"></span>
+							<span class="flip minutePlay"></span>
+							<em>&nbsp;минут</em>
+						</div>
+						<div class="seconds">
+							<span class="flip second6Play"></span>
+							<span class="flip secondPlay"></span>
+							<em>&nbsp;секунд</em>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="order_block first_order">
+        <!--
+				<span>Оставьте заявку</span>
+				и получите <b>бесплатную полировку</b><br />фар вашего автомобиля!
+        -->
+				<form id="callbacks" name="callbacks" action="/sender.php" method="POST">
                     {%csrf_token%}
-                    <input type="hidden" class="formname" name="mname" value="скидку 1 000 руб.">
-                    <input type="hidden" name="referer" value="http://pitline59.ru/">
-                    <div class="error_field email_namer ">  </div>
-                    <label class="name left required"><input type="text" name="name" class="input_name" placeholder="имя" /></label>
-                    <div class="error_field email_phone ">  </div>
-                    <label class="phone left required"><input type="text" name="phone" class="input_phone" placeholder="телефон" /></label>
-                    <div class="error_field email_error ">  </div>
-                    <label class="email left"><input type="text" name="email" class="input_email" placeholder="e-mail" /></label>
-                    <input type="button" class="bttn button-send" name="sender" value="Отправить заявку" />
-                </form>
-            </div>
-        </div>
-    </section>
-    <a name="cifr"></a>
-    <section class="counts">
-        <div class="wrap">
-            <div class="count c1">
-                высококлассных<br />специалистов, имеющих<br />огромный опыт
-            </div>
-            <div class="count c2">
-                клиентов уже<br />выбрали нас <br />и остались<br />довольны
-            </div>
-            <div class="count c3">
-                года <br />успешных <br />работ <br />по покраске 
-            </div>
-            <div class="count c4">
-                месяцев гарантии <br />на все выполненные <br />работы
-            </div>
-            <div class="clear"></div>
-        </div>
-    </section>
-    <a name="sravnenie"></a>
-    <section class="reasons">
-        <h2>До сих пор не решились отдать свое авто в сервис?</h2>
-        <div class="wrap scroll-animate">
+					<input type="hidden" class="formname" name="mname" value="скидку 1 000 руб.">
+					<input type="hidden" name="referer" value="http://pitline59.ru/">
+                   <div class="error_field email_namer ">  </div>
+					<label class="name left required"><input type="text" name="name" class="input_name" placeholder="имя" /></label>
+                   <div class="error_field email_phone ">  </div>
+					<label class="phone left required"><input type="text" name="phone" class="input_phone" placeholder="телефон" /></label>
+                   <div class="error_field email_error ">  </div>
+					<label class="email left"><input type="text" name="email" class="input_email" placeholder="e-mail" /></label>
+					<input type="button" class="bttn button-send" name="sender" value="Отправить заявку" />
+				</form>
+			</div>
+		</div>
+	</section>
+	<a name="cifr"></a>
+	<section class="counts">
+		<div class="wrap">
+			<div class="count c1">
+				высококлассных<br />специалистов, имеющих<br />огромный опыт
+			</div>
+			<div class="count c2">
+				клиентов уже<br />выбрали нас <br />и остались<br />довольны
+			</div>
+			<div class="count c3">
+				года <br />успешных <br />работ <br />по покраске 
+			</div>
+			<div class="count c4">
+				месяцев гарантии <br />на все выполненные <br />работы
+			</div>
+			<div class="clear"></div>
+		</div>
+	</section>
+	<a name="sravnenie"></a>
+	<section class="reasons">
+		<h2>До сих пор не решились отдать свое авто в сервис?</h2>
+		<div class="wrap scroll-animate">
+			<div class="fade">
+				<div class="reason rq">
+					Боитесь, что изначально вам назовут одну<br />цену, а после ремонта – другую?
+				</div>
+				<div class="reason ra">
+					<span>Прозрачная цена</span>
+					Цена на покраску и ремонтные работы останется<br />неизменной - без "внезапных" затрат<br />и наценок на детали.
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="fade">
+				<div class="reason rq">
+					Необходим срочный<br />ремонт авто после ДТП?
+				</div>
+				<div class="reason ra">
+					<span>Срочный ремонт</span>
+					Все работы по покраске и ремонту вашего авто<br />будут выполены в срок от 2х часов до 3х дней <br /> в зависимости от сложности работ.
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="fade">
+				<div class="reason rq">
+					Квалификация работников<br />автосервисов вызывает у вас недоверие?
+				</div>
+				<div class="reason ra">
+					<span>Только опытные мастера</span>
+					Специалисты нашего сервиса – профессионалы<br />с опытом работы более 10 лет в сфере покраски и ремонта авто.
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="fade">
+				<div class="reason rq">
+					Появилось желание<br />изменить внешний вид авто?
+				</div>
+				<div class="reason ra">
+					<span>Блестящий вид авто надолго</span>
+					Мы работаем только с проверенными<br />производителями лакокрасочных<br />покрытий из Англии, Японии и Германии,<br /> чья надежность проверена временем! 
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="fade">
+				<div class="reason rq">
+					Ждете гарантий на все<br />выполненные работы?
+				</div>
+				<div class="reason ra">
+					<span>Гарантия от одного года</span>
+					 Мы не боимся предоставлять гарантию<br />от 12 месяцев до пожизненной.
+				</div>
+				<div class="clear"></div>
+			</div>
             <div class="fade">
-                <div class="reason rq">
-                    Боитесь, что изначально вам назовут одну<br />цену, а после ремонта – другую?
-                </div>
-                <div class="reason ra">
-                    <span>Прозрачная цена</span>
-                    Цена на покраску и ремонтные работы останется<br />неизменной - без "внезапных" затрат<br />и наценок на детали.
-                </div>
-                <div class="clear"></div>
-            </div>
-            <div class="fade">
-                <div class="reason rq">
-                    Необходим срочный<br />ремонт авто после ДТП?
-                </div>
-                <div class="reason ra">
-                    <span>Срочный ремонт</span>
-                    Все работы по покраске и ремонту вашего авто<br />будут выполены в срок от 2х часов до 3х дней <br /> в зависимости от сложности работ.
-                </div>
-                <div class="clear"></div>
-            </div>
-            <div class="fade">
-                <div class="reason rq">
-                    Квалификация работников<br />автосервисов вызывает у вас недоверие?
-                </div>
-                <div class="reason ra">
-                    <span>Только опытные мастера</span>
-                    Специалисты нашего сервиса – профессионалы<br />с опытом работы более 10 лет в сфере покраски и ремонта авто.
-                </div>
-                <div class="clear"></div>
-            </div>
-            <div class="fade">
-                <div class="reason rq">
-                    Появилось желание<br />изменить внешний вид авто?
-                </div>
-                <div class="reason ra">
-                    <span>Блестящий вид авто надолго</span>
-                    Мы работаем только с проверенными<br />производителями лакокрасочных<br />покрытий из Англии, Японии и Германии,<br /> чья надежность проверена временем! 
-                </div>
-                <div class="clear"></div>
-            </div>
-            <div class="fade">
-                <div class="reason rq">
-                    Ждете гарантий на все<br />выполненные работы?
-                </div>
-                <div class="reason ra">
-                    <span>Гарантия от одного года</span>
-                    Мы не боимся предоставлять гарантию<br />от 12 месяцев до пожизненной.
-                </div>
-                <div class="clear"></div>
-            </div>
-            <div class="fade">
-                <div class="reason rq">
-
-                    Новый бампер <br />стоит дорого?
-                </div>
-                <div class="reason ra">
-                    <span>Восстановление</span>
-                    Восстановим старый с пожизненной гарантией,<br />даже если отсутствует элемент.
-                </div>
-                <div class="clear"></div>
-            </div>
-        </div>
-    </section>
-    <a name="promo1"></a>
-    <section class="order_photo">
-        <div class="wrap">
-            <div class="order_img2"></div>
-            <div class="order_block2">
-                <span>Рассчитать стоимость</span>
-                покраски и ремонта авто
-                <form id="callbacks" name="callbacks" action="/sender.php">
-                    <input type="hidden" name="referer" value="http://pitline59.ru/">
-                    <label class="name top required"><input type="text" name="name" class="input_name" placeholder="ваше имя" /></label>
-                    <label class="phone top required"><input type="text" name="phone" class="input_phone" placeholder="ваш телефон" /></label>
-                    <input class="bttn button" type="button" name="callback" value="Оставить заявку" />
-                </form>
-            </div>
-        </div>
-    </section>
-    <section class="offer" id="offer">
-        <h2>До сих пор не решились отдать свое авто в сервис?</h2>
-        <div class="wrap scroll-animate">
-            <a name="product"></a>
-            <div class="offer_one o1 scale">
-                <span><br />дефектовка после ДТП</span>
-                <div class="offer_text">
-                    <em>2 000 руб.</em>
-                </div>
-                <a id="go" onClick="popup('makeorder', 'УСЛУГИ', 'Заявка с блока УСЛУГИ. Дефектовка после ДТП')" rel="leanModal" name="makeorder" href="#makeorder">Заказать дефектовку</a>
-            </div>
-            <div class="offer_one o2 scale">
-                <span><br />Покраска</span>
-                <div class="offer_text">
-                    <em> от 4000 руб.</em>
-                    (одной детали)
-                </div>
-                <a id="go" onClick="popup('makeorder', 'УСЛУГИ', 'Заявка с блока УСЛУГИ. Покраска');" rel="leanModal" name="makeorder" href="#makeorder">Заказать покраску</a>
-            </div>
-            <div class="offer_one o3 scale">
-                <span><br />Локальный ремонт</span>
-                <div class="offer_text">
-                    <em>от 2 800 руб.</em>
-                    (точечный ремон интерьера)
-                </div>
-                <a id="go" onClick="popup('makeorder', 'Покраска жидкой резиной');" rel="leanModal" name="makeorder" href="#makeorder">Заказать ремонт салона</a>
-            </div>
-            <div class="clear"></div>
-            <a name="product2"></a>
-            <div class="offer_one o4 scale">
-                <span><br />Ремонт кузова</span>
-                <div class="offer_text">
-                    <em>от 500 руб.</em>
-                </div>
-                <a id="go" onClick="popup('makeorder', 'РЕМОНТ БАМПЕРОВ');" rel="leanModal" name="makeorder" href="#makeorder">Заказать ремонт бампера</a>
-            </div>
-            <div class="offer_one o5 scale">
-                <span><br />Ремонт бамперов</span>
-                <div class="offer_text">
-                    <em>от 800 руб.</em>
-                </div>
-                <a id="go" onClick="popup('makeorder', 'РЕМОНТ КУЗОВОВ');" rel="leanModal" name="makeorder" href="#makeorder">Заказать ремонт кузова</a>
-            </div>
-            <div class="offer_one o6 scale">
-                <span><br />Полировка кузова и оптики</span>
-                <div class="offer_text">
-                    <em>от 300 руб.</em>
-                </div>
-                <a id="go" onClick="popup('makeorder', 'Подбор автозапчастей');" rel="leanModal" name="makeorder" href="#makeorder">Заказать ремонт авто</a>
-            </div>
+				<div class="reason rq">
+                    
+					Новый бампер <br />стоит дорого?
+				</div>
+				<div class="reason ra">
+					<span>Восстановление</span>
+					 Восстановим старый с пожизненной гарантией,<br />даже если отсутствует элемент.
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</section>
+	<a name="promo1"></a>
+	<section class="order_photo">
+		<div class="wrap">
+			<div class="order_img2"></div>
+			<div class="order_block2">
+				<span>Рассчитать стоимость</span>
+				покраски и ремонта авто
+				<form id="callbacks" name="callbacks" action="/sender.php">
+			<input type="hidden" name="referer" value="http://pitline59.ru/">
+			<label class="name top required"><input type="text" name="name" class="input_name" placeholder="ваше имя" /></label>
+			<label class="phone top required"><input type="text" name="phone" class="input_phone" placeholder="ваш телефон" /></label>
+			<input class="bttn button" type="button" name="callback" value="Оставить заявку" />
+		</form>
+			</div>
+		</div>
+	</section>
+	<section class="offer" id="offer">
+		<h2>До сих пор не решились отдать свое авто в сервис?</h2>
+		<div class="wrap scroll-animate">
+			<a name="product"></a>
+			<div class="offer_one o1 scale">
+				<span><br />дефектовка после ДТП</span>
+				<div class="offer_text">
+					<em>2 000 руб.</em>
+				</div>
+				<a id="go" onClick="popup('makeorder', 'УСЛУГИ', 'Заявка с блока УСЛУГИ. Дефектовка после ДТП')" rel="leanModal" name="makeorder" href="#makeorder">Заказать дефектовку</a>
+			</div>
+			<div class="offer_one o2 scale">
+				<span><br />Покраска</span>
+				<div class="offer_text">
+					<em> от 4000 руб.</em>
+					(одной детали)
+				</div>
+				<a id="go" onClick="popup('makeorder', 'УСЛУГИ', 'Заявка с блока УСЛУГИ. Покраска');" rel="leanModal" name="makeorder" href="#makeorder">Заказать покраску</a>
+			</div>
+			<div class="offer_one o3 scale">
+				<span><br />Локальный ремонт</span>
+				<div class="offer_text">
+					<em>от 2 800 руб.</em>
+                 				</div>
+				<a id="go" onClick="popup('makeorder', 'УСЛУГИ', 'Заявка с блока УСЛУГИ. Локальный ремонт');" rel="leanModal" name="makeorder" href="#makeorder">Заказать ремонт</a>
+			</div>
+			<div class="clear"></div>
+			<a name="product2"></a>
+			<div class="offer_one o4 scale">
+				<span><br />Ремонт кузова</span>
+				<div class="offer_text">
+					<em>от 500 руб.</em>
+				</div>
+				<a id="go" onClick="popup('makeorder', 'УСЛУГИ', 'Заявка с блока УСЛУГИ. Ремонт кузова');" rel="leanModal" name="makeorder" href="#makeorder">Заказать ремонт кузова</a>
+			</div>
+			<div class="offer_one o5 scale">
+				<span><br />Ремонт бамперов</span>
+				<div class="offer_text">
+					<em>от 800 руб.</em>
+				</div>
+				<a id="go" onClick="popup('makeorder', 'УСЛУГИ', 'Заявка с блока УСЛУГИ. Ремонт бампера');" rel="leanModal" name="makeorder" href="#makeorder">Заказать ремонт бампера</a>
+			</div>
+			<div class="offer_one o6 scale">
+			<span><br />Полировка кузова и оптики</span>
+							<div class="offer_text">
+					<em>от 300 руб.</em>
+				</div>
+				<a id="go" onClick="popup('makeorder', 'УСЛУГИ', 'Заявка с блока УСЛУГИ. Полировка кузова и оптики');" rel="leanModal" name="makeorder" href="#makeorder">Заказать полировку</a>
+			</div>
             <!--==================-->
             <div class="clear"></div>
-            <a name="product3"></a>
-            <div class="offer_one o7 scale">
-                <span><br />Ремонт салона</span>
-                <div class="offer_text">
-                    <em>от 1 000 руб.</em>
-                </div>
-                <a id="go" onClick="popup('makeorder', 'РЕМОНТ БАМПЕРОВ');" rel="leanModal" name="makeorder" href="#makeorder">Заказать ремонт бампера</a>
-            </div>
-            <div class="offer_one o8 scale">
-                <span><br />Выправление вмятин без покраски</span>
-                <div class="offer_text">
-                    <em>от 1 500 руб.</em>
-                </div>
-                <a id="go" onClick="popup('makeorder', 'РЕМОНТ КУЗОВОВ');" rel="leanModal" name="makeorder" href="#makeorder">Заказать ремонт кузова</a>
-            </div>
-            <div class="offer_one o9 scale">
-                <span><br />    Нанесение защитных покрытий на кузов</span>
-                <div class="offer_text">
-                    <em>от 4 280 руб.</em>
-                </div>
-                <a id="go" onClick="popup('makeorder', 'Подбор автозапчастей');" rel="leanModal" name="makeorder" href="#makeorder">Заказать ремонт авто</a>
-            </div>
+			<a name="product3"></a>
+			<div class="offer_one o7 scale">
+				<span><br />Ремонт салона</span>
+				<div class="offer_text">
+					<em>от 1 000 руб.</em>
+				</div>
+				<a id="go" onClick="popup('makeorder', 'УСЛУГИ', 'Заявка с блока УСЛУГИ. Ремонт салона');" rel="leanModal" name="makeorder" href="#makeorder">Заказать ремонт салона</a>
+			</div>
+			<div class="offer_one o8 scale">
+				<span><br />Выправление вмятин без покраски</span>
+				<div class="offer_text">
+					<em>от 1 500 руб.</em>
+				</div>
+				<a id="go" onClick="popup('makeorder', 'УСЛУГИ', 'Заявка с блока УСЛУГИ. Выправление вмятин без покраски');" rel="leanModal" name="makeorder" href="#makeorder">Заказать выправление</a>
+			</div>
+			<div class="offer_one o9 scale">
+			<span><br />    Нанесение защитных покрытий на кузов</span>
+							<div class="offer_text">
+					<em>от 4 280 руб.</em>
+				</div>
+				<a id="go" onClick="popup('makeorder', 'УСЛУГИ', 'Заявка с блока УСЛУГИ. Нанесение защитных покрытий на кузов');" rel="leanModal" name="makeorder" href="#makeorder">Заказать нанесение</a>
+			</div>
             <!--==================-->
-            <div class="clear"></div>
-            <!--<a id="go" rel="leanModal" onClick="popup('makeorder', 'прайс-лист');" name="makeorder" href="#makeorder" class="offer_a">Получить прайс-лист всех услуг</a>-->
-        </div>
-    </section>
-    <a name="what"></a>
-    <section class="why">
-        <h2>Почему 3 000 клиентов выбрали нас?</h2>
-        <div class="wrap scroll-animate">
-            <div class="why_one w1 scale">
-                <span>Работа<br />без отсрочек</span>
-                Мы гарантируем<br />соблюдение сроков<br />по ремонту автомобиля.<br />У нас, Вы сможете <b><br />забрать авто точно в срок</b>
-            </div>
-            <div class="why_one w2 scale">
-                <span>Локальный ремонт<br />без видимых границ</span>
-                <b>Устранение повреждений<br />без замены детали.</b><br />Проводим работы так,<br />что невозможно отличить<br />где был дефект,<br />а где нет
-            </div>
-            <div class="why_one w3 scale">
-                <span>Работа<br />без выходных</span>
-                Мы работаем<br /><b>без перерывов и  выходных</b> <br /> 7 дней в неделю,<br /> и готовы в любой момент провести<br />ремонт вашего авто<br /><br />
-            </div>
-            <div class="why_one w4 scale">
-                <span>100% попадание<br />в цвет</span>
-                Квалификация наших<br />специалистов по подбору<br />краски <b>гарантирует<br />идеальное соответствие<br />покрытия</b> с базовым<br />цветом
-            </div>
-            <div class="clear"></div>
-            <div class="why_one w5 scale">
-                <span>Быстрее<br />диллерских станций</span>
-                В случае, если вашему авто<br />требуется <b>быстрый и качественный ремонт,</b><br />мы делаем это быстрее диллеров<br /><br />
-            </div>
-            <div class="why_one w6 scale">
-                <span>Бесплатная<br />оценка повреждений</span>
-                Нашим клиентам мы<br />предоставляем<br /><b>бесплатную оценку<br />повреждений авто</b> для расчета стоимости<br /> ремонта<br />
-            </div>
-            <div class="why_one w7 scale">
-                <span>Индивидуальный<br />подход</span>
-                К каждому клиенту<br />мы подходим индивидульно<br />В наших интересах выполнить<br />ремонтные работы так,<b> чтобы клиент остался доволен<br /></b> <br />
-            </div>
-            <div class="clear"></div>
-        </div>
-    </section>
-    <section class="price" id="price">
-        <h2>стоимость работ</h2>
+			<div class="clear"></div>
+			<!--<a id="go" rel="leanModal" onClick="popup('makeorder', 'прайс-лист');" name="makeorder" href="#makeorder" class="offer_a">Получить прайс-лист всех услуг</a>-->
+		</div>
+	</section>
+	<a name="what"></a>
+	<section class="why">
+		<h2>Почему 3 000 клиентов выбрали нас?</h2>
+		<div class="wrap scroll-animate">
+			<div class="why_one w1 scale">
+				<span>Работа<br />без отсрочек</span>
+				Мы гарантируем<br />соблюдение сроков<br />по ремонту автомобиля.<br />У нас, Вы сможете <b><br />забрать авто точно в срок</b>
+			</div>
+			<div class="why_one w2 scale">
+				<span>Локальный ремонт<br />без видимых границ</span>
+				<b>Устранение повреждений<br />без замены детали.</b><br />Проводим работы так,<br />что невозможно отличить<br />где был дефект,<br />а где нет
+			</div>
+			<div class="why_one w3 scale">
+				<span>Работа<br />без выходных</span>
+				Мы работаем<br /><b>без перерывов и  выходных</b> <br /> 7 дней в неделю,<br /> и готовы в любой момент провести<br />ремонт вашего авто<br /><br />
+			</div>
+			<div class="why_one w4 scale">
+				<span>100% попадание<br />в цвет</span>
+				Квалификация наших<br />специалистов по подбору<br />краски <b>гарантирует<br />идеальное соответствие<br />покрытия</b> с базовым<br />цветом
+			</div>
+			<div class="clear"></div>
+			<div class="why_one w5 scale">
+				<span>Быстрее<br />диллерских станций</span>
+				В случае, если вашему авто<br />требуется <b>быстрый и качественный ремонт,</b><br />мы делаем это быстрее диллеров<br /><br />
+			</div>
+			<div class="why_one w6 scale">
+				<span>Бесплатная<br />оценка повреждений</span>
+				Нашим клиентам мы<br />предоставляем<br /><b>бесплатную оценку<br />повреждений авто</b> для расчета стоимости<br /> ремонта<br />
+			</div>
+			<div class="why_one w7 scale">
+				<span>Индивидуальный<br />подход</span>
+				К каждому клиенту<br />мы подходим индивидульно<br />В наших интересах выполнить<br />ремонтные работы так,<b> чтобы клиент остался доволен<br /></b> <br />
+			</div>
+			<div class="clear"></div>
+		</div>
+	</section>
+	<section class="price" id="price">
+		<h2>стоимость работ</h2>
+        <h3 class="price-h3">покраска</h3>
+        
         <div class="car_classes">
             <h3>выберите класс авто</h3>
             <div class="row">
@@ -374,423 +375,216 @@
                 <label for="Aclass" title="Extra Small (daewoo Matiz, Kia Picanto, Suzuki Splash, итд)" onclick="cbCarClass_click('ExtraSmall')">Extra Small</label>
                 <input type="radio" class="car_classes_class" name="car_classes_class" id="Bclass" title="Small( Mazda2, Opel Corsa, Citroen C3 и др.)" onclick="cbCarClass_click('Small')"  />
                 <label for="Bclass" title="Small( Mazda2, Opel Corsa, Citroen C3 и др.)" onclick="cbCarClass_click('Small')">Small</label>
-                <input type="radio" class="car_classes_class" name="car_classes_class" id="Cclass" title="Standart (Volkswagen Golf, Toyota Corolla, Shkoda Oktavia, Subaru impreza и др.)" />
-                <label for="Cclass" title="Standart (Volkswagen Golf, Toyota Corolla, Shkoda Oktavia, Subaru impreza и др.)">Standart</label>
-                <input type="radio" class="car_classes_class" name="car_classes_class" id="Dclass" title="Maxi (Kia Sportage, Audi Q3, BMW X3, Mitsubishi ASX, и др.)" />
-                <label for="Dclass" title="Maxi (Kia Sportage, Audi Q3, BMW X3, Mitsubishi ASX, и др.)">Maxi</label>
-                <input type="radio" class="car_classes_class" name="car_classes_class" id="Eclass" title="Long( Chevrolet tacho, VW Toureg, Toyota Tundra и тд.)" />
-                <label for="Eclass" title="Long( Chevrolet tacho, VW Toureg, Toyota Tundra и тд.)">Long</label>
+                <input type="radio" class="car_classes_class" name="car_classes_class" id="Cclass" title="Standart (Volkswagen Golf, Toyota Corolla, Shkoda Oktavia, Subaru impreza и др.)"  onclick="cbCarClass_click('Standart')" />
+                <label for="Cclass" title="Standart (Volkswagen Golf, Toyota Corolla, Shkoda Oktavia, Subaru impreza и др.)" onclick="cbCarClass_click('Standart')">Standart</label>
+                <input type="radio" class="car_classes_class" name="car_classes_class" id="Dclass" title="Maxi (Kia Sportage, Audi Q3, BMW X3, Mitsubishi ASX, и др.)" onclick="cbCarClass_click('Maxi')" />
+                <label for="Dclass" title="Maxi (Kia Sportage, Audi Q3, BMW X3, Mitsubishi ASX, и др.)" onclick="cbCarClass_click('Maxi')">Maxi</label>
+                <input type="radio" class="car_classes_class" name="car_classes_class" id="Eclass" title="Long( Chevrolet tacho, VW Toureg, Toyota Tundra и тд.)" onclick="cbCarClass_click('Long')" />
+                <label for="Eclass" title="Long( Chevrolet tacho, VW Toureg, Toyota Tundra и тд.)" onclick="cbCarClass_click('Long')">Long</label>
             </div>
         </div>
 
+		<div class="wrap">
+			<div class="price_a pa1 hood_btn noselect">Капот</div>
+			<div class="price_a pa2 roof_btn noselect">Крыша</div>
+			<div class="price_a pa3 wing1_btn noselect">Крыло</div>
+			<div class="price_a pa4 door_btn noselect">Двери</div>
+			<div class="price_a pa5 wing2_btn noselect">Крыло</div>
+			<div class="price_a pa6 lights_btn noselect">Бампер</div>
+			<div class="price_a pa7 bumper2_btn noselect">Бампер</div>
+			<div class="pr1">
+				<div class="price_descr hood_desc">
+					<!-- <div class="" -->
 
-        <h4>Костя!!!!!!!!!!!!!! 1. нужны цены в таблицу</h4>
-        <h4>2. расписывать покраску и ремонт отедльно в таблице? кое где в самой машине оставила и ремонт и покраску - напиши как лучше</h4>
-        <h4>3. в самой машине просто сделать от и до из таблицы или всю строку из таблицы впихнуть? - посмотри</h4>
-        <h4>4. переход из машины в таблицу по ссылке к нужной строке сделала - посмотри</h4>
-        <div class="wrap">
-            <div class="price_a pa1 hood_btn noselect">Капот</div>
-            <div class="price_a pa2 roof_btn noselect">Крыша</div>
-            <div class="price_a pa3 wing1_btn noselect">Крыло</div>
-            <div class="price_a pa4 door_btn noselect">Двери</div>
-            <div class="price_a pa5 wing2_btn noselect">Крыло</div>
-            <div class="price_a pa6 lights_btn noselect">Фара</div>
-            <div class="price_a pa7 bumper2_btn noselect">Бампер</div>
-            <div class="pr1">
-                <div class="price_descr hood_desc">
-                    <!-- <div class="" -->
+					
+					<!--<a id="go" onClick="popup('makeorder', 'капот');" rel="leanModal" name="makeorder" href="#makeorder">оставить заявку</a>
+                    <a href="#tr1">подробнее</a>
+					<div class="pd"></div>
+                        -->
+				</div>
+			</div>
+			<div class="pr2">
+				<div class="price_descr roof_desc">
+                    <!--
+					Покраска крыши от <b>12000р</b><br />
+					Ремонт крыши от <b>4000р</b><br />
+					<!--<a id="go" onClick="popup('makeorder', 'крыша');" rel="leanModal" name="makeorder" href="#makeorder">оставить заявку</a>-->
+					<!--<a href="#tr2">подробнее</a>
+                    <div class="pd"></div>-->
+                    
+				</div>
+			</div>
+			<div class="pr3">
+				<div class="price_descr wing1_desc">
+                    <!--
+					Покраска переднего крыла от <b>6000р</b><br />
+					Ремонт переднего крыла от <b>1000р</b><br />
+					<!--<a id="go" onClick="popup('makeorder', 'переднее крыло');" rel="leanModal" name="makeorder" href="#makeorder">оставить заявку</a>-->
+                    <!--<a href="#tr3">подробнее</a>
+					<div class="pd"></div>-->
+				</div>
+			</div>
+			<div class="pr4">
+				<div class="price_descr door_desc">
+					<!--Покраска двери от <b>7500р</b> до <b>11200р</b><br />
+					Ремонт двери от <b>2000р</b><br />-->
+										<!--<a id="go" onClick="popup('makeorder', 'дверь');" rel="leanModal" name="makeorder" href="#makeorder">оставить заявку</a>
+                    <a href="#tr4">подробнее</a>
+					<div class="pd"></div>-->
+				</div>
+			</div>
+			<div class="pr5">
+				<div class="price_descr wing2_desc">
+					<!--Покраска заднего крыла от <b>7500р</b><br />
+					Ремонт заднего крыла от <b>2000р</b><br />-->
+										<!--<a id="go" onClick="popup('makeorder', 'заднее крыло');" rel="leanModal" name="makeorder" href="#makeorder">оставить заявку</a>
+                    <a href="#tr5">подробнее</a>-->
+					<div class="pd"></div>
+				</div>
+			</div>
+			<div class="pr6">
+				<div class="price_descr lights_desc">
+					<!--Полировка фар от <b>1000р</b><br />
+					<!--<a id="go" onClick="popup('makeorder', 'фара');" rel="leanModal" name="makeorder" href="#makeorder">оставить заявку</a>-->
+                    <!--<a href="#tr5">подробнее</a>-->
+					<div class="pd"></div>
+				</div>
+			</div>
+			<div class="pr7">
+				<div class="price_descr bumper1_desc">
+					<!--Покраска бампера от <b>6500р</b><br />>-->
+					<!--Ремонт бампера от <b>500р</b><br />-->
+					<!--<a id="go" onClick="popup('makeorder', 'передний бампер');" rel="leanModal" name="makeorder" href="#makeorder">оставить заявку</a>-->
+                    <!--<a href="#tr6">подробнее</a>>-->
+					<div class="pd"></div>
+				</div>
+			</div>
+			<div class="pr8">
+				<div class="price_descr bumper2_desc">
+					<!--Покраска бампера от <b>6500р</b><br />
+					Ремонт бампера от <b>300р</b><br />-->
+					<!--<a id="go" onClick="popup('makeorder', 'задний бампер');" rel="leanModal" name="makeorder" href="#makeorder">оставить заявку</a>
+                    <a href="#tr7">подробнее</a>-->
+					<div class="pd"></div>
+				</div>
+			</div>
+			<!--<img src="images/price.jpg" class="map" width="714" height="482" usemap="#navigation">-->
+            <img src="{% static 'app/images/price.jpg'%}" class="map" width="714" height="482" usemap="#navigation">
+			<map id="navigation" name="navigation">
+				<area shape="poly" id="hood" coords="188,28,175,28,161,31,133,36,110,42,93,50,76,61,55,76,43,86,31,97,23,108,20,114,19,119,19,127,19,135,22,142,23,142,27,141,34,142,41,143,51,144,63,147,73,150,82,153,92,157,105,162,111,163,115,164,124,164,133,162,141,159,147,157,149,156,148,152,147,149,147,144,148,138,151,131,155,123,161,115,169,107,179,96,189,88,200,80,212,71,227,63,236,58,246,55,255,52,260,50,265,49,271,49,274,49,270,47,261,44,247,40,227,35,207,31"> <!--21,135,17,123,22,105,39,89,62,70,84,54,107,43,131,36,162,30,182,27,202,30,225,34,249,39,270,47,237,56,211,71,186,89,166,108,153,123,147,138,147,155,126,162,111,161,72,146,39,140,24,141-->
+				<area shape="poly" id="lights" coords="18,123,14,131,11,139,11,147,12,153,15,157,18,151,23,148,23,146,20,140,19,136,19,136">
+				<area shape="poly" id="bumper1" coords="30,208,30,204,29,200,28,195,28,189,29,184,33,178,40,172,42,171,31,159,27,153,23,146,18,152,15,157,13,153,11,148,9,143,7,149,7,156,7,162,8,167,9,169,13,172,14,174,14,182,14,194,21,201,26,206">
+				<area shape="poly" id="wing1" coords="138,197,139,187,141,181,144,176,150,171,158,165,153,161,149,156,142,159,130,162,122,163,116,164,109,163,93,157,74,150,59,146,43,142,30,141,21,142,25,150,29,156,34,162,43,172,50,171,57,172,68,175,74,178,83,183,91,190,100,199,108,210,113,217,117,226,121,235,125,245,134,248,147,253,142,246,140,237,138,214">
+				<area shape="poly" id="roof" coords="548,121,524,109,491,93,466,82,442,72,422,65,397,57,380,53,358,48,345,45,332,50,321,56,309,64,298,71,289,78,279,87,273,94,264,104,259,111,252,121,246,133,256,133,274,134,289,136,308,139,323,144,341,150,361,157,380,166,407,179,426,189,442,197,457,206,465,211,473,204,483,196,494,186,505,175,515,165,524,157,532,147,540,135,544,127">
+				<area shape="poly" id="door" coords="138,203,138,215,139,225,140,233,141,241,141,245,145,251,148,254,180,266,210,278,248,293,293,309,320,319,345,327,362,333,370,334,380,331,385,328,397,315,403,308,413,297,418,292,424,283,427,276,427,265,427,258,396,248,358,236,319,223,269,206,229,192,207,185,188,179,175,174,165,170,159,166,158,166,152,169,147,173,143,177,140,183,139,190,138,195">
+				<area shape="poly" id="wing2" coords="470,216,504,239,521,252,541,266,552,273,564,279,568,286,576,297,580,301,596,309,616,318,615,320,603,326,583,335,572,349,561,363,552,374,547,377,543,378,536,378,516,375,505,373,497,358,486,345,478,336,466,327,456,322,446,319,437,317,426,316,417,317,411,319,407,321,402,325,400,329,398,334,397,339,398,343,399,347,400,353,397,352,387,348,376,344,376,341,378,337,381,332,386,327,392,321,400,312,408,303,416,295,421,288,424,282,426,277,427,270,427,258,432,259,442,262,453,262,463,261,476,259,487,256,490,253,489,249,477,240,453,222,445,216,447,213,452,208,455,205">
+				<area shape="poly" id="bumper2" coords="534,377,523,376,513,374,508,374,505,375,507,380,510,388,511,391,512,396,520,398,530,399,541,401,558,403,571,404,583,404,587,403,591,403,599,402,608,401,613,397,626,388,637,379,649,368,656,359,667,346,675,336,682,325,689,314,694,305,697,297,700,288,701,282,703,274,704,264,703,256,702,250,700,246,699,244,697,241,696,246,693,246,692,247,688,252,684,259,681,263,682,267,686,275,682,284,677,293,671,302,663,311,656,319,647,328,640,335,632,341,632,341,627,337,626,338,619,341,607,346,600,348,592,351,584,352,575,353,570,353,565,359,559,366,554,371,550,375,547,377,543,378">
+			</map>
+		</div>
+        <!--
+        <div class="price__table">
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th rowspan="2">НАИМЕНОВАНИЕ РАБОТ</th>
+              <th colspan="2">ЭКОНОМ</th>
+              <th colspan="2">СТАНДАРТ</th>
+              <th colspan="2">ПРЕМИУМ</th>
+            </tr>
+              <tr>
+                  <th>цена</th>
+                  <th>цена со скидкой</th>
+                  <th>цена</th>
+                  <th>цена со скидкой</th>
+                  <th>цена</th>
+                  <th>цена со скидкой</th>
+                </tr>
+          </thead>
+          <tbody>
+            <tr id="tr1">
+              <td>Капот</td>
+              <td class="warning"><strike>8200</strike></td>
+              <td class="warning">7500</td>
+              <td class="success"><strike>9500</strike></td>
+              <td class="success">9100</td>
+              <td class="danger"><strike>12000</strike></td>
+              <td class="danger">11200</td>
+            </tr>
+              <tr id="tr2">
+              <td>Крыша</td>
+              <td class="warning"><strike>8200</strike></td>
+              <td class="warning">7500</td>
+              <td class="success"><strike>9500</strike></td>
+              <td class="success">9100</td>
+              <td class="danger"><strike>12000</strike></td>
+              <td class="danger">11200</td>
+            </tr>
+              <tr id="tr3">
+              <td>Крыло</td>
+              <td class="warning"><strike>8200</strike></td>
+              <td class="warning">7500</td>
+              <td class="success"><strike>9500</strike></td>
+              <td class="success">9100</td>
+              <td class="danger"><strike>12000</strike></td>
+              <td class="danger">11200</td>
+            </tr>
+              <tr id="tr4">
+              <td>Двери</td>
+              <td class="warning"><strike>8200</strike></td>
+              <td class="warning">7500</td>
+              <td class="success"><strike>9500</strike></td>
+              <td class="success">9100</td>
+              <td class="danger"><strike>12000</strike></td>
+              <td class="danger">11200</td>
+            </tr>
+              <tr id="tr5">
+              <td>Крыло</td>
+              <td class="warning"><strike>8200</strike></td>
+              <td class="warning">7500</td>
+              <td class="success"><strike>9500</strike></td>
+              <td class="success">9100</td>
+              <td class="danger"><strike>12000</strike></td>
+              <td class="danger">11200</td>
+            </tr>
+              <tr id="tr6">
+              <td>Фара</td>
+              <td class="warning"><strike>8200</strike></td>
+              <td class="warning">7500</td>
+              <td class="success"><strike>9500</strike></td>
+              <td class="success">9100</td>
+              <td class="danger"><strike>12000</strike></td>
+              <td class="danger">11200</td>
+            </tr>
+              <tr id="tr7">
+                  <td>Бампер</td>
+                  <td class="warning"><strike>8200</strike></td>
+                  <td class="warning">7500</td>
+                  <td class="success"><strike>9500</strike></td>
+                  <td class="success">9100</td>
+                  <td class="danger"><strike>12000</strike></td>
+                  <td class="danger">11200</td>
+              </tr>
+            </tbody>
+            </table>
+        </div>-->
+	</section>
 
-
-                    <!--<a id="go" onClick="popup('makeorder', 'капот');" rel="leanModal" name="makeorder" href="#makeorder">оставить заявку</a>
-                        <a href="#tr1">подробнее</a>
-                        <div class="pd"></div>
-                    -->
-                    </div>
-                </div>
-                <div class="pr2">
-                    <div class="price_descr roof_desc">
-                        <!--
-                            Покраска крыши от <b>12000р</b><br />
-                            Ремонт крыши от <b>4000р</b><br />
-                            <!--<a id="go" onClick="popup('makeorder', 'крыша');" rel="leanModal" name="makeorder" href="#makeorder">оставить заявку</a>-->
-                            <!--<a href="#tr2">подробнее</a>-->
-                            <div class="pd"></div>
-
-                    </div>
-                </div>
-                <div class="pr3">
-                    <div class="price_descr wing1_desc">
-                        Покраска переднего крыла от <b>6000р</b><br />
-                        Ремонт переднего крыла от <b>1000р</b><br />
-                        <!--<a id="go" onClick="popup('makeorder', 'переднее крыло');" rel="leanModal" name="makeorder" href="#makeorder">оставить заявку</a>-->
-                        <a href="#tr3">подробнее</a>
-                        <div class="pd"></div>
-                    </div>
-                </div>
-                <div class="pr4">
-                    <div class="price_descr door_desc">
-                        Покраска двери от <b>7500р</b> до <b>11200р</b><br />
-                        <!--Ремонт двери от <b>2000р</b><br />-->
-                        <!--<a id="go" onClick="popup('makeorder', 'дверь');" rel="leanModal" name="makeorder" href="#makeorder">оставить заявку</a>-->
-                        <a href="#tr4">подробнее</a>
-                        <div class="pd"></div>
-                    </div>
-                </div>
-                <div class="pr3">
-                    <div class="price_descr wing2_desc">
-                        Покраска заднего крыла от <b>7500р</b><br />
-                        <!--Ремонт заднего крыла от <b>2000р</b><br />-->
-                        <!--<a id="go" onClick="popup('makeorder', 'заднее крыло');" rel="leanModal" name="makeorder" href="#makeorder">оставить заявку</a>-->
-                        <a href="#tr5">подробнее</a>
-                        <div class="pd"></div>
-                    </div>
-                </div>
-                <div class="pr6">
-                    <div class="price_descr lights_desc">
-                        Полировка фар от <b>1000р</b><br />
-                        <!--<a id="go" onClick="popup('makeorder', 'фара');" rel="leanModal" name="makeorder" href="#makeorder">оставить заявку</a>-->
-                        <a href="#tr5">подробнее</a>
-                        <div class="pd"></div>
-                    </div>
-                </div>
-                <div class="pr7">
-                    <div class="price_descr bumper1_desc">
-                        Покраска бампера от <b>6500р</b><br />
-                        <!--Ремонт бампера от <b>500р</b><br />-->
-                        <!--<a id="go" onClick="popup('makeorder', 'передний бампер');" rel="leanModal" name="makeorder" href="#makeorder">оставить заявку</a>-->
-                        <a href="#tr6">подробнее</a>
-                        <div class="pd"></div>
-                    </div>
-                </div>
-                <div class="pr8">
-                    <div class="price_descr bumper2_desc">
-                        Покраска бампера от <b>6500р</b><br />
-                        <!--Ремонт бампера от <b>300р</b><br />-->
-                        <!--<a id="go" onClick="popup('makeorder', 'задний бампер');" rel="leanModal" name="makeorder" href="#makeorder">оставить заявку</a>-->
-                        <a href="#tr7">подробнее</a>
-                        <div class="pd"></div>
-                    </div>
-                </div>
-                <!--<img src="images/price.jpg" class="map" width="714" height="482" usemap="#navigation">-->
-                <img src="{% static 'app/images/price.jpg'%}" class="map" width="714" height="482" usemap="#navigation">
-                <map id="navigation" name="navigation">
-                    <area shape="poly" id="hood" coords="188,28,175,28,161,31,133,36,110,42,93,50,76,61,55,76,43,86,31,97,23,108,20,114,19,119,19,127,19,135,22,142,23,142,27,141,34,142,41,143,51,144,63,147,73,150,82,153,92,157,105,162,111,163,115,164,124,164,133,162,141,159,147,157,149,156,148,152,147,149,147,144,148,138,151,131,155,123,161,115,169,107,179,96,189,88,200,80,212,71,227,63,236,58,246,55,255,52,260,50,265,49,271,49,274,49,270,47,261,44,247,40,227,35,207,31"> <!--21,135,17,123,22,105,39,89,62,70,84,54,107,43,131,36,162,30,182,27,202,30,225,34,249,39,270,47,237,56,211,71,186,89,166,108,153,123,147,138,147,155,126,162,111,161,72,146,39,140,24,141-->
-                        <area shape="poly" id="lights" coords="18,123,14,131,11,139,11,147,12,153,15,157,18,151,23,148,23,146,20,140,19,136,19,136">
-                            <area shape="poly" id="bumper1" coords="30,208,30,204,29,200,28,195,28,189,29,184,33,178,40,172,42,171,31,159,27,153,23,146,18,152,15,157,13,153,11,148,9,143,7,149,7,156,7,162,8,167,9,169,13,172,14,174,14,182,14,194,21,201,26,206">
-                                <area shape="poly" id="wing1" coords="138,197,139,187,141,181,144,176,150,171,158,165,153,161,149,156,142,159,130,162,122,163,116,164,109,163,93,157,74,150,59,146,43,142,30,141,21,142,25,150,29,156,34,162,43,172,50,171,57,172,68,175,74,178,83,183,91,190,100,199,108,210,113,217,117,226,121,235,125,245,134,248,147,253,142,246,140,237,138,214">
-                                    <area shape="poly" id="roof" coords="548,121,524,109,491,93,466,82,442,72,422,65,397,57,380,53,358,48,345,45,332,50,321,56,309,64,298,71,289,78,279,87,273,94,264,104,259,111,252,121,246,133,256,133,274,134,289,136,308,139,323,144,341,150,361,157,380,166,407,179,426,189,442,197,457,206,465,211,473,204,483,196,494,186,505,175,515,165,524,157,532,147,540,135,544,127">
-                                        <area shape="poly" id="door" coords="138,203,138,215,139,225,140,233,141,241,141,245,145,251,148,254,180,266,210,278,248,293,293,309,320,319,345,327,362,333,370,334,380,331,385,328,397,315,403,308,413,297,418,292,424,283,427,276,427,265,427,258,396,248,358,236,319,223,269,206,229,192,207,185,188,179,175,174,165,170,159,166,158,166,152,169,147,173,143,177,140,183,139,190,138,195">
-                                            <area shape="poly" id="wing2" coords="470,216,504,239,521,252,541,266,552,273,564,279,568,286,576,297,580,301,596,309,616,318,615,320,603,326,583,335,572,349,561,363,552,374,547,377,543,378,536,378,516,375,505,373,497,358,486,345,478,336,466,327,456,322,446,319,437,317,426,316,417,317,411,319,407,321,402,325,400,329,398,334,397,339,398,343,399,347,400,353,397,352,387,348,376,344,376,341,378,337,381,332,386,327,392,321,400,312,408,303,416,295,421,288,424,282,426,277,427,270,427,258,432,259,442,262,453,262,463,261,476,259,487,256,490,253,489,249,477,240,453,222,445,216,447,213,452,208,455,205">
-                                                <area shape="poly" id="bumper2" coords="534,377,523,376,513,374,508,374,505,375,507,380,510,388,511,391,512,396,520,398,530,399,541,401,558,403,571,404,583,404,587,403,591,403,599,402,608,401,613,397,626,388,637,379,649,368,656,359,667,346,675,336,682,325,689,314,694,305,697,297,700,288,701,282,703,274,704,264,703,256,702,250,700,246,699,244,697,241,696,246,693,246,692,247,688,252,684,259,681,263,682,267,686,275,682,284,677,293,671,302,663,311,656,319,647,328,640,335,632,341,632,341,627,337,626,338,619,341,607,346,600,348,592,351,584,352,575,353,570,353,565,359,559,366,554,371,550,375,547,377,543,378">
-                </map>
-            </div>
-            <div class="price__table">
-                <table class="table table-bordered table-hover">
-                    <thead>
-                        <tr>
-                            <th rowspan="2">НАИМЕНОВАНИЕ РАБОТ</th>
-                            <th colspan="2">ЭКОНОМ</th>
-                            <th colspan="2">СТАНДАРТ</th>
-                            <th colspan="2">ПРЕМИУМ</th>
-                        </tr>
-                        <tr>
-                            <th>цена</th>
-                            <th>цена со скидкой</th>
-                            <th>цена</th>
-                            <th>цена со скидкой</th>
-                            <th>цена</th>
-                            <th>цена со скидкой</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr id="tr1">
-                            <td>Капот</td>
-                            <td class="warning"><strike>8200</strike></td>
-                            <td class="warning">7500</td>
-                            <td class="success"><strike>9500</strike></td>
-                            <td class="success">9100</td>
-                            <td class="danger"><strike>12000</strike></td>
-                            <td class="danger">11200</td>
-                        </tr>
-                        <tr id="tr2">
-                            <td>Крыша</td>
-                            <td class="warning"><strike>8200</strike></td>
-                            <td class="warning">7500</td>
-                            <td class="success"><strike>9500</strike></td>
-                            <td class="success">9100</td>
-                            <td class="danger"><strike>12000</strike></td>
-                            <td class="danger">11200</td>
-                        </tr>
-                        <tr id="tr3">
-                            <td>Крыло</td>
-                            <td class="warning"><strike>8200</strike></td>
-                            <td class="warning">7500</td>
-                            <td class="success"><strike>9500</strike></td>
-                            <td class="success">9100</td>
-                            <td class="danger"><strike>12000</strike></td>
-                            <td class="danger">11200</td>
-                        </tr>
-                        <tr id="tr4">
-                            <td>Двери</td>
-                            <td class="warning"><strike>8200</strike></td>
-                            <td class="warning">7500</td>
-                            <td class="success"><strike>9500</strike></td>
-                            <td class="success">9100</td>
-                            <td class="danger"><strike>12000</strike></td>
-                            <td class="danger">11200</td>
-                        </tr>
-                        <tr id="tr5">
-                            <td>Крыло</td>
-                            <td class="warning"><strike>8200</strike></td>
-                            <td class="warning">7500</td>
-                            <td class="success"><strike>9500</strike></td>
-                            <td class="success">9100</td>
-                            <td class="danger"><strike>12000</strike></td>
-                            <td class="danger">11200</td>
-                        </tr>
-                        <tr id="tr6">
-                            <td>Фара</td>
-                            <td class="warning"><strike>8200</strike></td>
-                            <td class="warning">7500</td>
-                            <td class="success"><strike>9500</strike></td>
-                            <td class="success">9100</td>
-                            <td class="danger"><strike>12000</strike></td>
-                            <td class="danger">11200</td>
-                        </tr>
-                        <tr id="tr7">
-                            <td>Бампер</td>
-                            <td class="warning"><strike>8200</strike></td>
-                            <td class="warning">7500</td>
-                            <td class="success"><strike>9500</strike></td>
-                            <td class="success">9100</td>
-                            <td class="danger"><strike>12000</strike></td>
-                            <td class="danger">11200</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-    </section>
-
-    <a name="promo2"></a>
-    <section class="order">
-        <div class="wrap">
-            <div class="order_img"></div>
-            <div class="timer_block">
-                <span>Оставьте заявку</span>
-                и получите<br><b>скидку 1 000 руб.</b><br>на любые виды услуг
-                <!--
-                    и получите<br><b>скидку на 1 000 руб.</b><br>на любые виды услуг
-                -->
-                <div class="timer">
-                    <div class="pt-contain">
-                        <div class="days">
-                            <span class="flip day1Play">0</span>
-                            <span class="flip dayPlay">0</span>
-                            <em>&nbsp;дней</em>
-                        </div>
-                        <div class="hours">
-                            <span class="flip hour2Play"></span>
-                            <span class="flip hourPlay"></span>
-                            <em>&nbsp;часов</em>
-                        </div>
-                        <div class="minutes">
-                            <span class="flip minute6Play"></span>
-                            <span class="flip minutePlay"></span>
-                            <em>&nbsp;минут</em>
-                        </div>
-                        <div class="seconds">
-                            <span class="flip second6Play"></span>
-                            <span class="flip secondPlay"></span>
-                            <em>&nbsp;секунд</em>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="order_block">
-                <!--
-                    <span>Оставьте заявку</span>
-                    и получите <b>бесплатную полировку</b><br />фар вашего автомобиля!
-                -->
-                <form id="callbacks" name="callbacks" action="/sender.php">
-                    <input type="hidden" class="formname" name="formname" value="">
-                    <input type="hidden" name="referer" value="../index.html">
-                    <label class="name left required"><input type="text" name="name" class="input_name" placeholder="имя" /></label>
-                    <label class="phone left required"><input type="text" name="phone" class="input_phone" placeholder="телефон" /></label>
-                    <label class="email left"><input type="text" name="email" class="input_email" placeholder="e-mail" /></label>
-                    <input type="button" class="bttn button" name="request" value="Отправить заявку" />
-                </form>
-            </div>
-        </div>
-    </section>
-    <a name="kak"></a>
-    <section class="hww" id="work">
-        <h2>Как мы работаем</h2>
-        <div class="wrap scroll-animate">
-            <div class="hww_one hb h1 scale">
-                <div class="hww_text">
-                    <span>ЗАЯВКА</span>
-                    Вы оставляете заявку <br />на обратный звонок <br />или звоните самостоятельно
-                    <a id="go" onClick="popup('makeorder', 'как мы работаем');" rel="leanModal" name="makeorder" href="#makeorder">Оставить заявку</a>
-                </div>
-            </div>
-            <div class="hww_one ht h2 scale">
-                <span>КОНСУЛЬТАЦИЯ</span>
-                Вы получаете от нашего мастера<br />индивидуальное предложение, уточняете<br />сумму и сроки выполнения работ
-            </div>
-            <div class="hww_one hb h3 scale">
-                <span>ОБРАЩЕНИЕ В PIT LINE</span>
-                Вы приезжаете к нам в сервис, наш<br />специалист проводит осмотр автомобиля <br />и согласовывает стоимость работы
-            </div>
-            <div class="hww_one ht h4 scale">
-                <span>РЕМОНТНЫЕ РАБОТЫ</span>
-                Мы проводим весь цикл<br />покрасочных и ремонтных<br />работ
-            </div>
-            <div class="hww_one hb h5 scale">
-                <span>АВТОМОБИЛЬ ГОТОВ!</span>
-                Работы завершены!<br />Можете ехать!
-            </div>
-        </div>
-    </section>
-    <a name="reviews1"></a>
-    <section class="reviews" id="reviews">
-        <h2>Отзывы наших клиентов</h2>
-        <div class="wrap scroll-animate">
-            <a name="reviews2"></a>
-            {%for item in feedback_list%}
-            <div class="review {% cycle "r1" "r2"%} fade">
-                <div class="review_img"><img src="{{item.get_foto}}"></div>
-                <span>{{item.title}}</span>
-                {{item.text}}
-                <div class="review_name">
-                    <div class="rn"></div>
-                    <div class="rnn"></div>
-                    <em>{{item.name}}</em>
-                </div>
-            </div>
-            {%endfor%}
-            <a name="reviews4"></a>
-            <div class="review r3 fade">
-                <div class="review_img"></div>
-                <span>«Круто, не знаю где в Перми еще так делают»</span>
-                <p>Точечный ремонт - это круто. Не хотелось менять детали, а после такси, мой Рено износился достаточно.<b> Звонил во многие сервисы, везде предлагают деталь заменить, а тут и гадалкой быть не надо, накрутят и втридорога впарят.</b> Позвонил сюда, парни сказали, что смогут сделать без замены.</p>
-                <p>Не обманули, пускай цена не маленькая, зато качество на уровне.</p>
-                <div class="review_name">
-                    <div class="rn"></div>
-                    <div class="rnn"></div>
-                    <em>Виталий, 25 лет, Renault Symbol</em>
-                </div>
-            </div>
-            <a name="reviews5"></a>
-            <div class="review r4 fade">
-                <div class="review_img"></div>
-                <span>«Не только отремонтировали авто<br />но и порадовали бесплатной полировкой фар»</span>
-                <p> Машинку купила подержанную, чтобы научиться водить. Брала тоже из под девушки, поэтому ее внешний вид был потрепан, бампера, двери. К тому же она курила, и в салоне были "прокурыши". Вкруг машину красить не хотелось, ребята предложили локальный ремонт - вышло просто изумительно.</p>
-                <p><b> К тому же, мне еще и бесплатно отполировали фары, теперь езжу, свет яркий. Буду рекомендовать друзьям!</b></p>
-                <div class="review_name">
-                    <div class="rn"></div>
-                    <div class="rnn"></div>
-                    <em>Анна, 35 лет, Nissan Micra</em>
-                </div>
-            </div>
-        </div>
-    </section>
-    <a name="promo3"></a>
-    <section class="order_photo">
-        <div class="wrap">
-            <div class="order_img2"></div>
-            <div class="order_block2">
-                <span>Рассчитать стоимость</span>
-                восстановления авто после ДТП
-                <form id="callbacks" name="callbacks" action="/sender.php">
-                    <input type="hidden" name="referer" value="http://pitline59.ru/">
-                    <label class="name top required"><input type="text" name="name" class="input_name" placeholder="ваше имя" /></label>
-                    <label class="phone top required"><input type="text" name="phone" class="input_phone" placeholder="ваш телефон" /></label>
-                    <input class="bttn button" type="button" name="callback" value="Оставить заявку" />
-                </form>
-            </div>
-        </div>
-    </section>
-    <a name="proect1"></a>
-    <section class="projects" id="project">
-        <h2>ВЫПОЛНЕННЫЕ ПРОЕКТЫ</h2>
-        <div class="wrap">
-            {%for item in projects%}
-            <div class="project p1">
-                <div class="project_name">
-                    {{item.title}}
-                </div>
-                <div class="project_img">
-                    <img src="{{item.foto_befo.url}}">
-                    <img src="{{item.foto_after.url}}">
-                </div>
-                <div class="project_text">
-                    <span>Проблемы у автомобиля до ремонта:</span>
-                    {{item.text}}
-                    <div class="clear"></div>
-                </div>
-                <div class="project_det">
-                    <div class="project_date">Срок выполнения: <em>{{item.time}}</em></div>
-                    <div class="project_price">Цена: <em>{{item.cost}}</em></div>
-                    <div class="clear"></div>
-                </div>
-            </div>
-            {%endfor%}
-            <a name="proect2"></a>
-            <div class="project p2">
-                <div class="project_name">
-                    Ремонт и точечная покраска 
-                </div>
-                <div class="project_img"></div>
-                <div class="project_text">
-                    <span>Проблемы у автомобиля до ремонта:</span>
-                    <div class="pt_col ptc">
-                        - Повреждено крыло<br />
-                    </div>
-                    <div class="pt_col">
-                        - Локально повреждена краска<br />
-                    </div>
-                    <div class="clear"></div>
-                </div>
-                <div class="project_det">
-                    <div class="project_date">Срок выполнения: <em>5 часов</em></div>
-                    <div class="project_price">Цена: <em>7 000 р.</em></div>
-                    <div class="clear"></div>
-                </div>
-            </div>
-            <a name="proect3"></a>
-            <div class="project p3">
-                <div class="project_name">
-                    Ремонт бампера и крыла <br />вместе с покраской и полировкой
-                </div>
-                <div class="project_img"></div>
-                <div class="project_text">
-                    <span>Проблемы у автомобиля до ремонта:</span>
-                    <div class="pt_col">
-                        - Повреждено переднее крыло <br />
-                    </div>
-                    <div class="pt_col">
-                        - Поврежден бампер<br />
-                    </div>
-                    <div class="clear"></div>
-                    Клиенту был необходим быстрый ремонт по адекватной цене.
-                </div>
-                <div class="project_det">
-                    <div class="project_date">Срок выполнения: <em>7 часов</em></div>
-                    <div class="project_price">Цена: <em>12 000 р.</em></div>
-                    <div class="clear"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <a name="24"></a>
-    <section class="contacts_foto">
-        <div class="wrap">
-            <h2>Оценка по фото</h2>
-
-            <div class="row">
-                <div class="col-md-5">
-                    <div class="contacts_">
-                        <form method="POST" enctype="multipart/form-data" action="/sender">
+	<a name="promo2"></a>
+    
+	<section class="order">
+		<div class="wrap">
+			<!--<div class="order_img"></div>-->
+			<div class="timer_block">
+                <br />
+				<span>Оценка по фото</span>
+                <br />пришлите фотографии<br>и мы оценим вам ремонт
+			</div>
+			<div class="order_block order_block_photo">
+        <!--
+				<span>Оставьте заявку</span>
+				и получите <b>бесплатную полировку</b><br />фар вашего автомобиля!
+        -->
+			 <form method="POST" enctype="multipart/form-data" action="/sender">
                             {%csrf_token%}
                             <input type="hidden" class="formname" name="message" value="">
                             <input type="hidden" class="add_message" name="add_message" value="типа пусто">
@@ -808,110 +602,262 @@
                             {{form_foto.img3}}
                             <input class="bttn button-send" type="button" name="sender" value="Оставить заявку" />
                         </form>
-                    </div>
+			</div>
+		</div>
+	</section>
+	<a name="kak"></a>
+	<section class="hww" id="work">
+		<h2>Как мы работаем</h2>
+		<div class="wrap scroll-animate">
+			<div class="hww_one hb h1 scale">
+				<div class="hww_text">
+					<span>ЗАЯВКА</span>
+					Вы оставляете заявку <br />на обратный звонок <br />или звоните самостоятельно
+					<a id="go" onClick="popup('makeorder', 'как мы работаем');" rel="leanModal" name="makeorder" href="#makeorder">Оставить заявку</a>
+				</div>
+			</div>
+			<div class="hww_one ht h2 scale">
+				<span>КОНСУЛЬТАЦИЯ</span>
+				Вы получаете от нашего мастера<br />индивидуальное предложение, уточняете<br />сумму и сроки выполнения работ
+			</div>
+			<div class="hww_one hb h3 scale">
+				<span>ОБРАЩЕНИЕ В PIT LINE</span>
+				Вы приезжаете к нам в сервис, наш<br />специалист проводит осмотр автомобиля <br />и согласовывает стоимость работы
+			</div>
+			<div class="hww_one ht h4 scale">
+				<span>РЕМОНТНЫЕ РАБОТЫ</span>
+				Мы проводим весь цикл<br />покрасочных и ремонтных<br />работ
+			</div>
+			<div class="hww_one hb h5 scale">
+				<span>АВТОМОБИЛЬ ГОТОВ!</span>
+				Работы завершены!<br />Можете ехать!
+			</div>
+		</div>
+	</section>
+	<a name="reviews1"></a>
+	<section class="reviews" id="reviews">
+		<h2>Отзывы наших клиентов</h2>
+		<div class="wrap scroll-animate">
+			<a name="reviews2"></a>
+            {%for item in feedback_list%}
+            <div class="review {% cycle "r1" "r2"%} fade">
+                <div class="review_img"><img src="{{item.get_foto}}"></div>
+                <span>{{item.title}}</span>
+                {{item.text}}
+				<div class="review_name">
+					<div class="rn"></div>
+					<div class="rnn"></div>
+                    <em>{{item.name}}</em>
+				</div>
+			</div>
+            {%endfor%}
+			<a name="reviews4"></a>
+			<div class="review r3 fade">
+				<div class="review_img"></div>
+				<span>«Круто, не знаю где в Перми еще так делают»</span>
+				<p>Точечный ремонт - это круто. Не хотелось менять детали, а после такси, мой Рено износился достаточно.<b> Звонил во многие сервисы, везде предлагают деталь заменить, а тут и гадалкой быть не надо, накрутят и втридорога впарят.</b> Позвонил сюда, парни сказали, что смогут сделать без замены.</p>
+				<p>Не обманули, пускай цена не маленькая, зато качество на уровне.</p>
+				<div class="review_name">
+					<div class="rn"></div>
+					<div class="rnn"></div>
+					<em>Виталий, 25 лет, Renault Symbol</em>
+				</div>
+			</div>
+			<a name="reviews5"></a>
+			<div class="review r4 fade">
+				<div class="review_img"></div>
+				<span>«Не только отремонтировали авто<br />но и порадовали бесплатной полировкой фар»</span>
+				<p> Машинку купила подержанную, чтобы научиться водить. Брала тоже из под девушки, поэтому ее внешний вид был потрепан, бампера, двери. К тому же она курила, и в салоне были "прокурыши". Вкруг машину красить не хотелось, ребята предложили локальный ремонт - вышло просто изумительно.</p>
+				<p><b> К тому же, мне еще и бесплатно отполировали фары, теперь езжу, свет яркий. Буду рекомендовать друзьям!</b></p>
+				<div class="review_name">
+					<div class="rn"></div>
+					<div class="rnn"></div>
+					<em>Анна, 35 лет, Nissan Micra</em>
+				</div>
+			</div>
+		</div>
+	</section>
+	<a name="promo3"></a>
+	<section class="order_photo">
+		<div class="wrap">
+			<div class="order_img2"></div>
+			<div class="order_block2">
+				<span>Рассчитать стоимость</span>
+				восстановления авто после ДТП
+				<form id="callbacks" name="callbacks" action="/sender.php">
+			<input type="hidden" name="referer" value="http://pitline59.ru/">
+			<label class="name top required"><input type="text" name="name" class="input_name" placeholder="ваше имя" /></label>
+			<label class="phone top required"><input type="text" name="phone" class="input_phone" placeholder="ваш телефон" /></label>
+			<input class="bttn button" type="button" name="callback" value="Оставить заявку" />
+		</form>
+			</div>
+		</div>
+	</section>
+	<a name="proect1"></a>
+	<section class="projects" id="project">
+		<h2>ВЫПОЛНЕННЫЕ ПРОЕКТЫ</h2>
+		<div class="wrap">
+            {%for item in projects%}
+            <div class="project p1">
+				<div class="project_name">
+                    {{item.title}}
+				</div>
+				<div class="project_img">
+                    <img src="{{item.foto_befo.url}}">
+                    <img src="{{item.foto_after.url}}">
                 </div>
-                <div class="col-md-5">
-                    Отправте фотографии смоей машины и наши специалисты проведут оценку стоимости работ
-                </div>
-            </div>
-            <div class="clear"></div>
-        </div>
-    </section>
-
-
-
-    <section class="contacts">
-        <div class="wrap">
-            <h2>работаем<br /><em>для вас</em></h2>
-
-            <div class="contacts_text">
-                <span>
-                    консультации по вопросам <br />покраски и ремонта
-                </span>
-                <span>
-                    бесплатная оценка <br />повреждений
-                </span>
-                <div class="contacts_phone">
-                    +7(342) 288-11-91 
-                    <a id="go" rel="leanModal" name="callback" href="#callback" class="mc">заказать звонок</a>
-                </div>
-            </div>
-            <div class="clear"></div>
-        </div>
-    </section>
-    <a name="promo4"></a>
-    <section class="order">
-        <div class="wrap">
-            <div class="order_img"></div>
-            <div class="timer_block">
-                <span>Оставьте заявку</span>
-                и получите<br><b>скидку 1 000 руб.</b><br>на любые виды услуг
-                <div class="timer">
-                    <div class="pt-contain">
-                        <div class="days">
-                            <span class="flip day1Play">0</span>
-                            <span class="flip dayPlay">0</span>
-                            <em>&nbsp;дней</em>
-                        </div>
-                        <div class="hours">
-                            <span class="flip hour2Play"></span>
-                            <span class="flip hourPlay"></span>
-                            <em>&nbsp;часов</em>
-                        </div>
-                        <div class="minutes">
-                            <span class="flip minute6Play"></span>
-                            <span class="flip minutePlay"></span>
-                            <em>&nbsp;минут</em>
-                        </div>
-                        <div class="seconds">
-                            <span class="flip second6Play"></span>
-                            <span class="flip secondPlay"></span>
-                            <em>&nbsp;секунд</em>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="order_block">
-                <!--
-                    <span>Оставьте заявку</span>
-                    и получите <b>бесплатную полировку</b><br />фар вашего автомобиля!
-                -->
-                <form id="callbacks" name="callbacks" action="/sender.php">
-                    <input type="hidden" class="formname" name="name" value="">
-                    <input type="hidden" name="referer" value="../index.html">
-                    <label class="name left required"><input type="text" name="name" class="input_name" placeholder="имя" /></label>
-                    <label class="phone left required"><input type="text" name="phone" class="input_phone" placeholder="телефон" /></label>
-                    <label class="email left"><input type="text" name="email" class="input_email" placeholder="e-mail" /></label>
-                    <input type="button" class="bttn button" name="request" value="Отправить заявку" />
-                </form>
-            </div>
-        </div>
-    </section>
-    <section class="maps">
+				<div class="project_text">
+					<span>Проблемы у автомобиля до ремонта:</span>
+                    {{item.text}}
+					<div class="clear"></div>
+				</div>
+				<div class="project_det">
+                    <div class="project_date">Срок выполнения: <em>{{item.time}}</em></div>
+                    <div class="project_price">Цена: <em>{{item.cost}}</em></div>
+					<div class="clear"></div>
+				</div>
+			</div>
+            {%endfor%}
+			<a name="proect2"></a>
+			<div class="project p2">
+				<div class="project_name">
+				Ремонт и точечная покраска 
+				</div>
+				<div class="project_img"></div>
+				<div class="project_text">
+					<span>Проблемы у автомобиля до ремонта:</span>
+					<div class="pt_col ptc">
+						- Повреждено крыло<br />
+											</div>
+					<div class="pt_col">
+						- Локально повреждена краска<br />
+											</div>
+					<div class="clear"></div>
+				</div>
+				<div class="project_det">
+					<div class="project_date">Срок выполнения: <em>5 часов</em></div>
+					<div class="project_price">Цена: <em>7 000 р.</em></div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<a name="proect3"></a>
+			<div class="project p3">
+				<div class="project_name">
+					Ремонт бампера и крыла <br />вместе с покраской и полировкой
+				</div>
+				<div class="project_img"></div>
+				<div class="project_text">
+					<span>Проблемы у автомобиля до ремонта:</span>
+					<div class="pt_col">
+						- Повреждено переднее крыло <br />
+											</div>
+					<div class="pt_col">
+						- Поврежден бампер<br />
+											</div>
+					<div class="clear"></div>
+					Клиенту был необходим быстрый ремонт по адекватной цене.
+				</div>
+				<div class="project_det">
+					<div class="project_date">Срок выполнения: <em>7 часов</em></div>
+					<div class="project_price">Цена: <em>12 000 р.</em></div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<a name="24"></a>
+	<section class="contacts">
+		<div class="wrap">
+			<h2>работаем<br /><em>для вас</em></h2>
+			
+			<div class="contacts_text">
+				<span>
+					консультации по вопросам <br />покраски и ремонта
+				</span>
+				<span>
+					бесплатная оценка <br />повреждений
+				</span>
+				<div class="contacts_phone">
+					+7(342) 288-11-91 
+					<a id="go" rel="leanModal" name="callback" href="#callback" class="mc">заказать звонок</a>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</section>
+	<a name="promo4"></a>
+	<section class="order">
+		<div class="wrap">
+			<div class="order_img"></div>
+			<div class="timer_block">
+				<span>Оставьте заявку</span>
+				и получите<br><b>скидку 1 000 руб.</b><br>на любые виды услуг
+				<div class="timer">
+					<div class="pt-contain">
+						<div class="days">
+							<span class="flip day1Play">0</span>
+							<span class="flip dayPlay">0</span>
+							<em>&nbsp;дней</em>
+						</div>
+						<div class="hours">
+							<span class="flip hour2Play"></span>
+							<span class="flip hourPlay"></span>
+							<em>&nbsp;часов</em>
+						</div>
+						<div class="minutes">
+							<span class="flip minute6Play"></span>
+							<span class="flip minutePlay"></span>
+							<em>&nbsp;минут</em>
+						</div>
+						<div class="seconds">
+							<span class="flip second6Play"></span>
+							<span class="flip secondPlay"></span>
+							<em>&nbsp;секунд</em>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="order_block">
+        <!--
+				<span>Оставьте заявку</span>
+				и получите <b>бесплатную полировку</b><br />фар вашего автомобиля!
+        -->
+				<form id="callbacks" name="callbacks" action="/sender.php">
+					<input type="hidden" class="formname" name="name" value="">
+					<input type="hidden" name="referer" value="../index.html">
+					<label class="name left required"><input type="text" name="name" class="input_name" placeholder="имя" /></label>
+					<label class="phone left required"><input type="text" name="phone" class="input_phone" placeholder="телефон" /></label>
+					<label class="email left"><input type="text" name="email" class="input_email" placeholder="e-mail" /></label>
+					<input type="button" class="bttn button" name="request" value="Отправить заявку" />
+				</form>
+			</div>
+		</div>
+	</section>
+	<section class="maps">
         <div class="contact-page__map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2116.9809936290876!2d56.109888616001264!3d57.95427798119893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43e8bed4edf7b43b%3A0x1c314cb9b99f0e3f!2z0YguINCa0L7RgdC80L7QvdCw0LLRgtC-0LIsIDMxMCwg0J_QtdGA0LzRjCwg0J_QtdGA0LzRgdC60LjQuSDQutGA0LDQuSwgNjE0NTAw!5e0!3m2!1sru!2sru!4v1476628025382" frameborder="0" style="border:0" allowfullscreen></iframe>
-        </div>
-    </section>
-    <!--<section class="any_q">
-        <div class="wrap">
-        <h3>ОСТАЛИСЬ <em>ВОПРОСЫ?</em></h3>
-        <a id="go" rel="leanModal" name="question" href="#question">задайте их менеджеру</a>
-        <div class="clear"></div>
-        </div>
-        </section>
-    -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2116.9809936290876!2d56.109888616001264!3d57.95427798119893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43e8bed4edf7b43b%3A0x1c314cb9b99f0e3f!2z0YguINCa0L7RgdC80L7QvdCw0LLRgtC-0LIsIDMxMCwg0J_QtdGA0LzRjCwg0J_QtdGA0LzRgdC60LjQuSDQutGA0LDQuSwgNjE0NTAw!5e0!3m2!1sru!2sru!4v1476628025382" frameborder="0" style="border:0" allowfullscreen></iframe>
+	        </div>
+	</section>
+		<!--<section class="any_q">
+		<div class="wrap">
+			<h3>ОСТАЛИСЬ <em>ВОПРОСЫ?</em></h3>
+			<a id="go" rel="leanModal" name="question" href="#question">задайте их менеджеру</a>
+			<div class="clear"></div>
+		</div>
+	</section>
+            -->
     <footer>
         <div class="wrap">
             <div class="row">
                 <div class="col-md-3">
                     <div class="f_phone">
-                        +7(342) 288-11-91<br />
-                        <a id="go" rel="leanModal" name="callback" href="#callback" class="mc">заказать звонок</a>
-                    </div>
+				         +7(342) 288-11-91<br />
+				        <a id="go" rel="leanModal" name="callback" href="#callback" class="mc">заказать звонок</a>
+			        </div>
                 </div>
                 <div class="col-md-2 footer_q">
-                    <h3>ОСТАЛИСЬ ВОПРОСЫ?</h3>
-                    <a id="go" rel="leanModal" name="question" href="#question">задайте их менеджеру</a>
+			            <h3>ОСТАЛИСЬ ВОПРОСЫ?</h3>
+			            <a id="go" rel="leanModal" name="question" href="#question">задайте их менеджеру</a>
                 </div>
                 <div class="col-md-2">
                     <a href="conf.pdf" target="_blank" class="conf">Политика конфиденциальности</a>
@@ -919,10 +865,10 @@
                 <div class="col-md-3 icons">
                     <div class="row">
                         <div class="icons_vk">
-                            <a href="http://vk.com/perm.pitline" target="_blank" title="мы в VK">
-                                <i class="fa fa-vk fa-1x" aria-hidden="true"></i>
-                            </a>
-
+                                <a href="http://vk.com/perm.pitline" target="_blank" title="мы в VK">
+                                    <i class="fa fa-vk fa-1x" aria-hidden="true"></i>
+                                </a>
+                            
                         </div>
                         <div class="icons_insta">
                             <a href="http://instagram.com/pitline_perm" target="_blank" title="instagram">
@@ -932,15 +878,15 @@
                         <div class="icons_fb">
                             <a href="#" target="_blank" title="будет ссылка на facebook">
                                 <i class="fa fa-facebook fa-1x" aria-hidden="true"></i>
-
-                            </a>
+                              
+                           </a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-2">
-                </div>
             </div>
-        </div>
+            </div>
+            </div>
     </footer>
     <div class="container">
         <div class="row">
@@ -952,99 +898,148 @@
                 <script type="text/javascript">
 VK.Widgets.Group("vk_groups", {mode: 3, width: "auto"}, 52545395);
                 </script>
-            </div>
         </div>
-    </div>
+        </div>
+        </div>
 
 
     <!--
-        <footer>
-        <div class="wrap">
-        <div class="f_phone">
-        +7(342) 288-11-91 
-        <a id="go" rel="leanModal" name="callback" href="#callback" class="mc">заказать звонок</a>
-        </div>
-        <div>
-        ОСТАЛИСЬ ВОПРОСЫ?
-        <a id="go" rel="leanModal" name="question" href="#question">задайте их менеджеру</a>
-        <div class="clear"></div>
-        </div>
-        <div>
-        <div>
-        <div class="row" style="margin-top: 38px;">
-        <div class="col-md-6">
-        ОСТАЛИСЬ ВОПРОСЫ?
-        </div>
-        <div class="col-md-6">
-        <a href="conf.pdf" target="_blank" class="conf">Политика конфиденциальности</a>
-        </div>
-        </div>
-        </div>
-        </div>
-        <div>
-        </div>
-        <a href="http://vk.com/perm.pitline" target="_blank" class="copyright"><b>Pit Line--:</b></a>
-
-
-        <div class="clear"></div>
-        </div>
-        </footer>
-    -->
-        </div>
-        <script type="text/javascript">
-function cbCarClass_click(type) {
-    switch (type)
-    {
-        case 'ExtraSmall':
-            $(".hood_desc").html('Эконом - <b>7800р.</b><br />Стандарт - <b>8840р.</b><br />Вип - <b>10920р.</b><br /><div class="pd"></div>');
-            $(".roof_desc").html('Эконом - <b>10200р.</b><br />Стандарт - <b>11560р.</b><br />Вип - <b>14280р.</b><br /><div class="pd"></div>');
-            break;
-        case 'Small':
-            $(".hood_desc").html('Эконом - <b>8775р.</b><br />Стандарт - <b>9945р.</b><br />Вип - <b>12285р.</b><br /><div class="pd"></div>');
-            $(".roof_desc").html('Эконом - <b>11475р.</b><br />Стандарт - <b>13005р.</b><br />Вип - <b>16065р.</b><br /><div class="pd"></div>');
-            break;
+	<footer>
+		<div class="wrap">
+			<div class="f_phone">
+				 +7(342) 288-11-91 
+				<a id="go" rel="leanModal" name="callback" href="#callback" class="mc">заказать звонок</a>
+			</div>
+            <div>
+                ОСТАЛИСЬ ВОПРОСЫ?
+			    <a id="go" rel="leanModal" name="question" href="#question">задайте их менеджеру</a>
+			    <div class="clear"></div>
+            </div>
+			<div>
+                <div>
+                    <div class="row" style="margin-top: 38px;">
+                        <div class="col-md-6">
+            	            ОСТАЛИСЬ ВОПРОСЫ?
+                        </div>
+                        <div class="col-md-6">
+                            <a href="conf.pdf" target="_blank" class="conf">Политика конфиденциальности</a>
+                        </div>
+                    </div>
+             	</div>
+            </div>
+          <div>
+                      </div>
+			<a href="http://vk.com/perm.pitline" target="_blank" class="copyright"><b>Pit Line--:</b></a>
+            
+            
+			<div class="clear"></div>
+		</div>
+	</footer>
+-->
+</div>
+<script type="text/javascript">
+    window.onload = function () {
+        $(".hood_desc").html('<b>7800р.</b><br /><div class="pd"></div>');
+        $(".roof_desc").html('<b>10200р.</b><br /><div class="pd"></div>');
+        $(".wing1_desc").html('<b>5400р.</b><br /><div class="pd"></div>');
+        $(".door_desc").html('<b>6000р.</b><br /><div class="pd"></div>');
+        $(".wing2_desc").html('<b>6000р.</b><br /><div class="pd"></div>');
+        $(".lights_desc").html('<b>6000р.</b><br /><div class="pd"></div>');
+        $(".bumper1_desc").html('<b>6000р.</b><br /><div class="pd"></div>');
+        $(".bumper2_desc").html('<b>5700р.</b><br /><div class="pd"></div>');
     }
-}
-        </script>
-        <script type="text/javascript">
-        </script>
-        <!-- Yandex.Metrika counter -->
-        <script type="text/javascript">
+    function cbCarClass_click(type) {
+        switch (type)
+        {
+            case 'ExtraSmall':
+                $(".hood_desc").html('<b>7800р.</b><br /><div class="pd"></div>');
+                $(".roof_desc").html('<b>10200р.</b><br /><div class="pd"></div>');
+                $(".wing1_desc").html('<b>5400р.</b><br /><div class="pd"></div>');
+                $(".door_desc").html('<b>6000р.</b><br /><div class="pd"></div>');
+                $(".wing2_desc").html('<b>6000р.</b><br /><div class="pd"></div>');
+                $(".lights_desc").html('<b>6000р.</b><br /><div class="pd"></div>');
+                $(".bumper1_desc").html('<b>6000р.</b><br /><div class="pd"></div>');
+                $(".bumper2_desc").html('<b>5700р.</b><br /><div class="pd"></div>');
+                break;
+            case 'Small':
+                $(".hood_desc").html('<b>8775р.</b><br /><div class="pd"></div>');
+                $(".roof_desc").html('<b>11475р.</b><br /><div class="pd"></div>');
+                $(".wing1_desc").html('<b>6075р.</b><br /><div class="pd"></div>');
+                $(".door_desc").html('<b>6750р.</b><br /><div class="pd"></div>');
+                $(".wing2_desc").html('<b>6750р.</b><br /><div class="pd"></div>');
+                $(".lights_desc").html('<b>6750р.</b><br /><div class="pd"></div>');
+                $(".bumper1_desc").html('<b>6750р.</b><br /><div class="pd"></div>');
+                $(".bumper2_desc").html('<b>6412,5р.</b><br /><div class="pd"></div>');
+                break;
+            case 'Standart':
+                $(".hood_desc").html('<b>7500р.</b><br /><div class="pd"></div>');
+                $(".roof_desc").html('<b>12750р.</b><br /><div class="pd"></div>');
+                $(".wing1_desc").html('<b>6750р.</b><br /><div class="pd"></div>');
+                $(".door_desc").html('<b>7500р.</b><br /><div class="pd"></div>');
+                $(".wing2_desc").html('<b>7500р.</b><br /><div class="pd"></div>');
+                $(".lights_desc").html('<b>7500р.</b><br /><div class="pd"></div>');
+                $(".bumper1_desc").html('<b>7500р.</b><br /><div class="pd"></div>');
+                $(".bumper2_desc").html('<b>7125р.</b><br /><div class="pd"></div>');
+                break;
+            case 'Maxi':
+                $(".hood_desc").html('<b>11700р.</b><br /><div class="pd"></div>');
+                $(".roof_desc").html('<b>15300р.</b><br /><div class="pd"></div>');
+                $(".wing1_desc").html('<b>8100р.</b><br /><div class="pd"></div>');
+                $(".door_desc").html('<b>9000р.</b><br /><div class="pd"></div>');
+                $(".wing2_desc").html('<b>9000р.</b><br /><div class="pd"></div>');
+                $(".lights_desc").html('<b>9000р.</b><br /><div class="pd"></div>');
+                $(".bumper1_desc").html('<b>9000р.</b><br /><div class="pd"></div>');
+                $(".bumper2_desc").html('<b>8550р.</b><br /><div class="pd"></div>');
+                break;
+            case 'Long':
+                $(".hood_desc").html('<b>13650р.</b><br /><div class="pd"></div>');
+                $(".roof_desc").html('<b>17850р.</b><br /><div class="pd"></div>');
+                $(".wing1_desc").html('<b>9450р.</b><br /><div class="pd"></div>');
+                $(".door_desc").html('<b>9000р.</b><br /><div class="pd"></div>');
+                $(".wing2_desc").html('<b>10500р.</b><br /><div class="pd"></div>');
+                $(".lights_desc").html('<b>10500р.</b><br /><div class="pd"></div>');
+                $(".bumper1_desc").html('<b>10500р.</b><br /><div class="pd"></div>');
+                $(".bumper2_desc").html('<b>9975р.</b><br /><div class="pd"></div>');
+                break;
+        }
+    }
+</script>
+<script type="text/javascript">
+</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
 (function (d, w, c) {
-    (w[c] = w[c] || []).push(function() {
-        try {
-            w.yaCounter29772848 = new Ya.Metrika({id:29772848,
-                webvisor:true,
-                clickmap:true,
-                trackLinks:true,
-                accurateTrackBounce:true});
-        } catch(e) { }
-    });
-
-    var n = d.getElementsByTagName("script")[0],
-    s = d.createElement("script"),
-    f = function () { n.parentNode.insertBefore(s, n); };
-    s.type = "text/javascript";
-    s.async = true;
-    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
-
-    if (w.opera == "[object Opera]") {
-        d.addEventListener("DOMContentLoaded", f, false);
-    } else { f(); }
+(w[c] = w[c] || []).push(function() {
+try {
+w.yaCounter29772848 = new Ya.Metrika({id:29772848,
+webvisor:true,
+clickmap:true,
+trackLinks:true,
+accurateTrackBounce:true});
+} catch(e) { }
+});
+var n = d.getElementsByTagName("script")[0],
+s = d.createElement("script"),
+f = function () { n.parentNode.insertBefore(s, n); };
+s.type = "text/javascript";
+s.async = true;
+s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+if (w.opera == "[object Opera]") {
+d.addEventListener("DOMContentLoaded", f, false);
+} else { f(); }
 })(document, window, "yandex_metrika_callbacks");
-
 (window.Image ? (new Image()) : document.createElement('img')).src = location.protocol + '//vk.com/rtrg?r=zy6TK5ajH4qomQtvpoQ3Orc0Rc9SG3JzT56/hr0..*zQ8-&pixel_id=1000041549';
-        </script>
-        <noscript><div><img src="//mc.yandex.ru/watch/29772848" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-        <!-- /Yandex.Metrika counter -->
-        <!— Google Tag Manager —>
-        <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NCT6K7"
-                          height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/29772848" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<!— Google Tag Manager —>
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NCT6K7"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-NCT6K7');</script>
-        <!— End Google Tag Manager —>
-        <script type="text/javascript" src="//cdn.callbackhunter.com/cbh.js?hunter_code=1fe375998513ecac24315921c2007898" charset="UTF-8"></script>
-        {%endblock%}
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NCT6K7');</script>
+<!— End Google Tag Manager —>
+<script type="text/javascript" src="//cdn.callbackhunter.com/cbh.js?hunter_code=1fe375998513ecac24315921c2007898" charset="UTF-8"></script>
+{%endblock%}

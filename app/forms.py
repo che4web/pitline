@@ -49,8 +49,8 @@ class ContactForm(forms.Form):
         email = EmailMultiAlternatives('Заявка с ПитЛайн59',
                          message_body,
                          #to=['che-email@yandex.ru'
-                         to=['tanuffko24@gmail.com'
-                         to=['pit-line@bk.ru',
+                         to=['tanuffko24@gmail.com',
+                             'pit-line@bk.ru',
                              ])
 
         email.attach_alternative(message_body, "text/html")
