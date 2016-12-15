@@ -25,6 +25,7 @@ def home(request):
             'feedback_list':Feedback.objects.filter(active=True),
             'projects':Project.objects.filter(active=True),
             'year':datetime.now().year,
+            'form_foto':ContactForm(),
         }
     )
 

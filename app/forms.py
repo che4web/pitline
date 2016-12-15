@@ -33,6 +33,10 @@ class ContactForm(forms.Form):
     message = forms.CharField(widget=forms.Textarea,required=False)
     add_message = forms.CharField(widget=forms.Textarea,required=False)
 
+    img1 = forms.ImageField(required=False)
+    img2 = forms.ImageField(required=False)
+    img3 = forms.ImageField(required=False)
+
     def send_email(self):
         # send email using the self.cleaned_data dictionary
         plaintext = get_template('app/mail_detail.html')
@@ -44,9 +48,14 @@ class ContactForm(forms.Form):
         message_body = plaintext.render(b)
         email = EmailMultiAlternatives('Заявка с ПитЛайн59',
                          message_body,
+                         #to=['che-email@yandex.ru'
                          to=['tanuffko24@gmail.com'
-                         #to=['pit-line@bk.ru',
+                         to=['pit-line@bk.ru',
                              ])
-        email.attach_alternative(message_body, "text/html")
 
+        email.attach_alternative(message_body, "text/html")
+        file_list=[self.cleaned_data['img1'],self.cleaned_data['img2'],self.cleaned_data['img3']]
+        for f in file_list:
+            if f:
+                email.attach(f.name,f.read(),'application/img')
         email.send()
