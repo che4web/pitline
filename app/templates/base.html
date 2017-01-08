@@ -25,6 +25,8 @@
 <script type="text/javascript" src="{% static 'app/js/jquery.form.min.js' %}"></script>
 <link rel="stylesheet" href="{% static 'app/js/fancybox/jquery.fancybox8cbb.css' %}" />
 
+<script type="text/javascript" src="{% static 'app/js/bootstrap-filestyle.min.js' %}"></script>
+
 <!--<script type="text/javascript" src="ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>  
 <script type="text/javascript" src="code.jquery.com/jquery-migrate-1.2.1.js"></script>
 <script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
@@ -68,9 +70,21 @@
 					{#<li><a href="{% url 'action-index' %}">Акции</a></li>#}
                     <li><a href="{% url 'contact' %}">Контакты</a></li>
 				</ul>
-				 <div class="head__phone">
-				    <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>+7(342) 288 11 91
-				</div>
+                <div class="head__contcts">
+                    <div class="icons_wa">
+                        <a href="#" target="_blank" title="мы в watsapp">
+                            <i class="fa fa-whatsapp fa-1x" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="icons_sk">
+                        <a href="#" target="_blank" title="мы в skype">
+                            <i class="fa fa-skype fa-1x" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="head__phone">
+                        <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>+7(342) 288 11 91
+                    </div>
+                </div>
 			</div>
 		</div>
         

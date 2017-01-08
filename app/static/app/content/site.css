@@ -325,7 +325,7 @@ footer .wrap{
 .icons{
     float:left;
 }
-.icons_fb, .icons_vk, .icons_insta{
+.icons_fb, .icons_vk, .icons_insta, .icons_sk{
     line-height:30px!important;
     text-align:center;
     width:30px;
@@ -338,9 +338,20 @@ footer .wrap{
     font-weight:bold;
     color:white;
 }
-.icons_fb i,.icons_vk i,.icons_insta i{
+.icons_fb i,.icons_vk i,.icons_insta i, .icons_sk i, .icons_sk i, .icons_wa i{
     padding-top:5px;
     padding-bottom:5px;
+}
+
+.icons_sk, .icons_wa{
+    color:inherit;
+    border: none;
+    float:right;
+    font-size: 13pt;
+    height: 50px;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .car_classes{
@@ -349,6 +360,7 @@ footer .wrap{
 }
 
 .car_classes h3{
+    margin-top:30px;
     line-height: 24px;
     font-size:24px;
     font-family: 'pt_bold';
@@ -414,9 +426,6 @@ footer .wrap{
   box-shadow: 0 0 0 3px rgba(255,255,0,.5);
 }
 
-.order_block_photo input[type="text"]{
-    height:45px;
-}
 
 .order_block_photo .bttn{
     height:48px;
