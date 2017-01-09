@@ -107,7 +107,7 @@
 
 
     $(document).ready(function(){
-        $('a[href*=#]').bind("click", function(e){
+        $('a[href*=#]').not($('.noscroll')).bind("click", function(e){
             var anchor = $(this);
             $('html, body').stop().animate({
             scrollTop: $(anchor.attr('href')).offset().top
@@ -133,7 +133,7 @@
 
   $(document).on("scroll", onScroll);
 
-    $('a[href^="#"]').on('click', function (e) {
+    $('a[href^="#"]').not($('.noscroll')).on('click', function (e) {
 	      e.preventDefault();
 		    $(document).off("scroll");
 		     $('a').each(function () {
@@ -182,6 +182,12 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
+
+<!-- BEGIN JIVOSITE CODE {literal} -->
+<script type='text/javascript'>
+(function(){ var widget_id = 'haGfNZBWrg';var d=document;var w=window;function l(){
+var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
+<!-- {/literal} END JIVOSITE CODE -->
 	</body>
 	</html>
 
