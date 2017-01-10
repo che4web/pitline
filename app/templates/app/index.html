@@ -697,6 +697,56 @@
         <div class="">
             <a name="reviews2"></a>
 
+              
+                <div class="modal fade" tabindex="-1" role="dialog" id="feedback-modal">
+  <div class="modal-dialog modal-feedback" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Отзывы наших клиентов</h4>
+      </div>
+      <div class="modal-body">
+                   <div id="car-akcii2" class="carousel slide" data-ride="carousel" data-interval="0">
+                <ol class="carousel-indicators">
+                {%for item in feedback_list%}
+                    {%if forloop.first %}
+                           <li data-target="#car-akcii2" data-slide-to="{{forloop.counter0}}" class="active"></li>
+                    {%else%}
+                           <li data-target="#car-akcii2" data-slide-to="{{forloop.counter0}}"></li>
+                    {%endif%}
+                 {%endfor%}
+                </ol>
+                <div class="carousel-inner">
+                {%for item in feedback_list%}
+                    <div class="item {%if forloop.first%} active {%endif%} ">
+                       
+                        <div class="review-modal r1 ">
+                            <div class="review_img"><img src="{{item.get_foto}}"></div>
+                            <span>{{item.title}}</span>
+                            {{item.text}}
+                            <div class="review_name">
+                                <div class="rn"></div>
+                                <div class="rnn"></div>
+                                <em>{{item.name}}</em>
+                            </div>
+                        </div>
+                      
+                    </div>
+                 {%endfor%}
+                </div>
+            </div>
+        </div>      
+      </div>
+    </div><!-- /.modal-content -->
+                <a class="carousel-control left noscroll carousel-control-feedback" href="#car-akcii2" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="carousel-control right noscroll carousel-control-feedback" href="#car-akcii2" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+          
 
             <div id="car-akcii" class="carousel slide" data-ride="carousel" data-interval="5000">
                 <ol class="carousel-indicators">
@@ -726,12 +776,7 @@
                     </div>
                  {%endfor%}
                 </div>
-                <a class="carousel-control left noscroll" href="#car-akcii" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                </a>
-                <a class="carousel-control right noscroll" href="#car-akcii" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                </a>
+             
             </div>
         </div>
         </div>
@@ -1059,6 +1104,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 <script >
+$('#car-akcii').click(function(){
+   $('#feedback-modal').modal('toggle')
+})
+
 $('.offer_one').hover(function(){
     $(this).children('.product__desc').removeClass('product__desc-hide')
     },
@@ -1082,6 +1131,7 @@ $("input:file").change(function (){
      fileFormQuery[iter].style.display = 'table';;
 
      });
+
 
 </script >
 {%endblock%}

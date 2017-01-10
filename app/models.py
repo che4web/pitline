@@ -6,7 +6,7 @@ Definition of models.
 from django.db import models
 
 # Create your models here.
-
+DEFAULT_PHOTO = "/static/default_photo.png"
 class Feedback(models.Model):
     name = models.CharField(max_length=255)
     title = models.CharField(max_length=255)
@@ -18,6 +18,8 @@ class Feedback(models.Model):
     def get_foto(self):
         if self.foto:
             return self.foto.url
+        else:
+            return DEFAULT_PHOTO
 
 class Project(models.Model):
     name = models.CharField(max_length=255)
