@@ -21,6 +21,7 @@ urlpatterns = [
     # Examples:
     url(r'^$', app.views.home, name='home'),
     url(r'^contact$', app.views.contact, name='contact'),
+    url(r'^director$', app.views.director, name='director'),
     url(r'^about', app.views.about, name='about'),
     url(r'^sender', app.views.ContactView.as_view(), name='sender'),
     url(r'^akcii', ActionListView.as_view(), name='action-index'),

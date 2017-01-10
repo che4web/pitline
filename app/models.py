@@ -36,3 +36,9 @@ class Project(models.Model):
         if self.foto:
             return self.foto.url
 
+class Director(models.Model):
+    name = models.CharField(max_length=255)
+    text_base = models.TextField()
+    text_welcome = models.TextField()
+    foto = models.ImageField(blank=True)
+    contact = models.TextField()

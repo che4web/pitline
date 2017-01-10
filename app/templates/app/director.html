@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="director_main">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+
+                <div class="page_block">
+                <div class="director__img">
+
+                    <img src={{object.foto.url}}>
+                </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="page_block">
+                {{object.text_welcome}}
+                <hr>
+                <H2 class="director__contact">Контакты</H2>
+                {{object.contact|linebreaks}}
+            </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="page_block">
+                {{object.text_base}}
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{%endblock%}

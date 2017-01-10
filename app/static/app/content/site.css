@@ -337,22 +337,48 @@ footer .wrap{
     margin-left:10px;
     font-weight:bold;
     color:white;
+
 }
-.icons_fb i,.icons_vk i,.icons_insta i, .icons_sk i, .icons_sk i, .icons_wa i{
-    padding-top:5px;
-    padding-bottom:5px;
+.icons_fb i,.icons_vk i,.icons_insta i, .icons_sk i, .icons_sk i, .icons_wa i, .icons_viber i{
+    /*padding-top:5px;
+    padding-bottom:5px;*/
+    
 }
 
-.icons_sk, .icons_wa{
-    color:inherit;
+.icons_sk, .icons_wa, .icons_viber, .icons_director {
+    /*color:inherit;*/
     border: none;
     float:right;
-    font-size: 13pt;
-    height: 50px;
+    font-size: 22pt;
+    height: 34px;
+    width: 30px;
     text-align: center;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    margin-top:9px;
+    margin-bottom:5px;
+    padding:3px;
+
 }
+.icons_sk{
+    color:#00aaf1;
+    }
+
+.icons_wa{
+    color:#79BA7E;
+    }
+.icons_viber{
+    background-image: url(/static/viber-icon.png); 
+    background-repeat: no-repeat;
+    border-radius:30%;
+    margin-top:14px;
+    margin-left:2px;
+    opacity:0.87;
+    }
+
+.icons_viber:hover{
+    opacity:1;
+}
+
+
 
 .car_classes{
     text-align:center;

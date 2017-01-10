@@ -13,7 +13,7 @@ from django.views.generic.edit import FormView
 from django.shortcuts import HttpResponse
 import json
 from django.http import HttpResponseBadRequest
-from app.models import Feedback, Project
+from app.models import Feedback, Project, Director
 def home(request):
     """Renders the home page."""
     assert isinstance(request, HttpRequest)
@@ -75,3 +75,16 @@ class ContactView(FormView):
         #        error_list.append(e)
         #errors_dict =','.join(error_list)
         return HttpResponseBadRequest(errors_dict)
+
+def director(request):
+    """Renders the contact page."""
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/director.html',
+        {
+            'title':'Contact',
+            'object':Director.objects.get(id=1),
+        }
+    )
+
