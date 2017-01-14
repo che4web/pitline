@@ -3,7 +3,7 @@
 {% block navbar-small %}
 <li><a href="#offer">Наши услуги</a></li>
 <li><a href="#price">Цены</a></li>
-<li><a href="#work">Как мы работаем</a></li>
+<li><a href="#order">Оценка по фото</a></li>
 <li><a href="#reviews">Отзывы</a></li>
 <li><a href="#project">Проекты</a></li>
 <li><a href="{% url 'action-index' %}">Акции</a></li>
@@ -416,7 +416,7 @@
 
 
         <div class="car_classes">
-            <h3>выберите класс авто</h3>
+            <h3>выберите размер вашего автомобиля</h3>
             <div class="row">
                 <input type="radio" class="car_classes_class" name="car_classes_class" id="Aclass" title="Extra Small (daewoo Matiz, Kia Picanto, Suzuki Splash, итд)" onclick="cbCarClass_click('ExtraSmall')" checked/>
                 <label for="Aclass" title="Extra Small (daewoo Matiz, Kia Picanto, Suzuki Splash, итд)" onclick="cbCarClass_click('ExtraSmall')">Extra Small</label>
@@ -618,7 +618,7 @@
 
     <a name="promo2"></a>
 
-    <section class="order">
+    <section class="order" id="order">
         <div class="wrap">
             <!--<div class="order_img"></div>-->
             <div class="photo_block">
@@ -699,53 +699,53 @@
 
               
                 <div class="modal fade" tabindex="-1" role="dialog" id="feedback-modal">
-  <div class="modal-dialog modal-feedback" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Отзывы наших клиентов</h4>
-      </div>
-      <div class="modal-body">
-                   <div id="car-akcii2" class="carousel slide" data-ride="carousel" data-interval="0">
-                <ol class="carousel-indicators">
-                {%for item in feedback_list%}
-                    {%if forloop.first %}
-                           <li data-target="#car-akcii2" data-slide-to="{{forloop.counter0}}" class="active"></li>
-                    {%else%}
-                           <li data-target="#car-akcii2" data-slide-to="{{forloop.counter0}}"></li>
-                    {%endif%}
-                 {%endfor%}
-                </ol>
-                <div class="carousel-inner">
-                {%for item in feedback_list%}
-                    <div class="item {%if forloop.first%} active {%endif%} ">
+                  <div class="modal-dialog modal-feedback" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Отзывы наших клиентов</h4>
+                      </div>
+                      <div class="modal-body">
+                                   <div id="car-akcii2" class="carousel slide" data-ride="carousel" data-interval="0">
+                                <ol class="carousel-indicators">
+                                {%for item in feedback_list%}
+                                    {%if forloop.first %}
+                                           <li data-target="#car-akcii2" data-slide-to="{{forloop.counter0}}" class="active"></li>
+                                    {%else%}
+                                           <li data-target="#car-akcii2" data-slide-to="{{forloop.counter0}}"></li>
+                                    {%endif%}
+                                 {%endfor%}
+                                </ol>
+                                <div class="carousel-inner">
+                                {%for item in feedback_list%}
+                                    <div class="item {%if forloop.first%} active {%endif%} ">
                        
-                        <div class="review-modal r1 ">
-                            <div class="review_img"><img src="{{item.get_foto}}"></div>
-                            <span>{{item.title}}</span>
-                            {{item.text}}
-                            <div class="review_name">
-                                <div class="rn"></div>
-                                <div class="rnn"></div>
-                                <em>{{item.name}}</em>
-                            </div>
-                        </div>
+                                        <div class="review-modal r1 ">
+                                            <div class="review_img"><img src="{{item.get_foto}}"></div>
+                                            <span>{{item.title}}</span>
+                                            {{item.text}}
+                                            <div class="review_name">
+                                                <div class="rn"></div>
+                                                <div class="rnn"></div>
+                                                <em>{{item.name}}</em>
+                                            </div>
+                                        </div>
                       
-                    </div>
-                 {%endfor%}
-                </div>
-            </div>
-        </div>      
-      </div>
-    </div><!-- /.modal-content -->
+                                    </div>
+                                 {%endfor%}
+                                </div>
+                            </div>
+                        </div>      
+                      </div>
+                    </div><!-- /.modal-content -->
                 <a class="carousel-control left noscroll carousel-control-feedback" href="#car-akcii2" data-slide="prev">
                     <span class="glyphicon glyphicon-chevron-left"></span>
                 </a>
                 <a class="carousel-control right noscroll carousel-control-feedback" href="#car-akcii2" data-slide="next">
                     <span class="glyphicon glyphicon-chevron-right"></span>
                 </a>
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
           
 
             <div id="car-akcii" class="carousel slide" data-ride="carousel" data-interval="5000">
@@ -781,6 +781,7 @@
         </div>
         </div>
     </section>
+
     <a name="promo3"></a>
     <section class="order_photo">
         <div class="wrap">
@@ -798,9 +799,76 @@
         </div>
     </section>
     <a name="proect1"></a>
+
     <section class="projects" id="project">
         <h2>ВЫПОЛНЕННЫЕ ПРОЕКТЫ</h2>
-        <div class="wrap">
+
+        <div class="modal fade" tabindex="-1" role="dialog" id="projects-modal">
+                  <div class="modal-dialog modal-projects" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Выполненные проекты</h4>
+                      </div>
+                      <div class="modal-body">
+                                <div id="car-projects2" class="carousel slide" data-ride="carousel" data-interval="0">
+                                    <ol class="carousel-indicators">
+                                    {%for item in projects%}
+                                        {%if forloop.first %}
+                                               <li data-target="#car-projects2" data-slide-to="{{forloop.counter0}}" class="active"></li>
+                                        {%else%}
+                                               <li data-target="#car-projects2" data-slide-to="{{forloop.counter0}}"></li>
+                                        {%endif%}
+                                     {%endfor%}
+                                    </ol>
+                                    <div class="carousel-inner">
+                                    {%for item in projects%}
+                                        <div class="item {%if forloop.first%} active {%endif%} ">
+                       
+                                            <div class="projects-modal p1">
+                                                <div class="project_name">
+                                                    {{item.title}}
+                                                </div>
+                                                <div class="project_img">
+                                                    <img src="{{item.foto_befo.url}}">
+                                                    <img src="{{item.foto_after.url}}">
+                                                </div>
+                                                <div class="project_text">
+                                                    <span>Проблемы у автомобиля до ремонта:</span>
+                                                    {{item.text}}
+                                                    <div class="clear"></div>
+                                                </div>
+                                                <div class="project_det">
+                                                    <div class="project_date">Срок выполнения: <em>{{item.time}}</em></div>
+                                                    <div class="project_price">Цена: <em>{{item.cost}}</em></div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                            </div>
+                      
+                                        </div>
+                                     {%endfor%}
+                                    </div>
+                                </div>
+                        </div>      
+                      </div>
+                    </div><!-- /.modal-content -->
+                <a class="carousel-control left noscroll carousel-control-feedback" href="#car-projects2" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="carousel-control right noscroll carousel-control-feedback" href="#car-projects2" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </div><!-- /.modal-dialog -->
+
+
+
+
+
+        <div id="projects_carusel">
+
+            карусельку вставить- по клику открыается уже но не листается
+            <!--
+        {#<div class="wrap">
             {%for item in projects%}
             <div class="project p1">
                 <div class="project_name">
@@ -822,8 +890,12 @@
                 </div>
             </div>
             {%endfor%}
-        </div>
+        </div>#}-->
+            </div>
     </section>
+
+
+
     <a name="24"></a>
     <section class="contacts">
         <div class="wrap">
@@ -914,15 +986,16 @@
                         <a id="go" rel="leanModal" name="callback" href="#callback" class="mc">заказать звонок</a>
                     </div>
                 </div>
-                <div class="col-md-2 footer_q">
+                <div class="col-md-3 footer_q">
                     <h3>ОСТАЛИСЬ ВОПРОСЫ?</h3>
                     <a id="go" rel="leanModal" name="question" href="#question">задайте их менеджеру</a>
                 </div>
-                <div class="col-md-2">
-                    <a href="conf.pdf" target="_blank" class="conf">Политика конфиденциальности</a>
+                <div class="col-md-3 footer_p">
+                    <a href="conf.pdf" target="_blank" class="conf">
+                    <h3>Политика</h3> <br>конфиденциальности</a>
                 </div>
                 <div class="col-md-3 icons">
-                    <div class="row">
+                    <div class="row footer-icons-row">
                         <div class="icons_vk">
                             <a href="http://vk.com/perm.pitline" target="_blank" title="мы в VK">
                                 <i class="fa fa-vk fa-1x" aria-hidden="true"></i>
@@ -941,8 +1014,6 @@
                             </a>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-2">
                 </div>
             </div>
         </div>
@@ -1106,6 +1177,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script >
 $('#car-akcii').click(function(){
    $('#feedback-modal').modal('toggle')
+})
+
+$('#projects_carusel').click(function () {
+    $('#projects-modal').modal('toggle')
 })
 
 $('.offer_one').hover(function(){

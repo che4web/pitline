@@ -43,12 +43,14 @@ input[type="checkbox"].input-validation-error {
 }
 
 .head__phone{
-    font-size:13pt;
+    font-size:16pt;
     float:right;
     height:50px;
     text-align:center;
-    padding-top: 15px;
+    padding-top: 11px;
     padding-bottom: 15px;
+    margin-left:5px;
+    margin-right:5px;
 }
 .navbar-brand img{
     height:50px;
@@ -306,42 +308,64 @@ footer .wrap{
 .footer_q{
     color:white;
     float: left;
-    font-size: 18px;
-    line-height: 20px;
+    /*font-size: 26px;*/
+    /*line-height: 20px;*/
+    font-family:'pt_bold';
+
+    font-size: 20px;
+    /*line-height: 21px;*/
+    font-family: 'pt_bold';
+    text-transform: uppercase;
+    /*margin-top: 5px;*/
+    text-align: center;
 }
 
 .footer_q h3{
     color: #ffa400;
 }
 
+.footer_p h3{
+    color: #ffa400;
+}
+
 .footer_q a {
         display: inline-block;
-        font-size: 18px;
-        line-height: 18px;
+        /*font-size: 25px;
+        line-height: 18px;*/
         border-bottom: #fff dashed 1px;
         color: #fff;
     }
 
+.footer_q a:hover {
+	border-color:transparent;
+}
+
 .icons{
     float:left;
 }
-.icons_fb, .icons_vk, .icons_insta, .icons_sk{
+
+.footer-icons-row {
+    margin-top: -18px;
+}
+
+.icons_fb, .icons_vk, .icons_insta{
     line-height:30px!important;
     text-align:center;
-    width:30px;
-    height:30px;
+    width:65px;
+    height:65px;
     background-color:transparent;
     border-radius:50%;
-    border: 1px solid #ffa400;
+    border: 3px solid #ffa400;
     float:left;
     margin-left:10px;
     font-weight:bold;
     color:white;
 
 }
-.icons_fb i,.icons_vk i,.icons_insta i, .icons_sk i, .icons_sk i, .icons_wa i, .icons_viber i{
-    /*padding-top:5px;
-    padding-bottom:5px;*/
+.icons_fb i,.icons_vk i,.icons_insta i{
+    padding-top:10px;
+    font-size:40px;
+    padding-bottom:10px;
     
 }
 
@@ -467,7 +491,22 @@ footer .wrap{
     margin-right:5px;
 }
 
+.footer-icons-row {
+    padding-bottom:15px;
+    text-align: right;
+    float: right;
+}
 
-
+.logo_text {
+    text-transform:uppercase;
+    font-size: 33px;
+    color: #000;
+    font-stretch: ultra-expanded;
+    /*font-family:'pt_bold';*/
+    font-family: 'Archivo Black', sans-serif;
+    letter-spacing:-2px;
+    font-weight: bold;
+    margin-top:8px;
+}
 
 

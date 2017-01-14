@@ -13,6 +13,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'app/content/bootstrap.min.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'app/content/font-awesome/css/font-awesome.min.css' %}" />
 <link rel="stylesheet" type="text/css" href="{% static 'app/content/site.css' %}" />
+<link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
 
 
 <script type="text/javascript" src="{% static 'app/ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js' %}"></script>
@@ -54,7 +55,13 @@
 				</button>
                 <div class="schedule">
                     <div class="col-md-7">
-				        <a href="/" class="navbar-brand"><img src="{%static 'app/images/logo.png'%}"></a>
+				        {#<a href="/" class="navbar-brand"><img src="{%static 'app/images/logo.png'%}"></a>#}
+
+                        <a href="/" class="navbar-brand">
+                            <div class="logo_text">
+                                pit line
+                            </div>
+                        </a>
                     </div>
                     <div class="col-md-5" style="color:black; font-family: 'Dosis', sans-serif;">
                         График работы <br />
@@ -116,7 +123,20 @@
 	<script src="{% static 'app/scripts/bootstrap.js' %}"></script>
 	<script >
 
+        $(document).ready(function () {
+            var flag = false;
+            setTimeout(function () {
+                setInterval(function () {
+                    $(".glyphicon-earphone").css("color", flag ? "black" : "#299f53");
+                    $(".glyphicon-earphone").css("font-size", flag ? "18px" : "20px");
+                    $(".head__phone").css("font-weight", flag ? "none" : "bold");
+                    flag = !flag;
+                }, 700)
+            }, 3000);
 
+
+            //$('.glyphicon-earphone').css('color', 'yellow');
+        });
 
 
     $(document).ready(function(){
