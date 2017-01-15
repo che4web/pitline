@@ -309,9 +309,9 @@ $(document).ready(function() {
 	  }
 	tick(true);
 	setInterval(tick, 1000);
-	
-	if(null === navigator.userAgent.toLowerCase().match(/(iphone|ipod|ipad|android)/)){ 
-
+	alert('--- ' + navigator.userAgent.toLowerCase());
+	if (null === navigator.userAgent.toLowerCase().match(/(iphone|ipod|ipad|android)/)) {
+	    
 	// ниже вставляем код, который НЕ БУДЕТ РАБОТАТЬ на iphone|ipod|ipad|android
 	$('.scroll-animate').each(function () {
 		var block = $(this);
