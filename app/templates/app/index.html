@@ -694,6 +694,9 @@
     <a name="reviews1"></a>
     <section class="reviews" id="reviews">
         <h2>Отзывы наших клиентов</h2>
+        <h5 class="help_click">
+            кликните по отзыву для подробного просмотра
+        </h5>
         <div class="">
             <a name="reviews2"></a>
 
@@ -802,6 +805,9 @@
 
     <section class="projects" id="project">
         <h2>ВЫПОЛНЕННЫЕ ПРОЕКТЫ</h2>
+        <h5 class="help_click">
+            кликните по проекту для подробного просмотра
+        </h5>
 
         <div class="modal fade" tabindex="-1" role="dialog" id="projects-modal">
                   <div class="modal-dialog modal-projects" role="document">
@@ -825,7 +831,7 @@
                                     {%for item in projects%}
                                         <div class="item {%if forloop.first%} active {%endif%} ">
                        
-                                            <div class="projects-modal p1">
+                                            <div class="project p1">
                                                 <div class="project_name">
                                                     {{item.title}}
                                                 </div>
@@ -864,9 +870,40 @@
 
 
 
-        <div id="projects_carusel">
+        <div id="car-projects" class="carousel slide" data-ride="carousel" data-interval="5000">
+            <ol class="carousel-indicators">
+                {%for item in projects%}
+                    {%if forloop.first %}
+                           <li data-target="#car-projects" data-slide-to="{{forloop.counter0}}" class="active"></li>
+                    {%else%}
+                           <li data-target="#car-projects" data-slide-to="{{forloop.counter0}}"></li>
+                    {%endif%}
+                 {%endfor%}
+            </ol>
+            <div class="carousel-inner">
+                {%for item in projects%}
+                    <div class="project p1">
+                        <div class="project_name">
+                            {{item.title}}
+                        </div>
+                        <div class="project_img">
+                            <img src="{{item.foto_befo.url}}">
+                            <img src="{{item.foto_after.url}}">
+                        </div>
+                        <div class="project_text">
+                            <span>Проблемы у автомобиля до ремонта:</span>
+                            {{item.text}}
+                            <div class="clear"></div>
+                        </div>
+                        <div class="project_det">
+                            <div class="project_date">Срок выполнения: <em>{{item.time}}</em></div>
+                            <div class="project_price">Цена: <em>{{item.cost}}</em></div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                 {%endfor%}
+                </div>
 
-            карусельку вставить- по клику открыается уже но не листается
             <!--
         {#<div class="wrap">
             {%for item in projects%}
@@ -1179,7 +1216,7 @@ $('#car-akcii').click(function(){
    $('#feedback-modal').modal('toggle')
 })
 
-$('#projects_carusel').click(function () {
+$('#car-projects').click(function () {
     $('#projects-modal').modal('toggle')
 })
 

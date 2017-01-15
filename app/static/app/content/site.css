@@ -510,3 +510,46 @@ footer .wrap{
 }
 
 
+input.jivoBtn.accept{
+    background-color:rgb(255,189,0)!important;
+}
+.green input.jivoBtn.accept{
+    background-color:rgb(255,189,0)!important;
+}
+
+.green input.jivoBtn.accept:hover {
+    background-color: rgb(255,189,100)!important;
+}
+
+h5.help_click {
+    letter-spacing: 2px;
+    font-size: 12px;
+    line-height: 48px;
+    color: #004a77;
+    opacity:0.80;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0px 1px 1px #fff;
+    font-family: 'pt_bold';
+}
+
+.modal .modal-header span{
+    font-size:30px;
+}
+
+.head__phone span{
+    margin:3px;
+}
+
+.head__phone span:hover {
+    color:rgba(117, 235, 80, 0.5);
+    font-size:25px;
+    transform: rotate(70deg);
+    /*transform:scale(1,1);*/
+    transition:all 1s;
+    border: 1px solid rgba(117, 235, 80, 0.5);
+    border-width:5px;
+    /*border-*/
+    border-radius:50%;
+    
+}

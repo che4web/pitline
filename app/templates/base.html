@@ -122,21 +122,50 @@
 
 	<script src="{% static 'app/scripts/bootstrap.js' %}"></script>
 	<script >
+        var doscript;
+        $(document).ready(function () {
+            doscript = true;
+
+            $(".glyphicon-earphone").click(function () {
+                $('#callback').modal('toggle');
+            });
+
+        });
+
 
         $(document).ready(function () {
             var flag = false;
-            setTimeout(function () {
-                setInterval(function () {
-                    $(".glyphicon-earphone").css("color", flag ? "black" : "#299f53");
-                    $(".glyphicon-earphone").css("font-size", flag ? "18px" : "20px");
-                    $(".head__phone").css("font-weight", flag ? "none" : "bold");
-                    flag = !flag;
-                }, 700)
-            }, 3000);
+                setTimeout(function () {
+                    setInterval(function () {
+                        if (doscript) {
+                            $(".glyphicon-earphone").css("color", flag ? "black" : "rgba(117, 235, 80, 0.5)");
+                            $(".glyphicon-earphone").css("font-size", flag ? "18px" : "21px")
+                            $(".head__phone").css("font-weight", flag ? "none" : "bold");
+                            flag = !flag;
+                        }
+                    }, 700)
+                }, 3000);
+            
 
 
             //$('.glyphicon-earphone').css('color', 'yellow');
         });
+
+        $(".head__phone span").hover(function () {
+            //alert('hover');
+            doscript = false;
+            $(".glyphicon-earphone").css("color", "rgba(117, 235, 80, 0.5)");
+            $(".head__phone").css("padding-top", "5px");
+            $(".glyphicon-earphone").css("font-size", "26px");
+            //alert(doscript);
+        },
+        function () {
+            //alert('hover');
+            doscript = true;
+            $(".head__phone").css("padding-top", "11px");
+            //alert(doscript);
+        }
+        );
 
 
     $(document).ready(function(){
