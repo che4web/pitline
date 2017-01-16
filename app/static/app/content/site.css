@@ -43,14 +43,18 @@ input[type="checkbox"].input-validation-error {
 }
 
 .head__phone{
-    font-size:16pt;
+    font-size:14pt;
     float:right;
     height:50px;
     text-align:center;
-    padding-top: 11px;
+    padding-top: 15px;
+   -moz-padding-top: 0px;
     padding-bottom: 15px;
     margin-left:5px;
     margin-right:5px;
+}
+@-moz-document url-prefix() {
+  .head__phone {padding-top:0px;}
 }
 .navbar-brand img{
     height:35px;
