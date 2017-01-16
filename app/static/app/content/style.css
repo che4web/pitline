@@ -1818,7 +1818,7 @@ footer {
 
 .f_phone {
 	/*width:230px;*/
-	float:left;
+	float:right;
 	font-size:32px;
 	line-height:20px;
 	color:#ffa400;
@@ -1856,6 +1856,7 @@ a.copyright {
 a.conf {
 	display:inline-block;
 	float:left;
+    margin:auto;
 	/*margin:50px 0 0 105px;*/
 	color:#fff;
 	font-size:21px;
@@ -1865,6 +1866,7 @@ a.conf {
 	border-bottom:#fff dashed 1px;
     /*margin-top:5px;*/
     text-align:center;
+    margin-left:32px;
 }
 
 a.conf:hover {

@@ -5,8 +5,8 @@
 <li><a href="#price">Цены</a></li>
 <li><a href="#order">Оценка по фото</a></li>
 <li><a href="#reviews">Отзывы</a></li>
-<li><a href="#project">Проекты</a></li>
-<li><a href="{% url 'action-index' %}">Акции</a></li>
+<li><a href="#project">Наши работы</a></li>
+<li><a href="{% url 'action-index' %}" class="noscroll">Акции</a></li>
 <li><a href=""></a></li>
 {%endblock%}
 
@@ -663,34 +663,7 @@
         </div>
     </section>
     <a name="kak"></a>
-    <section class="hww" id="work">
-        <h2>Как мы работаем</h2>
-        <div class="wrap scroll-animate">
-            <div class="hww_one hb h1 scale">
-                <div class="hww_text">
-                    <span>ЗАЯВКА</span>
-                    Вы оставляете заявку <br />на обратный звонок <br />или звоните самостоятельно
-                    <a id="go" onClick="popup('makeorder', 'как мы работаем');" rel="leanModal" name="makeorder" href="#makeorder">Оставить заявку</a>
-                </div>
-            </div>
-            <div class="hww_one ht h2 scale">
-                <span>КОНСУЛЬТАЦИЯ</span>
-                Вы получаете от нашего мастера<br />индивидуальное предложение, уточняете<br />сумму и сроки выполнения работ
-            </div>
-            <div class="hww_one hb h3 scale">
-                <span>ОБРАЩЕНИЕ В PIT LINE</span>
-                Вы приезжаете к нам в сервис, наш<br />специалист проводит осмотр автомобиля <br />и согласовывает стоимость работы
-            </div>
-            <div class="hww_one ht h4 scale">
-                <span>РЕМОНТНЫЕ РАБОТЫ</span>
-                Мы проводим весь цикл<br />покрасочных и ремонтных<br />работ
-            </div>
-            <div class="hww_one hb h5 scale">
-                <span>АВТОМОБИЛЬ ГОТОВ!</span>
-                Работы завершены!<br />Можете ехать!
-            </div>
-        </div>
-    </section>
+    
     <a name="reviews1"></a>
     <section class="reviews" id="reviews">
         <h2>Отзывы наших клиентов</h2>
@@ -1104,6 +1077,7 @@ VK.Widgets.Group("vk_groups", {mode: 3, width: "auto"}, 52545395);
         </footer>
     -->
 </div>
+<div id="akcii"></div>
 <script type="text/javascript">
 window.onload = function () {
     $(".hood_desc").html('<b>7800р.</b><br /><div class="pd"></div>');

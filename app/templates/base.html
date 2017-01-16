@@ -58,6 +58,8 @@
 				        {#<a href="/" class="navbar-brand"><img src="{%static 'app/images/logo.png'%}"></a>#}
 
                         <a href="/" class="navbar-brand">
+                            <img class="logo-img" alt="сервисный центр pitline" title="ервисный центр pitline" src="{%static 'app/images/logo_new.png'%}">
+
                             <div class="logo_text">
                                 pit line
                             </div>
@@ -101,6 +103,8 @@
                         </a>
                     </div>
                     <div class="head__phone">
+                        <a href="#" id="popup__toggle" onclick="return false;"><div class="circlephone" style="transform-origin: center;"></div><div class="circle-fill" style="transform-origin: center;"></div><div class="img-circle" style="transform-origin: center;"><div class="img-circleblock" style="transform-origin: center;"></div></div></a>
+
                         <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>+7(342) 288 11 91
                     </div>
 
@@ -185,12 +189,7 @@
     $(window).scroll(function(){
 		    var window_top = $(window).scrollTop() + 12; 
 	       // the "12" should equal the margin-top value for nav.stickydiv
-		    var div_top = $('#checkdiv').offset().top;
-		    if (window_top >= div_top) {
-				    $('nav').addClass('stickydiv');
-			    } else {
-				    $('nav').removeClass('stickydiv');
-			    }
+
 	    });  
 
   $(document).on("scroll", onScroll);
@@ -215,10 +214,10 @@
 
     function onScroll(event){
 	    var scrollPos = $(document).scrollTop();
-	    $('#sidebar a').each(function () {
+	    $('#sidebar a').not($('.noscroll')).each(function () {
 		    var currLink = $(this);
 	       var refElement = $(currLink.attr("href"));
-		    if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+	       if (currLink.position().top <= scrollPos && currLink.position().top + currLink.height() > scrollPos) {
 			    $('#sidebar ul li a').removeClass("active");
 			    currLink.addClass("active");
 		    }
