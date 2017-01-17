@@ -308,7 +308,7 @@ footer{
 
 footer .wrap{
     margin:45px auto 30px auto;
-/*    width:1500px;*/
+    width:100%;
 }
 
 .footer_q{
