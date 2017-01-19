@@ -7,7 +7,12 @@
 <li><a href="#reviews">Отзывы</a></li>
 <li><a href="#project">Наши работы</a></li>
 <li><a href="{% url 'action-index' %}" class="noscroll">Акции</a></li>
-<li><a href=""></a></li>
+
+<li>
+    <a href="{%url 'director'%}" target="_blank" title="">
+        Руководитель
+    </a>
+</li>
 {%endblock%}
 
 {% block content %}
@@ -662,7 +667,7 @@
         </div>
     </section>
     <a name="kak"></a>
-    
+
     <a name="reviews1"></a>
     <section class="reviews" id="reviews">
         <h2>Отзывы наших клиентов</h2>
@@ -672,29 +677,29 @@
         <div class="">
             <a name="reviews2"></a>
 
-              
-                <div class="modal fade" tabindex="-1" role="dialog" id="feedback-modal">
-                  <div class="modal-dialog modal-feedback" role="document">
+
+            <div class="modal fade" tabindex="-1" role="dialog" id="feedback-modal">
+                <div class="modal-dialog modal-feedback" role="document">
                     <div class="modal-content">
-                      <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">Отзывы наших клиентов</h4>
-                      </div>
-                      <div class="modal-body">
-                                   <div id="car-akcii2" class="carousel slide" data-ride="carousel" data-interval="0">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">Отзывы наших клиентов</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div id="car-akcii2" class="carousel slide" data-ride="carousel" data-interval="0">
                                 <ol class="carousel-indicators">
-                                {%for item in feedback_list%}
+                                    {%for item in feedback_list%}
                                     {%if forloop.first %}
-                                           <li data-target="#car-akcii2" data-slide-to="{{forloop.counter0}}" class="active"></li>
+                                    <li data-target="#car-akcii2" data-slide-to="{{forloop.counter0}}" class="active"></li>
                                     {%else%}
-                                           <li data-target="#car-akcii2" data-slide-to="{{forloop.counter0}}"></li>
+                                    <li data-target="#car-akcii2" data-slide-to="{{forloop.counter0}}"></li>
                                     {%endif%}
-                                 {%endfor%}
+                                    {%endfor%}
                                 </ol>
                                 <div class="carousel-inner">
-                                {%for item in feedback_list%}
+                                    {%for item in feedback_list%}
                                     <div class="item {%if forloop.first%} active {%endif%} ">
-                       
+
                                         <div class="review-modal r1 ">
                                             <div class="review_img"><img src="{{item.get_foto}}"></div>
                                             <span>{{item.title}}</span>
@@ -705,14 +710,14 @@
                                                 <em>{{item.name}}</em>
                                             </div>
                                         </div>
-                      
+
                                     </div>
-                                 {%endfor%}
+                                    {%endfor%}
                                 </div>
                             </div>
                         </div>      
-                      </div>
-                    </div><!-- /.modal-content -->
+                    </div>
+                </div><!-- /.modal-content -->
                 <a class="carousel-control left noscroll carousel-control-feedback" href="#car-akcii2" data-slide="prev">
                     <span class="glyphicon glyphicon-chevron-left"></span>
                 </a>
@@ -721,40 +726,40 @@
                 </a>
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
-          
 
-            <div id="car-akcii" class="carousel slide" data-ride="carousel" data-interval="5000">
-                <ol class="carousel-indicators">
+
+        <div id="car-akcii" class="carousel slide" data-ride="carousel" data-interval="5000">
+            <ol class="carousel-indicators">
                 {%for item in feedback_list%}
-                    {%if forloop.first %}
-                           <li data-target="#car-akcii" data-slide-to="{{forloop.counter0}}" class="active"></li>
-                    {%else%}
-                           <li data-target="#car-akcii" data-slide-to="{{forloop.counter0}}"></li>
-                    {%endif%}
-                 {%endfor%}
-                </ol>
-                <div class="carousel-inner">
+                {%if forloop.first %}
+                <li data-target="#car-akcii" data-slide-to="{{forloop.counter0}}" class="active"></li>
+                {%else%}
+                <li data-target="#car-akcii" data-slide-to="{{forloop.counter0}}"></li>
+                {%endif%}
+                {%endfor%}
+            </ol>
+            <div class="carousel-inner">
                 {%for item in feedback_list%}
-                    <div class="item {%if forloop.first%} active {%endif%} ">
-                       
-                        <div class="review r1 ">
-                            <div class="review_img"><img src="{{item.get_foto}}"></div>
-                            <span>{{item.title}}</span>
-                            {{item.text}}
-                            <div class="review_name">
-                                <div class="rn"></div>
-                                <div class="rnn"></div>
-                                <em>{{item.name}}</em>
-                            </div>
+                <div class="item {%if forloop.first%} active {%endif%} ">
+
+                    <div class="review r1 ">
+                        <div class="review_img"><img src="{{item.get_foto}}"></div>
+                        <span>{{item.title}}</span>
+                        {{item.text}}
+                        <div class="review_name">
+                            <div class="rn"></div>
+                            <div class="rnn"></div>
+                            <em>{{item.name}}</em>
                         </div>
-                      
                     </div>
-                 {%endfor%}
+
                 </div>
-             
+                {%endfor%}
             </div>
+
         </div>
         </div>
+</div>
     </section>
 
     <a name="promo3"></a>
@@ -781,61 +786,61 @@
         </h5>
 
         <div class="modal fade" tabindex="-1" role="dialog" id="projects-modal">
-                  <div class="modal-dialog modal-projects" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
+            <div class="modal-dialog modal-projects" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <h4 class="modal-title">Выполненные проекты</h4>
-                      </div>
-                      <div class="modal-body">
-                                <div id="car-projects2" class="carousel slide" data-ride="carousel" data-interval="0">
-                                    <ol class="carousel-indicators">
-                                    {%for item in projects%}
-                                        {%if forloop.first %}
-                                               <li data-target="#car-projects2" data-slide-to="{{forloop.counter0}}" class="active"></li>
-                                        {%else%}
-                                               <li data-target="#car-projects2" data-slide-to="{{forloop.counter0}}"></li>
-                                        {%endif%}
-                                     {%endfor%}
-                                    </ol>
-                                    <div class="carousel-inner">
-                                    {%for item in projects%}
-                                        <div class="item {%if forloop.first%} active {%endif%} ">
-                       
-                                            <div class="project p1">
-                                                <div class="project_name">
-                                                    {{item.title}}
-                                                </div>
-                                                <div class="project_img">
-                                                    <img src="{{item.foto_befo.url}}">
-                                                    <img src="{{item.foto_after.url}}">
-                                                </div>
-                                                <div class="project_text">
-                                                    <span>Проблемы у автомобиля до ремонта:</span>
-                                                    {{item.text}}
-                                                    <div class="clear"></div>
-                                                </div>
-                                                <div class="project_det">
-                                                    <div class="project_date">Срок выполнения: <em>{{item.time}}</em></div>
-                                                    <div class="project_price">Цена: <em>{{item.cost}}</em></div>
-                                                    <div class="clear"></div>
-                                                </div>
-                                            </div>
-                      
+                    </div>
+                    <div class="modal-body">
+                        <div id="car-projects2" class="carousel slide" data-ride="carousel" data-interval="0">
+                            <ol class="carousel-indicators">
+                                {%for item in projects%}
+                                {%if forloop.first %}
+                                <li data-target="#car-projects2" data-slide-to="{{forloop.counter0}}" class="active"></li>
+                                {%else%}
+                                <li data-target="#car-projects2" data-slide-to="{{forloop.counter0}}"></li>
+                                {%endif%}
+                                {%endfor%}
+                            </ol>
+                            <div class="carousel-inner">
+                                {%for item in projects%}
+                                <div class="item {%if forloop.first%} active {%endif%} ">
+
+                                    <div class="project p1">
+                                        <div class="project_name">
+                                            {{item.title}}
                                         </div>
-                                     {%endfor%}
+                                        <div class="project_img">
+                                            <img src="{{item.foto_befo.url}}">
+                                            <img src="{{item.foto_after.url}}">
+                                        </div>
+                                        <div class="project_text">
+                                            <span>Проблемы у автомобиля до ремонта:</span>
+                                            {{item.text}}
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="project_det">
+                                            <div class="project_date">Срок выполнения: <em>{{item.time}}</em></div>
+                                            <div class="project_price">Цена: <em>{{item.cost}}</em></div>
+                                            <div class="clear"></div>
+                                        </div>
                                     </div>
+
                                 </div>
-                        </div>      
-                      </div>
-                    </div><!-- /.modal-content -->
-                <a class="carousel-control left noscroll carousel-control-feedback" href="#car-projects2" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                </a>
-                <a class="carousel-control right noscroll carousel-control-feedback" href="#car-projects2" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                </a>
-            </div><!-- /.modal-dialog -->
+                                {%endfor%}
+                            </div>
+                        </div>
+                    </div>      
+                </div>
+            </div><!-- /.modal-content -->
+            <a class="carousel-control left noscroll carousel-control-feedback" href="#car-projects2" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="carousel-control right noscroll carousel-control-feedback" href="#car-projects2" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div><!-- /.modal-dialog -->
 
 
 
@@ -844,62 +849,62 @@
         <div id="car-projects" class="carousel slide" data-ride="carousel" data-interval="5000">
             <ol class="carousel-indicators">
                 {%for item in projects%}
-                    {%if forloop.first %}
-                           <li data-target="#car-projects" data-slide-to="{{forloop.counter0}}" class="active"></li>
-                    {%else%}
-                           <li data-target="#car-projects" data-slide-to="{{forloop.counter0}}"></li>
-                    {%endif%}
-                 {%endfor%}
+                {%if forloop.first %}
+                <li data-target="#car-projects" data-slide-to="{{forloop.counter0}}" class="active"></li>
+                {%else%}
+                <li data-target="#car-projects" data-slide-to="{{forloop.counter0}}"></li>
+                {%endif%}
+                {%endfor%}
             </ol>
             <div class="carousel-inner">
                 {%for item in projects%}
-                    <div class="project p1">
-                        <div class="project_name">
-                            {{item.title}}
-                        </div>
-                        <div class="project_img">
-                            <img src="{{item.foto_befo.url}}">
-                            <img src="{{item.foto_after.url}}">
-                        </div>
-                        <div class="project_text">
-                            <span>Проблемы у автомобиля до ремонта:</span>
-                            {{item.text}}
-                            <div class="clear"></div>
-                        </div>
-                        <div class="project_det">
-                            <div class="project_date">Срок выполнения: <em>{{item.time}}</em></div>
-                            <div class="project_price">Цена: <em>{{item.cost}}</em></div>
-                            <div class="clear"></div>
-                        </div>
+                <div class="project p1">
+                    <div class="project_name">
+                        {{item.title}}
                     </div>
-                 {%endfor%}
+                    <div class="project_img">
+                        <img src="{{item.foto_befo.url}}">
+                        <img src="{{item.foto_after.url}}">
+                    </div>
+                    <div class="project_text">
+                        <span>Проблемы у автомобиля до ремонта:</span>
+                        {{item.text}}
+                        <div class="clear"></div>
+                    </div>
+                    <div class="project_det">
+                        <div class="project_date">Срок выполнения: <em>{{item.time}}</em></div>
+                        <div class="project_price">Цена: <em>{{item.cost}}</em></div>
+                        <div class="clear"></div>
+                    </div>
                 </div>
+                {%endfor%}
+            </div>
 
             <!--
-        {#<div class="wrap">
-            {%for item in projects%}
-            <div class="project p1">
+                {#<div class="wrap">
+                {%for item in projects%}
+                <div class="project p1">
                 <div class="project_name">
-                    {{item.title}}
+                {{item.title}}
                 </div>
                 <div class="project_img">
-                    <img src="{{item.foto_befo.url}}">
-                    <img src="{{item.foto_after.url}}">
+                <img src="{{item.foto_befo.url}}">
+                <img src="{{item.foto_after.url}}">
                 </div>
                 <div class="project_text">
-                    <span>Проблемы у автомобиля до ремонта:</span>
-                    {{item.text}}
-                    <div class="clear"></div>
+                <span>Проблемы у автомобиля до ремонта:</span>
+                {{item.text}}
+                <div class="clear"></div>
                 </div>
                 <div class="project_det">
-                    <div class="project_date">Срок выполнения: <em>{{item.time}}</em></div>
-                    <div class="project_price">Цена: <em>{{item.cost}}</em></div>
-                    <div class="clear"></div>
+                <div class="project_date">Срок выполнения: <em>{{item.time}}</em></div>
+                <div class="project_price">Цена: <em>{{item.cost}}</em></div>
+                <div class="clear"></div>
                 </div>
-            </div>
-            {%endfor%}
-        </div>#}-->
-            </div>
+                </div>
+                {%endfor%}
+                </div>#}-->
+        </div>
     </section>
 
 
@@ -1000,7 +1005,7 @@
                 </div>
                 <div class="col-md-3 footer_p">
                     <a href="conf.pdf" target="_blank" class="conf">
-                    <h3>Политика</h3> <br>конфиденциальности</a>
+                        <h3>Политика</h3> <br>конфиденциальности</a>
                 </div>
                 <div class="col-md-3 icons">
                     <div class="row footer-icons-row">
@@ -1074,9 +1079,9 @@ VK.Widgets.Group("vk_groups", {mode: 3, width: "auto"}, 52545395);
         </div>
         </footer>
     -->
-</div>
-<div id="akcii"></div>
-<script type="text/javascript">
+    </div>
+    <div id="akcii"></div>
+    <script type="text/javascript">
 window.onload = function () {
     $(".hood_desc").html('<b>7800р.</b><br /><div class="pd"></div>');
     $(".roof_desc").html('<b>10200р.</b><br /><div class="pd"></div>');
@@ -1142,11 +1147,11 @@ function cbCarClass_click(type) {
             break;
     }
 }
-</script>
-<script type="text/javascript">
-</script>
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript">
+    </script>
+    <script type="text/javascript">
+    </script>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
 (function (d, w, c) {
     (w[c] = w[c] || []).push(function() {
         try {
@@ -1159,7 +1164,7 @@ function cbCarClass_click(type) {
     });
     var n = d.getElementsByTagName("script")[0],
     s = d.createElement("script"),
-    f = function () { n.parentNode.insertBefore(s, n); };
+        f = function () { n.parentNode.insertBefore(s, n); };
     s.type = "text/javascript";
     s.async = true;
     s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
@@ -1168,22 +1173,22 @@ function cbCarClass_click(type) {
     } else { f(); }
 })(document, window, "yandex_metrika_callbacks");
 (window.Image ? (new Image()) : document.createElement('img')).src = location.protocol + '//vk.com/rtrg?r=zy6TK5ajH4qomQtvpoQ3Orc0Rc9SG3JzT56/hr0..*zQ8-&pixel_id=1000041549';
-</script>
-<noscript><div><img src="//mc.yandex.ru/watch/29772848" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
-<!— Google Tag Manager —>
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NCT6K7"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    </script>
+    <noscript><div><img src="//mc.yandex.ru/watch/29772848" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+    <!— Google Tag Manager —>
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NCT6K7"
+                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NCT6K7');</script>
-<!— End Google Tag Manager —>
-<script type="text/javascript" src="//cdn.callbackhunter.com/cbh.js?hunter_code=1fe375998513ecac24315921c2007898" charset="UTF-8"></script>
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NCT6K7');</script>
+    <!— End Google Tag Manager —>
+    <script type="text/javascript" src="//cdn.callbackhunter.com/cbh.js?hunter_code=1fe375998513ecac24315921c2007898" charset="UTF-8"></script>
 
 
-<script >
+    <script >
 $('#car-akcii').click(function(){
    $('#feedback-modal').modal('toggle')
 })
@@ -1200,8 +1205,8 @@ $('.offer_one').hover(function(){
     }  
 )
 
-</script>
-<script >
+    </script>
+    <script >
 $(":file").filestyle({buttonText: ' <i class="fa fa-upload" aria-hidden="true"></i>',
                       iconName: "",
                       placeholder: "Выберите файл"});
