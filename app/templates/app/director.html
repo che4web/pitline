@@ -16,10 +16,10 @@
             </div>
             <div class="col-md-8">
                 <div class="page_block">
-                {{object.text_welcome}}
+                {{object.text_welcome|safe}}
                 <hr>
                 <H2 class="director__contact">Контакты</H2>
-                {{object.contact|linebreaks}}
+                {{object.contact|linebreaks|safe}}
             </div>
             </div>
         </div>
