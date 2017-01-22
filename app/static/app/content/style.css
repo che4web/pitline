@@ -579,7 +579,7 @@ h2 {
 }
 
 .o3 {
-	background:url(../images/o2.png) no-repeat center 90px;
+	background:url(../images/o31.png) no-repeat center 90px;
 }
 
 .o4 {
@@ -592,7 +592,7 @@ h2 {
 }
 
 .o6 {
-	background:url(../images/o6.png) no-repeat center 90px;
+	background:url(../images/o61.png) no-repeat center 90px;
 }
 
 .o7 {
@@ -605,7 +605,7 @@ h2 {
 }
 
 .o9 {
-	background:url(../images/o6.png) no-repeat center 90px;
+	background:url(../images/o9.png) no-repeat center 90px;
 }
 
 .o4 .offer_text em, .o5 .offer_text em, .o6 .offer_text em , .o7 .offer_text em, .o8 .offer_text em, .o9 .offer_text em, .o1 .offer_text em, .o3 .offer_text em {
@@ -2324,7 +2324,6 @@ padding: 0px 35px 7px 35px;
 
 .modal-dialog.modal-feedback{
     width: 800px;
-    padding-top:231px;
 }
 
 .carousel-control-feedback{
