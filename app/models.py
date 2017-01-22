@@ -8,10 +8,10 @@ from django.db import models
 # Create your models here.
 DEFAULT_PHOTO = "/static/default_photo.png"
 class Feedback(models.Model):
-    name = models.CharField(max_length=255)
-    title = models.CharField(max_length=255)
-    text = models.TextField()
-    foto = models.ImageField(blank=True)
+    name = models.CharField(max_length=255,blank=True)
+    title = models.CharField(max_length=255,blank=True)
+    text = models.TextField(blank=True)
+    foto = models.ImageField()
     active = models.BooleanField(blank=True)
     date = models.DateField(auto_now_add = True)
 

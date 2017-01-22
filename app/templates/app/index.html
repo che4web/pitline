@@ -702,13 +702,6 @@
 
                                         <div class="review-modal r1 ">
                                             <div class="review_img"><img src="{{item.get_foto}}"></div>
-                                            <span>{{item.title}}</span>
-                                            {{item.text}}
-                                            <div class="review_name">
-                                                <div class="rn"></div>
-                                                <div class="rnn"></div>
-                                                <em>{{item.name}}</em>
-                                            </div>
                                         </div>
 
                                     </div>
@@ -745,13 +738,6 @@
 
                     <div class="review r1 ">
                         <div class="review_img"><img src="{{item.get_foto}}"></div>
-                        <span>{{item.title}}</span>
-                        {{item.text}}
-                        <div class="review_name">
-                            <div class="rn"></div>
-                            <div class="rnn"></div>
-                            <em>{{item.name}}</em>
-                        </div>
                     </div>
 
                 </div>
@@ -813,8 +799,12 @@
                                             {{item.title}}
                                         </div>
                                         <div class="project_img">
+                                        <div class="project_img__before">
                                             <img src="{{item.foto_befo.url}}">
+                                        </div>
+                                        <div class="project_img__after">
                                             <img src="{{item.foto_after.url}}">
+                                        </div>
                                         </div>
                                         <div class="project_text">
                                             <span>Проблемы у автомобиля до ремонта:</span>
@@ -859,14 +849,25 @@
             </ol>
             <div class="carousel-inner">
                 {%for item in projects%}
+                        <div class="item {%if forloop.first%} active {%endif%} ">
                 <div class="project p1">
                     <div class="project_name">
                         {{item.title}}
                     </div>
-                    <div class="project_img">
-                        <img src="{{item.foto_befo.url}}">
-                        <img src="{{item.foto_after.url}}">
-                    </div>
+                                        <div class="project_img">
+                                        <div class="project_img__before">
+                                        <div class="project_img___text">
+                                            до
+                                        </div>
+                                            <img src="{{item.foto_befo.url}}">
+                                        </div>
+                                        <div class="project_img__after">
+                                        <div class="project_img___text">
+                                            после
+                                        </div>
+                                            <img src="{{item.foto_after.url}}">
+                                        </div>
+                                        </div>
                     <div class="project_text">
                         <span>Проблемы у автомобиля до ремонта:</span>
                         {{item.text}}
@@ -876,6 +877,7 @@
                         <div class="project_date">Срок выполнения: <em>{{item.time}}</em></div>
                         <div class="project_price">Цена: <em>{{item.cost}}</em></div>
                         <div class="clear"></div>
+                    </div>
                     </div>
                 </div>
                 {%endfor%}
