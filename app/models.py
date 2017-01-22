@@ -20,7 +20,11 @@ class Feedback(models.Model):
             return self.foto.url
         else:
             return DEFAULT_PHOTO
-
+    class Meta:
+        verbose_name=u'Отзыв'
+        verbose_name_plural=u'Отзывы'
+    def __str__(self):
+        return str(self.id)+'-- '+self.name
 class Project(models.Model):
     name = models.CharField(max_length=255)
     title = models.CharField(max_length=255)
@@ -36,9 +40,20 @@ class Project(models.Model):
         if self.foto:
             return self.foto.url
 
+    def __str__(self):
+        return str(self.id)+'-- '+self.name
+    class Meta:
+        verbose_name=u'Проект'
+        verbose_name_plural=u'Наши работы'
 class Director(models.Model):
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255,verbose_name=u'Имя')
     text_base = models.TextField()
     text_welcome = models.TextField()
     foto = models.ImageField(blank=True)
     contact = models.TextField()
+
+    def __str__(self):
+        return str(self.id)+'-- '+self.name
+    class Meta:
+        verbose_name=u'Директор'
+        verbose_name_plural=u'Директор'
