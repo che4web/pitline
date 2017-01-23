@@ -642,4 +642,13 @@ opacity: .1;}}
   50% {transform: rotate(0deg) scale(1) skew(1deg);opacity: .2;}
   100% {transform: rotate(0deg) scale(0.7) skew(1deg);opacity: .2;}}
 
+.director__contact__coonect {
+float:right;
+text-align:right;
+
+}
+.director__contact__coonect button{
+background-color: #004a77;
+    }
+
 

@@ -263,6 +263,7 @@
     <Content Include="app\static\app\js\jquery.min.js" />
     <Content Include="app\static\app\js\scripts.js" />
     <Content Include="app\static\app\js\validator.js" />
+    <Content Include="app\templates\app\director.html" />
     <Content Include="app\templates\base.html" />
     <Content Include="locksmith\templates\locksmith\index.html" />
     <Content Include="requirements.txt" />
