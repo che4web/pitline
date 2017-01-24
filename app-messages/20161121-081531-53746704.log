@@ -1,0 +1,42 @@
+Content-Type: multipart/alternative;
+ boundary="===============4903680505907423738=="
+MIME-Version: 1.0
+Subject: =?utf-8?b?0J/RgNC40YjQu9CwINC30LDRj9Cy0LrQsCDRgSDRgdCw0LnRgtCwINCf0Lg=?=
+ =?utf-8?b?0YLQm9Cw0LnQvTU5?=
+From: webmaster@localhost
+To: pit-line@bk.ru
+Date: Mon, 21 Nov 2016 08:15:31 -0000
+Message-ID: <20161121081531.11458.50469@vps-1081345.vpshome.pro>
+
+--===============4903680505907423738==
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+
+<h2 class="mdl-card__title-text">Новый заказ с сайта pitline59.ru</h2>
+           
+<div class="">
+    <p>Заказчик: awd</p>
+    <p>телефон:awd</p>
+    <p>emailawd@efe.ef</p>
+   <p> </p>
+    </div>
+
+--===============4903680505907423738==
+MIME-Version: 1.0
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+
+<h2 class="mdl-card__title-text">Новый заказ с сайта pitline59.ru</h2>
+           
+<div class="">
+    <p>Заказчик: awd</p>
+    <p>телефон:awd</p>
+    <p>emailawd@efe.ef</p>
+   <p> </p>
+    </div>
+
+--===============4903680505907423738==--
+-------------------------------------------------------------------------------
