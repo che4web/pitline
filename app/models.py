@@ -57,3 +57,12 @@ class Director(models.Model):
     class Meta:
         verbose_name=u'Директор'
         verbose_name_plural=u'Директор'
+
+class MainText(models.Model):
+    name = models.CharField(max_length=255,verbose_name=u'Текст')
+
+    def __str__(self):
+        return self.name
+    class Meta:
+        verbose_name=u'Текст'
+        verbose_name_plural=u'Тексты'
