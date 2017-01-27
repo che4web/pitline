@@ -106,14 +106,29 @@
                 <!--<span>У нас нет фиксированной цены за деталь, наше основное отличие - индивидуальный подход к клиенту<br><b>Ждем всех по адресу: ул. Шоссе Космонавтов 310Г</b>
                     </span>-->
             </h1>
-            <div class="timer_block first_timer reason_block">
-                типа причины
-                <ul>
-                {%for res in text_reasons%}
-                <li>{{res.text}}</li>
-                {%endfor%}
-                </ul>
+            <div class="timer_block left first_timer">
+                <div class="row">
+                    <div class="col-md-2">
+                        <img class="logo-img" alt="сервисный центр pitline" title="ервисный центр pitline" src="/static/app/images/logo_new.png">
+                    </div>
+                    <div class="col-md-10 text" >
+                        заголовок из модели - item.title
+                    </div>
                 </div>
+                <div class="row">
+                    <div class="inner__text">
+                         <ul>
+                        {%for res in text_reasons%}
+                        <li>{{res.text}}</li>
+                        {%endfor%}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+
+           
             <div class="timer_block first_timer">
                 <span>Оставьте заявку</span>
                 и получите<br><b>скидку 1 000 руб.</b><br>на любые виды услуг
