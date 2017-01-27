@@ -112,13 +112,13 @@
                         <img class="logo-img" alt="сервисный центр pitline" title="ервисный центр pitline" src="/static/app/images/logo_new.png">
                     </div>
                     <div class="col-md-10 text" >
-                        заголовок из модели - item.title
+                        {{text_reasons.text}}
                     </div>
                 </div>
                 <div class="row">
                     <div class="inner__text">
-                         <ul>
-                        {%for res in text_reasons%}
+                        <ul>
+                        {%for res in text_reasons.maintext_set.all%}
                         <li>{{res.text}}</li>
                         {%endfor%}
                         </ul>

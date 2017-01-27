@@ -64,6 +64,10 @@ class TextCategory(models.Model):
     slug = models.SlugField(blank=True,unique=True)
     def __str__(self):
         return self.name
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = defaultfilters.slugify(unidecode(self.name))
+        return super(TextCategory, self).save(*args, **kwargs)
 
     class Meta:
         verbose_name=u'Категория'
@@ -74,7 +78,10 @@ class MainText(models.Model):
     text = models.TextField(verbose_name=u'Текст',blank=True)
     category = models.ForeignKey(TextCategory)
     slug = models.SlugField(blank=True,unique=True)
-
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = defaultfilters.slugify(unidecode(self.name))
+        return super(MainText, self).save(*args, **kwargs)
     def __str__(self):
         return self.name
     class Meta:

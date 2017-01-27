@@ -19,7 +19,7 @@ class MainTextAdmin(admin.ModelAdmin):
     list_filter = ('category',)
     def get_readonly_fields(self, request, obj=None):
         if obj: # editing an existing object
-            return self.readonly_fields + ('name','slug')
+            return self.readonly_fields + ('slug',)
         return self.readonly_fields
 
 @admin.register(TextCategory)

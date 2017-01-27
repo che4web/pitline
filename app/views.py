@@ -13,7 +13,7 @@ from django.views.generic.edit import FormView
 from django.shortcuts import HttpResponse
 import json
 from django.http import HttpResponseBadRequest
-from app.models import Feedback, Project, Director,MainText
+from app.models import Feedback, Project, Director,MainText,TextCategory
 def home(request):
     """Renders the home page."""
     assert isinstance(request, HttpRequest)
@@ -27,7 +27,7 @@ def home(request):
             'year':datetime.now().year,
             'form_foto':ContactForm(),
             'text_title':MainText.objects.filter(category_id=1),
-            'text_reasons':MainText.objects.filter(category_id=2),
+            'text_reasons':TextCategory.objects.get(pk=2),
             'description':MainText.objects.get(slug='descriptionMain').text,
             'keywords':MainText.objects.get(slug='keywordsMain').text,
             'title':MainText.objects.get(slug='MainTitle').text,
