@@ -28,6 +28,9 @@ def home(request):
             'form_foto':ContactForm(),
             'text_title':MainText.objects.filter(category_id=1),
             'text_reasons':MainText.objects.filter(category_id=2),
+            'description':MainText.objects.get(slug='descriptionMain').text,
+            'keywords':MainText.objects.get(slug='keywordsMain').text,
+            'title':MainText.objects.get(slug='MainTitle').text,
         }
     )
 
