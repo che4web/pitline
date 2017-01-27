@@ -4,8 +4,6 @@ Definition of models.
 """
 
 from django.db import models
-from unidecode import unidecode
-from django.template import defaultfilters
 # Create your models here.
 DEFAULT_PHOTO = "/static/default_photo.png"
 class Feedback(models.Model):
@@ -70,10 +68,6 @@ class TextCategory(models.Model):
     class Meta:
         verbose_name=u'Категория'
         verbose_name_plural=u'Категория'
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = defaultfilters.slugify(unidecode(self.name))
-        return super(TextCategory, self).save(*args, **kwargs)
 
 class MainText(models.Model):
     name = models.CharField(max_length=255,verbose_name=u'Название')
@@ -86,7 +80,3 @@ class MainText(models.Model):
     class Meta:
         verbose_name=u'Текст'
         verbose_name_plural=u'Тексты'
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = defaultfilters.slugify(unidecode(self.name))
-        return super(MainText, self).save(*args, **kwargs)
