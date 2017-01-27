@@ -63,7 +63,7 @@ class Director(models.Model):
 class TextCategory(models.Model):
     name = models.CharField(max_length=255,verbose_name=u'Название')
     text= models.TextField(max_length=255,verbose_name=u'Текст',blank=True)
-    slug = models.SlugField(blank=True )
+    slug = models.SlugField(blank=True,unique=True)
     def __str__(self):
         return self.name
 
@@ -79,7 +79,7 @@ class MainText(models.Model):
     name = models.CharField(max_length=255,verbose_name=u'Название')
     text = models.TextField(verbose_name=u'Текст',blank=True)
     category = models.ForeignKey(TextCategory)
-    slug = models.SlugField(blank=True)
+    slug = models.SlugField(blank=True,unique=True)
 
     def __str__(self):
         return self.name
