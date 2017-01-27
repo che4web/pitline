@@ -26,7 +26,8 @@ def home(request):
             'projects':Project.objects.filter(active=True),
             'year':datetime.now().year,
             'form_foto':ContactForm(),
-            'text_list':MainText.objects.all(),
+            'text_title':MainText.objects.filter(category_id=1),
+            'text_reasons':MainText.objects.filter(category_id=2),
         }
     )
 

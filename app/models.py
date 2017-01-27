@@ -4,7 +4,8 @@ Definition of models.
 """
 
 from django.db import models
-
+from unidecode import unidecode
+from django.template import defaultfilters
 # Create your models here.
 DEFAULT_PHOTO = "/static/default_photo.png"
 class Feedback(models.Model):
@@ -58,11 +59,34 @@ class Director(models.Model):
         verbose_name=u'Директор'
         verbose_name_plural=u'Директор'
 
+
+class TextCategory(models.Model):
+    name = models.CharField(max_length=255,verbose_name=u'Название')
+    text= models.TextField(max_length=255,verbose_name=u'Текст',blank=True)
+    slug = models.SlugField(blank=True )
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name=u'Категория'
+        verbose_name_plural=u'Категория'
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = defaultfilters.slugify(unidecode(self.name))
+        return super(TextCategory, self).save(*args, **kwargs)
+
 class MainText(models.Model):
-    name = models.CharField(max_length=255,verbose_name=u'Текст')
+    name = models.CharField(max_length=255,verbose_name=u'Название')
+    text = models.TextField(verbose_name=u'Текст',blank=True)
+    category = models.ForeignKey(TextCategory)
+    slug = models.SlugField(blank=True)
 
     def __str__(self):
         return self.name
     class Meta:
         verbose_name=u'Текст'
         verbose_name_plural=u'Тексты'
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = defaultfilters.slugify(unidecode(self.name))
+        return super(MainText, self).save(*args, **kwargs)
