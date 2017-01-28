@@ -652,3 +652,14 @@ background-color: #004a77;
     }
 
 
+.main .wrap {
+width:100%;
+}
+
+
+.main .order_block {
+    right: 10%;
+}
+.main h1{
+    left:25%;
+}
