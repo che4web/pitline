@@ -49,7 +49,7 @@ class ContactForm(forms.Form):
         email = EmailMultiAlternatives('Заявка с ПитЛайн59',
                          message_body,
                          #to=['che-email@yandex.ru'
-                         to=['tanuffko24@gmail.com',
+                         to=['che-email@yandex.ru',
                              'pit-line@bk.ru',
                              ])
 

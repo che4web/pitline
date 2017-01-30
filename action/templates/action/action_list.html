@@ -19,7 +19,7 @@
 			    <div class="action__date">{{act.date}}</div>
 			    <div class="action__text">{{act.text}}</div>
                 <div class="action__btn">
-                    <button type="button" class="btn btn-default">воспользоваться</button>
+                    <a onClick="popup('makeorder', 'УСЛУГИ', 'Заявка на акцию {{act.title}}')" rel="leanModal" name="makeorder" href="#makeorder">  <button type="button" class="btn btn-default" >воспользоваться</button></a>
                 </div>
 		    </div>
 	  </div>
@@ -46,4 +46,28 @@
 	});
 
 </script>
+
+<div id="makeorder" class="modal makeorder">
+    <div class="modal-box">
+        <div class="modal-title">
+            Оставить заявку
+            <span>заполните форму и мы обязательно свяжемся с вами!</span>
+        </div>
+
+        <form id="callbacks" name="callbacks" action="/sender.php" method="POST">
+            <div class="error_field nonfielderror"> </div>
+            {%csrf_token%}
+            <input type="hidden" class="formname" name="message" value="">
+            <input type="hidden" class="add_message" name="add_message" value="типа пусто">
+            <input type="hidden" name="referer" value="http://pitline59.ru/">
+            <div class="error_field name_error ">  </div>
+            <label class="name left required"><input type="text" name="name" class="input_name" placeholder="ваше имя" /></label>
+            <div class="error_field phone_error ">  </div>
+            <label class="phone left required"><input type="text" name="phone" class="input_phone" placeholder="ваш телефон" /></label>
+            <div class="error_field email_error ">  </div>
+            <label class="email left"><input type="text" name="email" class="input_email" placeholder="ваш e-mail" /></label>
+            <input class="bttn button-send" type="button" name="sender" value="Оставить заявку" />
+        </form>
+    </div>
+</div
 {%endblock%}

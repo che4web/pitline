@@ -17,11 +17,21 @@ import posixpath
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 #EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+#EMAIL_USE_TLS = True
+#EMAIL_HOST = 'smtp.yandex.ru'
+#EMAIL_HOST_USER = 'pitlinemailbox@yandex.ru'
+#EMAIL_HOST_PASSWORD = 'jvrvtwdkapbwcrrk'
+#EMAIL_PORT = 587
+#DEFAULT_FROM_EMAIL="pitlinemailbox@yandex.ru"
+#SERVER_EMAIL = EMAIL_HOST_USER
 EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'pitlinemailbox@gmail.com'
-EMAIL_HOST_PASSWORD = 'PitLineMailbox123'
+EMAIL_HOST ='mail.nic.ru'
+EMAIL_HOST_USER = 'info@pitline59.ru'
+EMAIL_HOST_PASSWORD = 'jvrvtwdkapbwcrrk'
 EMAIL_PORT = 587
+DEFAULT_FROM_EMAIL=EMAIL_HOST_USER
+SERVER_EMAIL = EMAIL_HOST_USER
+
 
 
 EMAIL_FILE_PATH = 'app-messages'

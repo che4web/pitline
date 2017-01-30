@@ -11,7 +11,7 @@ def send_first_mail(form):
     message_body = plaintext.render(b)
     email = EmailMultiAlternatives('Пришла заявка с сайта ПитЛайн59',
                          message_body,
-                         to=['tanuffko24@gmail.com',
+                         to=['che-email@ya.ru',
                              ])
     email.attach_alternative(message_body, "text/html")
-    email.send()
+    print email.send()
