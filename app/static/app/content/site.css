@@ -292,8 +292,8 @@ background: #e5e5e5;
     /*background:url('logo.png') no-repeat 0 0 0 10 ;*/
 }
 
-.container{
- /*   max-width:1300px;*/
+.navbar .container{
+    max-width:1300px;
 }
 
 .action_title{
