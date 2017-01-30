@@ -295,6 +295,11 @@ background: #e5e5e5;
 .navbar .container{
     max-width:1300px;
 }
+@media(max-width:767px){
+.navbar .container{
+    max-width:100%;
+}
+}
 
 .action_title{
     font-family: 'Russo One', sans-ser/if;
