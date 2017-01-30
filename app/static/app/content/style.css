@@ -1057,8 +1057,8 @@ h2 {
 }
 
 .pa7 {
-	right:60px;
-	bottom:152px;
+	left:601px;
+	top:345px;
 }
 
 .order_photo {
@@ -2150,6 +2150,7 @@ map {
 .price .wrap {
 	line-height: 0;
 	position: relative;
+min-width: 10px;
 }
 
 .price_a {
