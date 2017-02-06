@@ -15,6 +15,17 @@ import posixpath
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+#EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'pitlinemailbox@gmail.com'
+EMAIL_HOST_PASSWORD = 'PitLineMailbox123'
+EMAIL_PORT = 587
+
+
+EMAIL_FILE_PATH = 'app-messages'
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -109,7 +120,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-ru'
 
 TIME_ZONE = 'UTC'
 
@@ -125,8 +136,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT= '/var/www/test/pitline/media'
+#STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
+STATIC_ROOT= '/var/www/test/pitline/static'
 
 MEDIA_URL = '/media/'
-
+#MEDIA_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['media']))
 MEDIA_ROOT = '/var/www/test/pitline/media'
+
+try:
+    from local_settings import *
+except ImportError:
+    pass

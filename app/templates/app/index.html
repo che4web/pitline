@@ -9,9 +9,9 @@
 <li><a href="{% url 'action-index' %}" class="noscroll">Акции</a></li>
 
 <li>
-    <a href="{%url 'director'%}" target="_blank" title="">
-        Руководитель
-    </a>
+<a href="{%url 'director'%}" target="_blank" title="">
+    Руководитель
+</a>
 </li>
 {%endblock%}
 
@@ -98,88 +98,88 @@
 <div class="page">
 
     <section class="main">
-        <div class="wrap">
-            <h1 style="text-transform:uppercase">
-                {{text_title.0.text}} <br /> 
-                <!--ЦЕНТР ЛОКАЛЬНОГО КУЗОВНОГО РЕМОНТА <br />-->
-                <span>{{text_title.1.text}}</span>
-                <!--<span>У нас нет фиксированной цены за деталь, наше основное отличие - индивидуальный подход к клиенту<br><b>Ждем всех по адресу: ул. Шоссе Космонавтов 310Г</b>
-                    </span>-->
-            </h1>
-            <div class="timer_block left first_timer">
-                <div class="row">
-                    <div class="col-sm-2">
-                        <img class="logo-img" alt="сервисный центр pitline" title="ервисный центр pitline" src="/static/app/images/logo_new.png">
-                    </div>
-                    <div class="col-sm-10 text" >
-                        {{text_reasons.text}}
-                    </div>
+    <div class="wrap">
+        <h1 style="text-transform:uppercase">
+            {{text_title.0.text}} <br /> 
+            <!--ЦЕНТР ЛОКАЛЬНОГО КУЗОВНОГО РЕМОНТА <br />-->
+            <span>{{text_title.1.text}}</span>
+            <!--<span>У нас нет фиксированной цены за деталь, наше основное отличие - индивидуальный подход к клиенту<br><b>Ждем всех по адресу: ул. Шоссе Космонавтов 310Г</b>
+            </span>-->
+        </h1>
+        <div class="timer_block left first_timer">
+            <div class="row">
+                <div class="col-sm-2">
+                    <img class="logo-img" alt="сервисный центр pitline" title="ервисный центр pitline" src="/static/app/images/logo_new.png">
                 </div>
-                <div class="row">
-                    <div class="inner__text">
-                        <ul>
+                <div class="col-sm-10 text" >
+                    {{text_reasons.text}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="inner__text">
+                    <ul>
                         {%for res in text_reasons.maintext_set.all%}
                         <li>{{res.text}}</li>
                         {%endfor%}
-                        </ul>
-                    </div>
+                    </ul>
                 </div>
-            </div>
-
-
-
-           
-            <div class="timer_block first_timer">
-                <span>Оставьте заявку</span>
-                и получите<br><b>скидку 1 000 руб.</b><br>на любые виды услуг
-                <div class="timer">
-                    <div class="pt-contain">
-                        <div class="days">
-                            <span class="flip day1Play">0</span>
-                            <span class="flip dayPlay">0</span>
-                            <em>&nbsp;дней</em>
-                        </div>
-                        <div class="hours">
-                            <span class="flip hour2Play"></span>
-                            <span class="flip hourPlay"></span>
-                            <em>&nbsp;часов</em>
-                        </div>
-                        <div class="minutes">
-                            <span class="flip minute6Play"></span>
-                            <span class="flip minutePlay"></span>
-                            <em>&nbsp;минут</em>
-                        </div>
-                        <div class="seconds">
-                            <span class="flip second6Play"></span>
-                            <span class="flip secondPlay"></span>
-                            <em>&nbsp;секунд</em>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="order_block first_order">
-                <!--
-                    <span>Оставьте заявку</span>
-                    и получите <b>бесплатную полировку</b><br />фар вашего автомобиля!
-                -->
-                <form id="callbacks" name="callbacks" action="/sender.php" method="POST">
-                    {%csrf_token%}
-                    <input type="hidden" class="formname" name="mname" value="скидку 1 000 руб.">
-                    <input type="hidden" name="referer" value="http://pitline59.ru/">
-                    <div class="error_field email_namer ">  </div>
-                    <label class="name left required"><input type="text" name="name" class="input_name" placeholder="имя" /></label>
-                    <div class="error_field email_phone ">  </div>
-                    <label class="phone left required"><input type="text" name="phone" class="input_phone" placeholder="телефон" /></label>
-                    <div class="error_field email_error ">  </div>
-                    <label class="email left"><input type="text" name="email" class="input_email" placeholder="e-mail" /></label>
-                    <input type="button" class="bttn button-send" name="sender" value="Отправить заявку" />
-                </form>
             </div>
         </div>
+
+
+
+
+        <div class="timer_block first_timer">
+            <span>Оставьте заявку</span>
+            и получите<br><b>скидку 1 000 руб.</b><br>на любые виды услуг
+            <div class="timer">
+                <div class="pt-contain">
+                    <div class="days">
+                        <span class="flip day1Play">0</span>
+                        <span class="flip dayPlay">0</span>
+                        <em>&nbsp;дней</em>
+                    </div>
+                    <div class="hours">
+                        <span class="flip hour2Play"></span>
+                        <span class="flip hourPlay"></span>
+                        <em>&nbsp;часов</em>
+                    </div>
+                    <div class="minutes">
+                        <span class="flip minute6Play"></span>
+                        <span class="flip minutePlay"></span>
+                        <em>&nbsp;минут</em>
+                    </div>
+                    <div class="seconds">
+                        <span class="flip second6Play"></span>
+                        <span class="flip secondPlay"></span>
+                        <em>&nbsp;секунд</em>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="order_block first_order">
+            <!--
+            <span>Оставьте заявку</span>
+            и получите <b>бесплатную полировку</b><br />фар вашего автомобиля!
+            -->
+            <form id="callbacks" name="callbacks" action="/sender.php" method="POST">
+                {%csrf_token%}
+                <input type="hidden" class="formname" name="mname" value="скидку 1 000 руб.">
+                <input type="hidden" name="referer" value="http://pitline59.ru/">
+                <div class="error_field email_namer ">  </div>
+                <label class="name left required"><input type="text" name="name" class="input_name" placeholder="имя" /></label>
+                <div class="error_field email_phone ">  </div>
+                <label class="phone left required"><input type="text" name="phone" class="input_phone" placeholder="телефон" /></label>
+                <div class="error_field email_error ">  </div>
+                <label class="email left"><input type="text" name="email" class="input_email" placeholder="e-mail" /></label>
+                <input type="button" class="bttn button-send" name="sender" value="Отправить заявку" />
+            </form>
+        </div>
+    </div>
     </section>
     <a name="cifr"></a>
     <section class="counts">
-        <div class="container">
+    <div class="">
 
 
         <div class="wrap">
@@ -217,11 +217,11 @@
             </div>
             <div class="clear"></div>
         </div>
-        </div>
+    </div>
     </section>
     <a name="sravnenie"></a>
     <section class="reasons">
-        <div class="container">
+    <div class="">
         <h2>До сих пор не решились отдать свое авто в сервис?</h2>
         <div class="wrap scroll-animate">
             <div class="fade">
@@ -286,11 +286,11 @@
                 <div class="clear"></div>
             </div>
         </div>
-        </div>
+    </div>
     </section>
     <a name="promo1"></a>
     <section class="order_photo">
-        <div class="container">
+    <div class="">
         <div class="wrap">
             <div class="order_block2">
                 <span>Рассчитать стоимость</span>
@@ -302,11 +302,11 @@
                     <input class="bttn button" type="button" name="callback" value="Оставить заявку" />
                 </form>
             </div>
-            </div>
         </div>
+    </div>
     </section>
     <section class="offer" id="offer">
-        <div class="container">
+    <div class="">
         <h2>До сих пор не решились отдать свое авто в сервис?</h2>
         <div class="wrap scroll-animate">
             <a name="product"></a>
@@ -410,11 +410,10 @@
             <div class="clear"></div>
             <!--<a id="go" rel="leanModal" onClick="popup('makeorder', 'прайс-лист');" name="makeorder" href="#makeorder" class="offer_a">Получить прайс-лист всех услуг</a>-->
         </div>
-        </div>
+    </div>
     </section>
     <a name="what"></a>
     <section class="why">
-        <div class="container">
         <h2>Почему 3 000 клиентов выбрали нас?</h2>
         <div class="wrap scroll-animate">
             <div class="why_one w1 scale">
@@ -448,8 +447,8 @@
             </div>
             <div class="clear"></div>
         </div>
-    </section>
-    <section class="price" id="price">
+        </section>
+        <section class="price" id="price">
         <h2>стоимость  окрасочных работ</h2>
 
 
@@ -470,279 +469,274 @@
         </div>
 
 
-        <div class="container">
-        <div class="wrap">
-            <div class="price_a pa1 hood_btn noselect">Капот</div>
-            <div class="price_a pa2 roof_btn noselect">Крыша</div>
-            <div class="price_a pa3 wing1_btn noselect">Крыло</div>
-            <div class="price_a pa4 door_btn noselect">Двери</div>
-            <div class="price_a pa5 wing2_btn noselect">Крыло</div>
-            <div class="price_a pa6 lights_btn noselect">Бампер</div>
-            <div class="price_a pa7 bumper2_btn noselect">Бампер</div>
-            <div class="pr1">
-                <div class="price_descr hood_desc">
-                    <!-- <div class="" -->
+        <div class="">
+            <div class="wrap">
+                <div class="price_a pa1 hood_btn noselect">Капот</div>
+                <div class="price_a pa2 roof_btn noselect">Крыша</div>
+                <div class="price_a pa3 wing1_btn noselect">Крыло</div>
+                <div class="price_a pa4 door_btn noselect">Двери</div>
+                <div class="price_a pa5 wing2_btn noselect">Крыло</div>
+                <div class="price_a pa6 lights_btn noselect">Бампер</div>
+                <div class="price_a pa7 bumper2_btn noselect">Бампер</div>
+                <div class="pr1">
+                    <div class="price_descr hood_desc">
+                    </div>
+                    <div class="pr2">
+                        <div class="price_descr roof_desc">
 
-
-                    <!--<a id="go" onClick="popup('makeorder', 'капот');" rel="leanModal" name="makeorder" href="#makeorder">оставить заявку</a>
-                        <a href="#tr1">подробнее</a>
-                        <div class="pd"></div>
-                    -->
+                        </div>
                     </div>
-                </div>
-                <div class="pr2">
-                    <div class="price_descr roof_desc">
-                        <!--
-                            Покраска крыши от <b>12000р</b><br />
-                            Ремонт крыши от <b>4000р</b><br />
-                            <!--<a id="go" onClick="popup('makeorder', 'крыша');" rel="leanModal" name="makeorder" href="#makeorder">оставить заявку</a>-->
-                            <!--<a href="#tr2">подробнее</a>
-                                <div class="pd"></div>-->
-
+                    <div class="pr3">
+                        <div class="price_descr wing1_desc">
+                        </div>
                     </div>
-                </div>
-                <div class="pr3">
-                    <div class="price_descr wing1_desc">
-                        <!--
-                            Покраска переднего крыла от <b>6000р</b><br />
-                            Ремонт переднего крыла от <b>1000р</b><br />
-                            <!--<a id="go" onClick="popup('makeorder', 'переднее крыло');" rel="leanModal" name="makeorder" href="#makeorder">оставить заявку</a>-->
-                            <!--<a href="#tr3">подробнее</a>
-                                <div class="pd"></div>-->
+                    <div class="pr4">
+                        <div class="price_descr door_desc">
+                        </div>
                     </div>
-                </div>
-                <div class="pr4">
-                    <div class="price_descr door_desc">
-                        <!--Покраска двери от <b>7500р</b> до <b>11200р</b><br />
-                            Ремонт двери от <b>2000р</b><br />-->
-                            <!--<a id="go" onClick="popup('makeorder', 'дверь');" rel="leanModal" name="makeorder" href="#makeorder">оставить заявку</a>
-                                <a href="#tr4">подробнее</a>
-                                <div class="pd"></div>-->
-                    </div>
-                </div>
-                <div class="pr5">
-                    <div class="price_descr wing2_desc">
-                        <!--Покраска заднего крыла от <b>7500р</b><br />
-                            Ремонт заднего крыла от <b>2000р</b><br />-->
-                            <!--<a id="go" onClick="popup('makeorder', 'заднее крыло');" rel="leanModal" name="makeorder" href="#makeorder">оставить заявку</a>
-                                <a href="#tr5">подробнее</a>-->
-                                <div class="pd"></div>
-                    </div>
-                </div>
-                <div class="pr6">
-                    <div class="price_descr lights_desc">
-                        <!--Полировка фар от <b>1000р</b><br />
-                            <!--<a id="go" onClick="popup('makeorder', 'фара');" rel="leanModal" name="makeorder" href="#makeorder">оставить заявку</a>-->
-                            <!--<a href="#tr5">подробнее</a>-->
+                    <div class="pr5">
+                        <div class="price_descr wing2_desc">
                             <div class="pd"></div>
+                        </div>
                     </div>
-                </div>
-                <div class="pr7">
-                    <div class="price_descr bumper1_desc">
-                        <!--Покраска бампера от <b>6500р</b><br />>-->
-                        <!--Ремонт бампера от <b>500р</b><br />-->
-                        <!--<a id="go" onClick="popup('makeorder', 'передний бампер');" rel="leanModal" name="makeorder" href="#makeorder">оставить заявку</a>-->
-                        <!--<a href="#tr6">подробнее</a>>-->
-                        <div class="pd"></div>
+                    <div class="pr6">
+                        <div class="price_descr lights_desc">
+                            <div class="pd"></div>
+                        </div>
                     </div>
-                </div>
-                <div class="pr8">
-                    <div class="price_descr bumper2_desc">
-                        <!--Покраска бампера от <b>6500р</b><br />
-                            Ремонт бампера от <b>300р</b><br />-->
-                            <!--<a id="go" onClick="popup('makeorder', 'задний бампер');" rel="leanModal" name="makeorder" href="#makeorder">оставить заявку</a>
-                                <a href="#tr7">подробнее</a>-->
-                                <div class="pd"></div>
+                    <div class="pr7">
+                        <div class="price_descr bumper1_desc">
+                            <div class="pd"></div>
+                        </div>
                     </div>
-                </div>
-                <!--<img src="images/price.jpg" class="map" width="714" height="482" usemap="#navigation">-->
-                <img src="{% static 'app/images/price.jpg'%}" class="map" width="714" height="482" usemap="#navigation">
-                <map id="navigation" name="navigation">
-                    <area shape="poly" id="hood" coords="188,28,175,28,161,31,133,36,110,42,93,50,76,61,55,76,43,86,31,97,23,108,20,114,19,119,19,127,19,135,22,142,23,142,27,141,34,142,41,143,51,144,63,147,73,150,82,153,92,157,105,162,111,163,115,164,124,164,133,162,141,159,147,157,149,156,148,152,147,149,147,144,148,138,151,131,155,123,161,115,169,107,179,96,189,88,200,80,212,71,227,63,236,58,246,55,255,52,260,50,265,49,271,49,274,49,270,47,261,44,247,40,227,35,207,31"> <!--21,135,17,123,22,105,39,89,62,70,84,54,107,43,131,36,162,30,182,27,202,30,225,34,249,39,270,47,237,56,211,71,186,89,166,108,153,123,147,138,147,155,126,162,111,161,72,146,39,140,24,141-->
+                    <div class="pr8">
+                        <div class="price_descr bumper2_desc">
+                            <div class="pd"></div>
+                        </div>
+                    </div>
+                    <img src="{% static 'app/images/price.jpg'%}" class="map" width="714" height="482" usemap="#navigation">
+                    <map id="navigation" name="navigation">
+                        <area shape="poly" id="hood" coords="188,28,175,28,161,31,133,36,110,42,93,50,76,61,55,76,43,86,31,97,23,108,20,114,19,119,19,127,19,135,22,142,23,142,27,141,34,142,41,143,51,144,63,147,73,150,82,153,92,157,105,162,111,163,115,164,124,164,133,162,141,159,147,157,149,156,148,152,147,149,147,144,148,138,151,131,155,123,161,115,169,107,179,96,189,88,200,80,212,71,227,63,236,58,246,55,255,52,260,50,265,49,271,49,274,49,270,47,261,44,247,40,227,35,207,31"> <!--21,135,17,123,22,105,39,89,62,70,84,54,107,43,131,36,162,30,182,27,202,30,225,34,249,39,270,47,237,56,211,71,186,89,166,108,153,123,147,138,147,155,126,162,111,161,72,146,39,140,24,141-->
                         <area shape="poly" id="lights" coords="18,123,14,131,11,139,11,147,12,153,15,157,18,151,23,148,23,146,20,140,19,136,19,136">
-                            <area shape="poly" id="bumper1" coords="30,208,30,204,29,200,28,195,28,189,29,184,33,178,40,172,42,171,31,159,27,153,23,146,18,152,15,157,13,153,11,148,9,143,7,149,7,156,7,162,8,167,9,169,13,172,14,174,14,182,14,194,21,201,26,206">
-                                <area shape="poly" id="wing1" coords="138,197,139,187,141,181,144,176,150,171,158,165,153,161,149,156,142,159,130,162,122,163,116,164,109,163,93,157,74,150,59,146,43,142,30,141,21,142,25,150,29,156,34,162,43,172,50,171,57,172,68,175,74,178,83,183,91,190,100,199,108,210,113,217,117,226,121,235,125,245,134,248,147,253,142,246,140,237,138,214">
-                                    <area shape="poly" id="roof" coords="548,121,524,109,491,93,466,82,442,72,422,65,397,57,380,53,358,48,345,45,332,50,321,56,309,64,298,71,289,78,279,87,273,94,264,104,259,111,252,121,246,133,256,133,274,134,289,136,308,139,323,144,341,150,361,157,380,166,407,179,426,189,442,197,457,206,465,211,473,204,483,196,494,186,505,175,515,165,524,157,532,147,540,135,544,127">
-                                        <area shape="poly" id="door" coords="138,203,138,215,139,225,140,233,141,241,141,245,145,251,148,254,180,266,210,278,248,293,293,309,320,319,345,327,362,333,370,334,380,331,385,328,397,315,403,308,413,297,418,292,424,283,427,276,427,265,427,258,396,248,358,236,319,223,269,206,229,192,207,185,188,179,175,174,165,170,159,166,158,166,152,169,147,173,143,177,140,183,139,190,138,195">
-                                            <area shape="poly" id="wing2" coords="470,216,504,239,521,252,541,266,552,273,564,279,568,286,576,297,580,301,596,309,616,318,615,320,603,326,583,335,572,349,561,363,552,374,547,377,543,378,536,378,516,375,505,373,497,358,486,345,478,336,466,327,456,322,446,319,437,317,426,316,417,317,411,319,407,321,402,325,400,329,398,334,397,339,398,343,399,347,400,353,397,352,387,348,376,344,376,341,378,337,381,332,386,327,392,321,400,312,408,303,416,295,421,288,424,282,426,277,427,270,427,258,432,259,442,262,453,262,463,261,476,259,487,256,490,253,489,249,477,240,453,222,445,216,447,213,452,208,455,205">
-                                                <area shape="poly" id="bumper2" coords="534,377,523,376,513,374,508,374,505,375,507,380,510,388,511,391,512,396,520,398,530,399,541,401,558,403,571,404,583,404,587,403,591,403,599,402,608,401,613,397,626,388,637,379,649,368,656,359,667,346,675,336,682,325,689,314,694,305,697,297,700,288,701,282,703,274,704,264,703,256,702,250,700,246,699,244,697,241,696,246,693,246,692,247,688,252,684,259,681,263,682,267,686,275,682,284,677,293,671,302,663,311,656,319,647,328,640,335,632,341,632,341,627,337,626,338,619,341,607,346,600,348,592,351,584,352,575,353,570,353,565,359,559,366,554,371,550,375,547,377,543,378">
-                </map>
-            </div>
-            <!--
-                <div class="price__table">
-                <table class="table table-bordered table-hover">
-                <thead>
-                <tr>
-                <th rowspan="2">НАИМЕНОВАНИЕ РАБОТ</th>
-                <th colspan="2">ЭКОНОМ</th>
-                <th colspan="2">СТАНДАРТ</th>
-                <th colspan="2">ПРЕМИУМ</th>
-                </tr>
-                <tr>
-                <th>цена</th>
-                <th>цена со скидкой</th>
-                <th>цена</th>
-                <th>цена со скидкой</th>
-                <th>цена</th>
-                <th>цена со скидкой</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr id="tr1">
-                <td>Капот</td>
-                <td class="warning"><strike>8200</strike></td>
-                <td class="warning">7500</td>
-                <td class="success"><strike>9500</strike></td>
-                <td class="success">9100</td>
-                <td class="danger"><strike>12000</strike></td>
-                <td class="danger">11200</td>
-                </tr>
-                <tr id="tr2">
-                <td>Крыша</td>
-                <td class="warning"><strike>8200</strike></td>
-                <td class="warning">7500</td>
-                <td class="success"><strike>9500</strike></td>
-                <td class="success">9100</td>
-                <td class="danger"><strike>12000</strike></td>
-                <td class="danger">11200</td>
-                </tr>
-                <tr id="tr3">
-                <td>Крыло</td>
-                <td class="warning"><strike>8200</strike></td>
-                <td class="warning">7500</td>
-                <td class="success"><strike>9500</strike></td>
-                <td class="success">9100</td>
-                <td class="danger"><strike>12000</strike></td>
-                <td class="danger">11200</td>
-                </tr>
-                <tr id="tr4">
-                <td>Двери</td>
-                <td class="warning"><strike>8200</strike></td>
-                <td class="warning">7500</td>
-                <td class="success"><strike>9500</strike></td>
-                <td class="success">9100</td>
-                <td class="danger"><strike>12000</strike></td>
-                <td class="danger">11200</td>
-                </tr>
-                <tr id="tr5">
-                <td>Крыло</td>
-                <td class="warning"><strike>8200</strike></td>
-                <td class="warning">7500</td>
-                <td class="success"><strike>9500</strike></td>
-                <td class="success">9100</td>
-                <td class="danger"><strike>12000</strike></td>
-                <td class="danger">11200</td>
-                </tr>
-                <tr id="tr6">
-                <td>Фара</td>
-                <td class="warning"><strike>8200</strike></td>
-                <td class="warning">7500</td>
-                <td class="success"><strike>9500</strike></td>
-                <td class="success">9100</td>
-                <td class="danger"><strike>12000</strike></td>
-                <td class="danger">11200</td>
-                </tr>
-                <tr id="tr7">
-                <td>Бампер</td>
-                <td class="warning"><strike>8200</strike></td>
-                <td class="warning">7500</td>
-                <td class="success"><strike>9500</strike></td>
-                <td class="success">9100</td>
-                <td class="danger"><strike>12000</strike></td>
-                <td class="danger">11200</td>
-                </tr>
-                </tbody>
-                </table>
-                </div>-->
+                        <area shape="poly" id="bumper1" coords="30,208,30,204,29,200,28,195,28,189,29,184,33,178,40,172,42,171,31,159,27,153,23,146,18,152,15,157,13,153,11,148,9,143,7,149,7,156,7,162,8,167,9,169,13,172,14,174,14,182,14,194,21,201,26,206">
+                        <area shape="poly" id="wing1" coords="138,197,139,187,141,181,144,176,150,171,158,165,153,161,149,156,142,159,130,162,122,163,116,164,109,163,93,157,74,150,59,146,43,142,30,141,21,142,25,150,29,156,34,162,43,172,50,171,57,172,68,175,74,178,83,183,91,190,100,199,108,210,113,217,117,226,121,235,125,245,134,248,147,253,142,246,140,237,138,214">
+                        <area shape="poly" id="roof" coords="548,121,524,109,491,93,466,82,442,72,422,65,397,57,380,53,358,48,345,45,332,50,321,56,309,64,298,71,289,78,279,87,273,94,264,104,259,111,252,121,246,133,256,133,274,134,289,136,308,139,323,144,341,150,361,157,380,166,407,179,426,189,442,197,457,206,465,211,473,204,483,196,494,186,505,175,515,165,524,157,532,147,540,135,544,127">
+                        <area shape="poly" id="door" coords="138,203,138,215,139,225,140,233,141,241,141,245,145,251,148,254,180,266,210,278,248,293,293,309,320,319,345,327,362,333,370,334,380,331,385,328,397,315,403,308,413,297,418,292,424,283,427,276,427,265,427,258,396,248,358,236,319,223,269,206,229,192,207,185,188,179,175,174,165,170,159,166,158,166,152,169,147,173,143,177,140,183,139,190,138,195">
+                        <area shape="poly" id="wing2" coords="470,216,504,239,521,252,541,266,552,273,564,279,568,286,576,297,580,301,596,309,616,318,615,320,603,326,583,335,572,349,561,363,552,374,547,377,543,378,536,378,516,375,505,373,497,358,486,345,478,336,466,327,456,322,446,319,437,317,426,316,417,317,411,319,407,321,402,325,400,329,398,334,397,339,398,343,399,347,400,353,397,352,387,348,376,344,376,341,378,337,381,332,386,327,392,321,400,312,408,303,416,295,421,288,424,282,426,277,427,270,427,258,432,259,442,262,453,262,463,261,476,259,487,256,490,253,489,249,477,240,453,222,445,216,447,213,452,208,455,205">
+                        <area shape="poly" id="bumper2" coords="534,377,523,376,513,374,508,374,505,375,507,380,510,388,511,391,512,396,520,398,530,399,541,401,558,403,571,404,583,404,587,403,591,403,599,402,608,401,613,397,626,388,637,379,649,368,656,359,667,346,675,336,682,325,689,314,694,305,697,297,700,288,701,282,703,274,704,264,703,256,702,250,700,246,699,244,697,241,696,246,693,246,692,247,688,252,684,259,681,263,682,267,686,275,682,284,677,293,671,302,663,311,656,319,647,328,640,335,632,341,632,341,627,337,626,338,619,341,607,346,600,348,592,351,584,352,575,353,570,353,565,359,559,366,554,371,550,375,547,377,543,378">
+                    </map>
                 </div>
-                </div>
-    </section>
-
-    <a name="promo2"></a>
-
-    <section class="order" id="order">
-    <div class="container">
-        <div class="wrap">
-            <!--<div class="order_img"></div>-->
-            <div class="photo_block">
-                <br />
-                <span>Оценка по фото</span>
-                <br />пришлите фотографии<br>и мы оценим вам ремонт
-
-
             </div>
-            <div class="order_block order_block_photo">
-                <!--
+        </div>
+        </section>
+
+        <a name="promo2"></a>
+
+        <section class="order" id="order">
+        <div class="">
+            <div class="wrap">
+                <!--<div class="order_img"></div>-->
+                <div class="photo_block">
+                    <br />
+                    <span>Оценка по фото</span>
+                    <br />пришлите фотографии<br>и мы оценим вам ремонт
+
+
+                </div>
+                <div class="order_block order_block_photo">
+                    <!--
                     <span>Оставьте заявку</span>
                     и получите <b>бесплатную полировку</b><br />фар вашего автомобиля!
-                -->
-                <form method="POST" enctype="multipart/form-data" action="/sender">
-                    <div class="">
-                        <div class="order_block_photo__left">
-                            {%csrf_token%}
-                            <input type="hidden" class="formname" name="message" value="">
-                            <input type="hidden" class="add_message" name="add_message" value="типа пусто">
-                            <input type="hidden" name="referer" value="http://pitline59.ru/">
-                            <div class="error_field name_error ">  </div>
-                            <label class="name left required"><input type="text" name="name" class="input_name" placeholder="ваше имя" /></label>
-                            <div class="error_field phone_error ">  </div>
-                            <label class="phone left required"><input type="text" name="phone" class="input_phone" placeholder="ваш телефон" /></label>
-                            <div class="error_field email_error ">  </div>
-                            <label class="email left"><input type="text" name="email" class="input_email" placeholder="ваш e-mail" /></label>
-                            <div class="error_field email_error ">  </div>
-                            <label class="email left"><input type="text" name="add_message" class="input_email" placeholder="комментарий" /></label>
+                    -->
+                    <form method="POST" enctype="multipart/form-data" action="/sender">
+                        <div class="">
+                            <div class="order_block_photo__left">
+                                {%csrf_token%}
+                                <input type="hidden" class="formname" name="message" value="">
+                                <input type="hidden" class="add_message" name="add_message" value="типа пусто">
+                                <input type="hidden" name="referer" value="http://pitline59.ru/">
+                                <div class="error_field name_error ">  </div>
+                                <label class="name left required"><input type="text" name="name" class="input_name" placeholder="ваше имя" /></label>
+                                <div class="error_field phone_error ">  </div>
+                                <label class="phone left required"><input type="text" name="phone" class="input_phone" placeholder="ваш телефон" /></label>
+                                <div class="error_field email_error ">  </div>
+                                <label class="email left"><input type="text" name="email" class="input_email" placeholder="ваш e-mail" /></label>
+                                <div class="error_field email_error ">  </div>
+                                <label class="email left"><input type="text" name="add_message" class="input_email" placeholder="комментарий" /></label>
 
-                            <input class="bttn button-send" type="button" name="sender" value="Оставить заявку" />
-                        </div>       
-                        <div class="order_block_photo__right">
-                            {{form_foto.img1}}
-                            {{form_foto.img2}}
-                            {{form_foto.img3}}
-                            <div style="display:none"> гаршочек не вари</div>
-                        </div>       
-                    </div>
-                </form>
+                                <input class="bttn button-send" type="button" name="sender" value="Оставить заявку" />
+                            </div>       
+                            <div class="order_block_photo__right">
+                                {{form_foto.img1}}
+                                {{form_foto.img2}}
+                                {{form_foto.img3}}
+                                <div style="display:none"> гаршочек не вари</div>
+                            </div>       
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-        </div>
-    </section>
-    <a name="kak"></a>
+        </section>
+        <a name="kak"></a>
 
-    <a name="reviews1"></a>
-    <section class="reviews" id="reviews">
-       <div class="container">
-        <h2>Отзывы наших клиентов</h2>
-        <h5 class="help_click">
-            кликните по отзыву для подробного просмотра
-        </h5>
+        <a name="reviews1"></a>
+        <section class="reviews" id="reviews">
         <div class="">
-            <a name="reviews2"></a>
+            <h2>Отзывы наших клиентов</h2>
+            <h5 class="help_click">
+                кликните по отзыву для подробного просмотра
+            </h5>
+            <div class="">
+                <a name="reviews2"></a>
 
 
-            <div class="modal fade" tabindex="-1" role="dialog" id="feedback-modal">
-                <div class="modal-dialog modal-feedback" role="document">
+                <div class="modal fade" tabindex="-1" role="dialog" id="feedback-modal">
+                    <div class="modal-dialog modal-feedback" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">Отзывы наших клиентов</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div id="car-akcii2" class="carousel slide" data-ride="carousel" data-interval="0">
+                                    <ol class="carousel-indicators">
+                                        {%for item in feedback_list%}
+                                        {%if forloop.first %}
+                                        <li data-target="#car-akcii2" data-slide-to="{{forloop.counter0}}" class="active"></li>
+                                        {%else%}
+                                        <li data-target="#car-akcii2" data-slide-to="{{forloop.counter0}}"></li>
+                                        {%endif%}
+                                        {%endfor%}
+                                    </ol>
+                                    <div class="carousel-inner">
+                                        {%for item in feedback_list%}
+                                        <div class="item {%if forloop.first%} active {%endif%} ">
+
+                                            <div class="review-modal r1 ">
+                                                <div class="review_img"><img src="{{item.get_foto}}"></div>
+                                            </div>
+
+                                        </div>
+                                        {%endfor%}
+                                    </div>
+                                </div>
+                            </div>      
+                        </div>
+
+                        <a class="carousel-control left noscroll carousel-control-feedback" href="#car-akcii2" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a class="carousel-control right noscroll carousel-control-feedback" href="#car-akcii2" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+
+
+            <div id="car-akcii" class="carousel slide" data-ride="carousel" data-interval="5000">
+                <ol class="carousel-indicators">
+                    {%for item in feedback_list%}
+                    {%if forloop.first %}
+                    <li data-target="#car-akcii" data-slide-to="{{forloop.counter0}}" class="active"></li>
+                    {%else%}
+                    <li data-target="#car-akcii" data-slide-to="{{forloop.counter0}}"></li>
+                    {%endif%}
+                    {%endfor%}
+                </ol>
+                <div class="carousel-inner">
+                    {%for item in feedback_list%}
+                    <div class="item {%if forloop.first%} active {%endif%} ">
+
+                        <div class="review r1 ">
+                            <div class="review_img"><img src="{{item.get_foto}}"></div>
+                        </div>
+
+                    </div>
+                    {%endfor%}
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <a name="promo3"></a>
+    <section class="order_photo">
+    <div class="">
+        <div class="wrap">
+            <div class="order_block2">
+                <span>Рассчитать стоимость</span>
+                восстановления авто после ДТП
+                <form id="callbacks" name="callbacks" action="/sender.php">
+                    <input type="hidden" name="referer" value="http://pitline59.ru/">
+                    <a onClick="popup('makeorder', 'УСЛУГИ', 'Заявка на расчет стоимости после ДТП')" rel="leanModal" name="makeorder" href="#makeorder">  <input class="bttn button" type="button" name="callback" value="Оставить заявку" />
+                    </form>
+                </div>
+            </div>
+        </div>
+        </section>
+        <a name="proect1"></a>
+
+        <section class="projects" id="project">
+        <div class="">
+            <h2>ВЫПОЛНЕННЫЕ ПРОЕКТЫ</h2>
+            <h5 class="help_click">
+                кликните по проекту для подробного просмотра
+            </h5>
+
+            <div class="modal fade" tabindex="-1" role="dialog" id="projects-modal">
+                <div class="modal-dialog modal-projects" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title">Отзывы наших клиентов</h4>
+                            <h4 class="modal-title">Выполненные проекты</h4>
                         </div>
                         <div class="modal-body">
-                            <div id="car-akcii2" class="carousel slide" data-ride="carousel" data-interval="0">
+                            <div id="car-projects2" class="carousel slide" data-ride="carousel" data-interval="0">
                                 <ol class="carousel-indicators">
-                                    {%for item in feedback_list%}
+                                    {%for item in projects%}
                                     {%if forloop.first %}
-                                    <li data-target="#car-akcii2" data-slide-to="{{forloop.counter0}}" class="active"></li>
+                                    <li data-target="#car-projects2" data-slide-to="{{forloop.counter0}}" class="active"></li>
                                     {%else%}
-                                    <li data-target="#car-akcii2" data-slide-to="{{forloop.counter0}}"></li>
+                                    <li data-target="#car-projects2" data-slide-to="{{forloop.counter0}}"></li>
                                     {%endif%}
                                     {%endfor%}
                                 </ol>
                                 <div class="carousel-inner">
-                                    {%for item in feedback_list%}
+                                    {%for item in projects%}
                                     <div class="item {%if forloop.first%} active {%endif%} ">
 
-                                        <div class="review-modal r1 ">
-                                            <div class="review_img"><img src="{{item.get_foto}}"></div>
+                                        <div class="project p1">
+                                            <div class="project_name">
+                                                {{item.title}}
+                                            </div>
+
+                                            <div class="project_img">
+                                                <div class="project_img__before">
+                                                    <div class="project_img___text">
+                                                        до
+                                                    </div>
+                                                    <img src="{{item.foto_befo.url}}">
+                                                </div>
+                                                <div class="project_img__after">
+                                                    <div class="project_img___text">
+                                                        после
+                                                    </div>
+                                                    <img src="{{item.foto_after.url}}">
+                                                </div>
+                                            </div>
+                                            <div class="project_text">
+                                                <span>Проблемы у автомобиля до ремонта:</span>
+                                                {{item.text}}
+                                                <div class="clear"></div>
+                                            </div>
+                                            <div class="project_det">
+                                                <div class="project_date">Срок выполнения: <em>{{item.time}}</em></div>
+                                                <div class="project_price">Цена: <em>{{item.cost}}</em></div>
+                                                <div class="clear"></div>
+                                            </div>
                                         </div>
 
                                     </div>
@@ -751,305 +745,150 @@
                             </div>
                         </div>      
                     </div>
-
-                <a class="carousel-control left noscroll carousel-control-feedback" href="#car-akcii2" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                </a>
-                <a class="carousel-control right noscroll carousel-control-feedback" href="#car-akcii2" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                </a>
+                    <a class="carousel-control left noscroll carousel-control-feedback" href="#car-projects2" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a class="carousel-control right noscroll carousel-control-feedback" href="#car-projects2" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
 
 
-        <div id="car-akcii" class="carousel slide" data-ride="carousel" data-interval="5000">
-            <ol class="carousel-indicators">
-                {%for item in feedback_list%}
-                {%if forloop.first %}
-                <li data-target="#car-akcii" data-slide-to="{{forloop.counter0}}" class="active"></li>
-                {%else%}
-                <li data-target="#car-akcii" data-slide-to="{{forloop.counter0}}"></li>
-                {%endif%}
-                {%endfor%}
-            </ol>
-            <div class="carousel-inner">
-                {%for item in feedback_list%}
-                <div class="item {%if forloop.first%} active {%endif%} ">
 
-                    <div class="review r1 ">
-                        <div class="review_img"><img src="{{item.get_foto}}"></div>
-                    </div>
 
-                </div>
-                {%endfor%}
-            </div>
 
-        </div>
-        </div>
-        </div>
-</div>
-    </section>
-
-    <a name="promo3"></a>
-    <section class="order_photo">
-       <div class="container">
-        <div class="wrap">
-            <div class="order_block2">
-                <span>Рассчитать стоимость</span>
-                восстановления авто после ДТП
-                <form id="callbacks" name="callbacks" action="/sender.php">
-                    <input type="hidden" name="referer" value="http://pitline59.ru/">
-                                      <a onClick="popup('makeorder', 'УСЛУГИ', 'Заявка на расчет стоимости после ДТП')" rel="leanModal" name="makeorder" href="#makeorder">  <input class="bttn button" type="button" name="callback" value="Оставить заявку" />
-                </form>
-            </div>
-        </div>
-        </div>
-    </section>
-    <a name="proect1"></a>
-
-    <section class="projects" id="project">
-       <div class="container">
-        <h2>ВЫПОЛНЕННЫЕ ПРОЕКТЫ</h2>
-        <h5 class="help_click">
-            кликните по проекту для подробного просмотра
-        </h5>
-
-        <div class="modal fade" tabindex="-1" role="dialog" id="projects-modal">
-            <div class="modal-dialog modal-projects" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">Выполненные проекты</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div id="car-projects2" class="carousel slide" data-ride="carousel" data-interval="0">
-                            <ol class="carousel-indicators">
-                                {%for item in projects%}
-                                {%if forloop.first %}
-                                <li data-target="#car-projects2" data-slide-to="{{forloop.counter0}}" class="active"></li>
-                                {%else%}
-                                <li data-target="#car-projects2" data-slide-to="{{forloop.counter0}}"></li>
-                                {%endif%}
-                                {%endfor%}
-                            </ol>
-                            <div class="carousel-inner">
-                                {%for item in projects%}
-                                <div class="item {%if forloop.first%} active {%endif%} ">
-
-                                    <div class="project p1">
-                                        <div class="project_name">
-                                            {{item.title}}
-                                        </div>
-
-                                        <div class="project_img">
-                                        <div class="project_img__before">
-                                        <div class="project_img___text">
-                                            до
-                                        </div>
-                                            <img src="{{item.foto_befo.url}}">
-                                        </div>
-                                        <div class="project_img__after">
-                                        <div class="project_img___text">
-                                            после
-                                        </div>
-                                            <img src="{{item.foto_after.url}}">
-                                        </div>
-                                        </div>
-                                        <div class="project_text">
-                                            <span>Проблемы у автомобиля до ремонта:</span>
-                                            {{item.text}}
-                                            <div class="clear"></div>
-                                        </div>
-                                        <div class="project_det">
-                                            <div class="project_date">Срок выполнения: <em>{{item.time}}</em></div>
-                                            <div class="project_price">Цена: <em>{{item.cost}}</em></div>
-                                            <div class="clear"></div>
-                                        </div>
+            <div id="car-projects" class="carousel slide" data-ride="carousel" data-interval="5000">
+                <ol class="carousel-indicators">
+                    {%for item in projects%}
+                    {%if forloop.first %}
+                    <li data-target="#car-projects" data-slide-to="{{forloop.counter0}}" class="active"></li>
+                    {%else%}
+                    <li data-target="#car-projects" data-slide-to="{{forloop.counter0}}"></li>
+                    {%endif%}
+                    {%endfor%}
+                </ol>
+                <div class="carousel-inner">
+                    {%for item in projects%}
+                    <div class="item {%if forloop.first%} active {%endif%} ">
+                        <div class="project p1">
+                            <div class="project_name">
+                                {{item.title}}
+                            </div>
+                            <div class="project_img">
+                                <div class="project_img__before">
+                                    <div class="project_img___text">
+                                        до
                                     </div>
-
+                                    <img src="{{item.foto_befo.url}}">
                                 </div>
-                                {%endfor%}
+                                <div class="project_img__after">
+                                    <div class="project_img___text">
+                                        после
+                                    </div>
+                                    <img src="{{item.foto_after.url}}">
+                                </div>
+                            </div>
+                            <div class="project_text">
+                                <span>Проблемы у автомобиля до ремонта:</span>
+                                {{item.text}}
+                                <div class="clear"></div>
+                            </div>
+                            <div class="project_det">
+                                <div class="project_date">Срок выполнения: <em>{{item.time}}</em></div>
+                                <div class="project_price">Цена: <em>{{item.cost}}</em></div>
+                                <div class="clear"></div>
                             </div>
                         </div>
-                    </div>      
+                    </div>
+                    {%endfor%}
                 </div>
-            <a class="carousel-control left noscroll carousel-control-feedback" href="#car-projects2" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-            </a>
-            <a class="carousel-control right noscroll carousel-control-feedback" href="#car-projects2" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-            </a>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
 
-
-
-
-
-        <div id="car-projects" class="carousel slide" data-ride="carousel" data-interval="5000">
-            <ol class="carousel-indicators">
-                {%for item in projects%}
-                {%if forloop.first %}
-                <li data-target="#car-projects" data-slide-to="{{forloop.counter0}}" class="active"></li>
-                {%else%}
-                <li data-target="#car-projects" data-slide-to="{{forloop.counter0}}"></li>
-                {%endif%}
-                {%endfor%}
-            </ol>
-            <div class="carousel-inner">
-                {%for item in projects%}
-                        <div class="item {%if forloop.first%} active {%endif%} ">
-                <div class="project p1">
-                    <div class="project_name">
-                        {{item.title}}
-                    </div>
-                                        <div class="project_img">
-                                        <div class="project_img__before">
-                                        <div class="project_img___text">
-                                            до
-                                        </div>
-                                            <img src="{{item.foto_befo.url}}">
-                                        </div>
-                                        <div class="project_img__after">
-                                        <div class="project_img___text">
-                                            после
-                                        </div>
-                                            <img src="{{item.foto_after.url}}">
-                                        </div>
-                                        </div>
-                    <div class="project_text">
-                        <span>Проблемы у автомобиля до ремонта:</span>
-                        {{item.text}}
-                        <div class="clear"></div>
-                    </div>
-                    <div class="project_det">
-                        <div class="project_date">Срок выполнения: <em>{{item.time}}</em></div>
-                        <div class="project_price">Цена: <em>{{item.cost}}</em></div>
-                        <div class="clear"></div>
-                    </div>
-                    </div>
-                </div>
-                {%endfor%}
             </div>
+        </div>
+        </section>
 
-            <!--
-                {#<div class="wrap">
-                {%for item in projects%}
-                <div class="project p1">
-                <div class="project_name">
-                {{item.title}}
+
+
+        <a name="24"></a>
+        <section class="contacts">
+        <div class="">
+            <div class="wrap">
+                <h2>работаем<br /><em>для вас</em></h2>
+
+                <div class="contacts_text">
+                    <span>
+                        консультации по вопросам <br />покраски и ремонта
+                    </span>
+                    <span>
+                        бесплатная оценка <br />повреждений
+                    </span>
+                    <div class="contacts_phone">
+                        +7(342) 288-11-91 
+                        <a id="go" rel="leanModal" name="callback" href="#callback" class="mc">заказать звонок</a>
+                    </div>
                 </div>
-                <div class="project_img">
-                <img src="{{item.foto_befo.url}}">
-                <img src="{{item.foto_after.url}}">
-                </div>
-                <div class="project_text">
-                <span>Проблемы у автомобиля до ремонта:</span>
-                {{item.text}}
                 <div class="clear"></div>
-                </div>
-                <div class="project_det">
-                <div class="project_date">Срок выполнения: <em>{{item.time}}</em></div>
-                <div class="project_price">Цена: <em>{{item.cost}}</em></div>
-                <div class="clear"></div>
-                </div>
-                </div>
-                {%endfor%}
-                </div>#}-->
-        </div>
-        </div>
-    </section>
-
-
-
-    <a name="24"></a>
-    <section class="contacts">
-    <div class="container">
-        <div class="wrap">
-            <h2>работаем<br /><em>для вас</em></h2>
-
-            <div class="contacts_text">
-                <span>
-                    консультации по вопросам <br />покраски и ремонта
-                </span>
-                <span>
-                    бесплатная оценка <br />повреждений
-                </span>
-                <div class="contacts_phone">
-                    +7(342) 288-11-91 
-                    <a id="go" rel="leanModal" name="callback" href="#callback" class="mc">заказать звонок</a>
-                </div>
             </div>
-            <div class="clear"></div>
         </div>
-        </div>
-    </section>
-    <a name="promo4"></a>
-    <section class="order">
-    <div class="container">
-        <div class="wrap">
-            <div class="order_img"></div>
-            <div class="timer_block">
-                <span>Оставьте заявку</span>
-                и получите<br><b>скидку 1 000 руб.</b><br>на любые виды услуг
-                <div class="timer">
-                    <div class="pt-contain">
-                        <div class="days">
-                            <span class="flip day1Play">0</span>
-                            <span class="flip dayPlay">0</span>
-                            <em>&nbsp;дней</em>
-                        </div>
-                        <div class="hours">
-                            <span class="flip hour2Play"></span>
-                            <span class="flip hourPlay"></span>
-                            <em>&nbsp;часов</em>
-                        </div>
-                        <div class="minutes">
-                            <span class="flip minute6Play"></span>
-                            <span class="flip minutePlay"></span>
-                            <em>&nbsp;минут</em>
-                        </div>
-                        <div class="seconds">
-                            <span class="flip second6Play"></span>
-                            <span class="flip secondPlay"></span>
-                            <em>&nbsp;секунд</em>
+        </section>
+        <a name="promo4"></a>
+        <section class="order">
+        <div class="">
+            <div class="wrap">
+                <div class="order_img"></div>
+                <div class="timer_block">
+                    <span>Оставьте заявку</span>
+                    и получите<br><b>скидку 1 000 руб.</b><br>на любые виды услуг
+                    <div class="timer">
+                        <div class="pt-contain">
+                            <div class="days">
+                                <span class="flip day1Play">0</span>
+                                <span class="flip dayPlay">0</span>
+                                <em>&nbsp;дней</em>
+                            </div>
+                            <div class="hours">
+                                <span class="flip hour2Play"></span>
+                                <span class="flip hourPlay"></span>
+                                <em>&nbsp;часов</em>
+                            </div>
+                            <div class="minutes">
+                                <span class="flip minute6Play"></span>
+                                <span class="flip minutePlay"></span>
+                                <em>&nbsp;минут</em>
+                            </div>
+                            <div class="seconds">
+                                <span class="flip second6Play"></span>
+                                <span class="flip secondPlay"></span>
+                                <em>&nbsp;секунд</em>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="order_block">
-                <!--
+                <div class="order_block">
+                    <!--
                     <span>Оставьте заявку</span>
                     и получите <b>бесплатную полировку</b><br />фар вашего автомобиля!
-                -->
-                <form id="callbacks" name="callbacks" action="/sender.php">
-                    <input type="hidden" class="formname" name="name" value="">
-                    <input type="hidden" name="referer" value="../index.html">
-                    <label class="name left required"><input type="text" name="name" class="input_name" placeholder="имя" /></label>
-                    <label class="phone left required"><input type="text" name="phone" class="input_phone" placeholder="телефон" /></label>
-                    <label class="email left"><input type="text" name="email" class="input_email" placeholder="e-mail" /></label>
-                    <input type="button" class="bttn button" name="request" value="Отправить заявку" />
-                </form>
+                    -->
+                    <form id="callbacks" name="callbacks" action="/sender.php">
+                        <input type="hidden" class="formname" name="name" value="">
+                        <input type="hidden" name="referer" value="../index.html">
+                        <label class="name left required"><input type="text" name="name" class="input_name" placeholder="имя" /></label>
+                        <label class="phone left required"><input type="text" name="phone" class="input_phone" placeholder="телефон" /></label>
+                        <label class="email left"><input type="text" name="email" class="input_email" placeholder="e-mail" /></label>
+                        <input type="button" class="bttn button" name="request" value="Отправить заявку" />
+                    </form>
+                </div>
             </div>
         </div>
-        </div>
-    </section>
-    <section class="maps">
+        </section>
+        <section class="maps">
         <div class="contact-page__map">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4485.771887504383!2d56.10516595103162!3d57.9539143346363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43e8bed36d1d3bd3%3A0xd569357004c36fa1!2sPit+Line!5e0!3m2!1sru!2sru!4v1484070492428" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
-    </section>
-    <!--<section class="any_q">
-        <div class="wrap">
-        <h3>ОСТАЛИСЬ <em>ВОПРОСЫ?</em></h3>
-        <a id="go" rel="leanModal" name="question" href="#question">задайте их менеджеру</a>
-        <div class="clear"></div>
-        </div>
         </section>
-    -->
-    <footer>
-        <div class="container">
+        <footer>
+        <div class="">
             <div class="row">
                 <div class="col-sm-6 col-md-3">
                     <div class="f_phone">
@@ -1088,68 +927,38 @@
                 </div>
             </div>
         </div>
-    </footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12" >
-                <script type="text/javascript" src="//vk.com/js/api/openapi.js?136"></script>
-
-                <!-- VK Widget -->
-                <div id="vk_groups"></div>
-                <script type="text/javascript">
-VK.Widgets.Group("vk_groups", {mode: 3, width: "auto"}, 52545395);
-                </script>
-            </div>
-        </div>
-    </div>
-
-
-    <!--
-        <footer>
-        <div class="wrap">
-        <div class="f_phone">
-        +7(342) 288-11-91 
-        <a id="go" rel="leanModal" name="callback" href="#callback" class="mc">заказать звонок</a>
-        </div>
-        <div>
-        ОСТАЛИСЬ ВОПРОСЫ?
-        <a id="go" rel="leanModal" name="question" href="#question">задайте их менеджеру</a>
-        <div class="clear"></div>
-        </div>
-        <div>
-        <div>
-        <div class="row" style="margin-top: 38px;">
-        <div class="col-md-6">
-        ОСТАЛИСЬ ВОПРОСЫ?
-        </div>
-        <div class="col-md-6">
-        <a href="conf.pdf" target="_blank" class="conf">Политика конфиденциальности</a>
-        </div>
-        </div>
-        </div>
-        </div>
-        <div>
-        </div>
-        <a href="http://vk.com/perm.pitline" target="_blank" class="copyright"><b>Pit Line--:</b></a>
-
-
-        <div class="clear"></div>
-        </div>
         </footer>
-    -->
+        <div class="">
+            <div class="row">
+                <div class="col-md-12" >
+                    <script type="text/javascript" src="//vk.com/js/api/openapi.js?136"></script>
+                    <div class="wrap">
+
+                    <!-- VK Widget -->
+                    <div id="vk_groups"></div>
+                    <script type="text/javascript">
+                        VK.Widgets.Group("vk_groups", {mode: 3, width: "auto"}, 52545395);
+                        </script>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
     </div>
     <div id="akcii"></div>
     <script type="text/javascript">
-window.onload = function () {
-    $(".hood_desc").html('<b>7800р.</b><br /><div class="pd"></div>');
-    $(".roof_desc").html('<b>10200р.</b><br /><div class="pd"></div>');
-    $(".wing1_desc").html('<b>5400р.</b><br /><div class="pd"></div>');
-    $(".door_desc").html('<b>6000р.</b><br /><div class="pd"></div>');
-    $(".wing2_desc").html('<b>6000р.</b><br /><div class="pd"></div>');
-    $(".lights_desc").html('<b>6000р.</b><br /><div class="pd"></div>');
-    $(".bumper1_desc").html('<b>6000р.</b><br /><div class="pd"></div>');
-    $(".bumper2_desc").html('<b>5700р.</b><br /><div class="pd"></div>');
-}
+        window.onload = function () {
+            $(".hood_desc").html('<b>7800р.</b><br /><div class="pd"></div>');
+            $(".roof_desc").html('<b>10200р.</b><br /><div class="pd"></div>');
+            $(".wing1_desc").html('<b>5400р.</b><br /><div class="pd"></div>');
+            $(".door_desc").html('<b>6000р.</b><br /><div class="pd"></div>');
+            $(".wing2_desc").html('<b>6000р.</b><br /><div class="pd"></div>');
+            $(".lights_desc").html('<b>6000р.</b><br /><div class="pd"></div>');
+            $(".bumper1_desc").html('<b>6000р.</b><br /><div class="pd"></div>');
+            $(".bumper2_desc").html('<b>5700р.</b><br /><div class="pd"></div>');
+        }
 function cbCarClass_click(type) {
     switch (type)
     {
@@ -1205,80 +1014,80 @@ function cbCarClass_click(type) {
             break;
     }
 }
-    </script>
-    <script type="text/javascript">
-    </script>
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
-(function (d, w, c) {
-    (w[c] = w[c] || []).push(function() {
-        try {
-            w.yaCounter29772848 = new Ya.Metrika({id:29772848,
-                webvisor:true,
-                clickmap:true,
-                trackLinks:true,
-                accurateTrackBounce:true});
-        } catch(e) { }
-    });
-    var n = d.getElementsByTagName("script")[0],
-    s = d.createElement("script"),
-        f = function () { n.parentNode.insertBefore(s, n); };
-    s.type = "text/javascript";
-    s.async = true;
-    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
-    if (w.opera == "[object Opera]") {
-        d.addEventListener("DOMContentLoaded", f, false);
-    } else { f(); }
-})(document, window, "yandex_metrika_callbacks");
+</script>
+<script type="text/javascript">
+</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function (d, w, c) {
+     (w[c] = w[c] || []).push(function() {
+         try {
+         w.yaCounter29772848 = new Ya.Metrika({id:29772848,
+             webvisor:true,
+             clickmap:true,
+             trackLinks:true,
+             accurateTrackBounce:true});
+         } catch(e) { }
+         });
+     var n = d.getElementsByTagName("script")[0],
+     s = d.createElement("script"),
+     f = function () { n.parentNode.insertBefore(s, n); };
+     s.type = "text/javascript";
+     s.async = true;
+     s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+     if (w.opera == "[object Opera]") {
+     d.addEventListener("DOMContentLoaded", f, false);
+     } else { f(); }
+     })(document, window, "yandex_metrika_callbacks");
 (window.Image ? (new Image()) : document.createElement('img')).src = location.protocol + '//vk.com/rtrg?r=zy6TK5ajH4qomQtvpoQ3Orc0Rc9SG3JzT56/hr0..*zQ8-&pixel_id=1000041549';
-    </script>
-    <noscript><div><img src="//mc.yandex.ru/watch/29772848" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
-    <!— Google Tag Manager —>
-    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NCT6K7"
-                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-NCT6K7');</script>
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/29772848" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<!— Google Tag Manager —>
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NCT6K7"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NCT6K7');</script>
     <!— End Google Tag Manager —>
     <script type="text/javascript" src="//cdn.callbackhunter.com/cbh.js?hunter_code=1fe375998513ecac24315921c2007898" charset="UTF-8"></script>
 
 
     <script >
-$('#car-akcii').click(function(){
-   $('#feedback-modal').modal('toggle')
-})
+        $('#car-akcii').click(function(){
+            $('#feedback-modal').modal('toggle')
+        })
 
-$('#car-projects').click(function () {
-    $('#projects-modal').modal('toggle')
-})
+        $('#car-projects').click(function () {
+            $('#projects-modal').modal('toggle')
+        })
 
-$('.offer_one').hover(function(){
-    $(this).children('.product__desc').removeClass('product__desc-hide')
-    },
-    function(){
-        $(this).children('.product__desc').addClass('product__desc-hide')
-    }  
-)
+        $('.offer_one').hover(function(){
+            $(this).children('.product__desc').removeClass('product__desc-hide')
+        },
+        function(){
+            $(this).children('.product__desc').addClass('product__desc-hide')
+        }  
+        )
 
     </script>
     <script >
-$(":file").filestyle({buttonText: ' <i class="fa fa-upload" aria-hidden="true"></i>',
-                      iconName: "",
-                      placeholder: "Выберите файл"});
-var fileFormQuery=$(".bootstrap-filestyle");
-fileFormQuery.hide();
-fileFormQuery.first().show();
-$("#id_img1").filestyle('disabled', false);
-var iter=0;
-$("input:file").change(function (){
-    iter++;
-     fileFormQuery[iter].style.display = 'table';;
+        $(":file").filestyle({buttonText: ' <i class="fa fa-upload" aria-hidden="true"></i>',
+        iconName: "",
+        placeholder: "Выберите файл"});
+    var fileFormQuery=$(".bootstrap-filestyle");
+    fileFormQuery.hide();
+    fileFormQuery.first().show();
+    $("#id_img1").filestyle('disabled', false);
+    var iter=0;
+    $("input:file").change(function (){
+        iter++;
+        fileFormQuery[iter].style.display = 'table';;
 
-     });
+    });
 
 
-</script >
-{%endblock%}
+    </script >
+    {%endblock%}

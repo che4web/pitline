@@ -53,7 +53,7 @@ p {
 .wrap {
 #	width:80%;
 	margin:0 auto;
-    min-width: 1000px;
+    width: 1000px;
 }
 
 .page {
@@ -272,7 +272,7 @@ h1.h1_2 span {
 }
 
 .order_block_photo {
-	width:660px;
+	width:600px;
 	position:absolute;
 	/*height:311px;*/
     height:248px;
