@@ -51,9 +51,8 @@ p {
 }
 
 .wrap {
-#	width:80%;
+    width: 980px;
 	margin:0 auto;
-    width: 1000px;
 }
 
 .page {
@@ -369,7 +368,7 @@ input.bttn:hover {
 .count {
 	float:left;
 	height:80px;
-	font-size:16px;
+	font-size:14px;
 	line-height:18px;
 	padding-top:5px;
 	color:#fff;
@@ -2187,6 +2186,7 @@ min-width: 10px;
         color:#ffffff;
 }
 .navbar-nav{
+        margin:0px;
         color:#000000;
         font-size:13pt;
         text-align:center;
