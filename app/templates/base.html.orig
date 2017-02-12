@@ -1,0 +1,261 @@
+﻿<!DOCTYPE html>
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300&amp;subset=cyrillic" rel="stylesheet">
+    <title>Pit Line - Кузовной ремонт в Перми| {{title}}</title>
+
+    <meta name="description" content="  {{description}}">
+    <meta name="keywords" content="{{keywords}}">
+    {% load staticfiles %}
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+    <link rel="apple-touch-icon" href="{% static 'app/images/apple-touch-icon.png' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/font-awesome/css/font-awesome.min.css' %}" />
+<<<<<<< HEAD
+<link rel="stylesheet" type="text/css" href="{% static 'app/content/site.css' %}" />
+<link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
+
+
+<script type="text/javascript" src="{% static 'app/ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'app/code.jquery.com/jquery-migrate-1.2.1.js' %}"></script>
+<script type="text/javascript" src="{% static 'app/js/jquery.leanModal.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'app/js/scripts.js' %}"></script>
+<script type="text/javascript" src="{% static 'app/js/validator.js' %}"></script>
+<script type="text/javascript" src="{% static 'app/js/fancybox/jquery.fancybox8cbb.js' %}"></script>
+<script type="text/javascript" src="{% static 'app/js/jquery.maphilight.js' %}"></script>
+<script type="text/javascript" src="{% static 'app/js/jquery.form.min.js' %}"></script>
+<link rel="stylesheet" href="{% static 'app/js/fancybox/jquery.fancybox8cbb.css' %}" />
+
+<script type="text/javascript" src="{% static 'app/js/bootstrap-filestyle.min.js' %}"></script>
+<link rel="stylesheet" href="{% static 'app/content/reset.css' %}" />
+<link rel="stylesheet" href="{% static 'app/content/fonts.css' %}" />
+<link rel="stylesheet" href="{% static 'app/content/style.css' %}" />
+=======
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/site.css' %}" />
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
+
+
+    <script type="text/javascript" src="{% static 'app/ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'app/code.jquery.com/jquery-migrate-1.2.1.js' %}"></script>
+    <script type="text/javascript" src="{% static 'app/js/jquery.leanModal.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'app/js/scripts.js' %}"></script>
+    <script type="text/javascript" src="{% static 'app/js/validator.js' %}"></script>
+    <script type="text/javascript" src="{% static 'app/js/jquery.maphilight.js' %}"></script>
+    <script type="text/javascript" src="{% static 'app/js/jquery.form.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'app/js/fancybox/jquery.fancybox8cbb.css' %}" />
+
+    <script type="text/javascript" src="{% static 'app/js/bootstrap-filestyle.min.js' %}"></script>
+
+
+    <link rel="stylesheet" href="{% static 'app/content/reset.css' %}" />
+    <link rel="stylesheet" href="{% static 'app/content/fonts.css' %}" />
+    <link rel="stylesheet" href="{% static 'app/content/style.css' %}" />
+>>>>>>> test2
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar__iner">
+            <div class="">
+                <div class="schedule ">
+                    <div class="col-md-7 col-sm-7">
+                        {#<a href="/" class="navbar-brand"><img src="{%static 'app/images/logo.png'%}"></a>#}
+
+                        <a href="/" class="navbar-brand">
+                            <img class="logo-img" alt="сервисный центр pitline" title="ервисный центр pitline" src="{%static 'app/images/logo_new.png'%}">
+
+                            <div class="logo_text">
+                                pit line
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-5 col-sm-5" style="color:black; font-family: 'Dosis', sans-serif;">
+                        График работы <br />
+                        <label style="font-weight:bold; padding-top:2px; padding-bottom:2px">9:00-20:00</label><br />
+                        без выходных
+                    </div>
+                </div>
+            </div>
+            <div class="navbar ">
+                <ul class="nav navbar-nav ">
+                    <li><a href="{% url 'home' %}">Кузовные работы</a></li>
+                    <li><a href="{% url 'locksmith-index' %}">Слесарные работы</a></li>
+                    {#<li><a href="{% url 'action-index' %}">Акции</a></li>#}
+                    <li><a href="{% url 'contact' %}">Контакты</a></li>
+                </ul>
+                <div class="head__contcts ">
+                    <a href="viber://chats" target="_blank" title="мы в viber">
+                        <div class="icons_viber">
+
+                            <!--<i class="fa fa-phone fa-1x" aria-hidden="true"></i>-->
+                        </div>
+                    </a>
+
+                    <div class="icons_wa">
+                        <a href="whatsapp://+79223013933" target="_blank" title="мы в watsapp">
+                            <i class="fa fa-whatsapp fa-1x" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="icons_sk">
+                        <a href='skype:live:657ca1949b46deae?chat' target="_blank" title="мы в skype">
+                            <i class="fa fa-skype fa-1x" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="head__phone">
+                        <a href="#" id="popup__toggle" onclick="return false;"><div class="circlephone" style="transform-origin: center;"></div><div class="circle-fill" style="transform-origin: center;"></div><div class="img-circle" style="transform-origin: center;"><div class="img-circleblock" style="transform-origin: center;"></div></div></a>
+
+                        <div> +7(342) 288 11 91</div>
+
+                        <!--<span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>-->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <ul class="nav navbar-nav navbar-nav-small" id="sidebar">
+                {%block navbar-small%}
+                {%endblock%}
+            </ul>
+        </div>
+    </div>
+
+    <div class="body-content-main">
+        {% block content %}{% endblock %}
+    </div>
+
+    <script src="{% static 'app/scripts/bootstrap.js' %}"></script>
+    <script >
+var doscript;
+        $(document).ready(function () {
+            doscript = true;
+            if($(window).width() < 1024){
+                  $('.navbar').removeClass('navbar-fixed-top');
+                 $('.head__contcts').hide() ;
+                $('.body-content-main').addClass('body-content__mobile');
+              }
+
+            $("#popup__toggle").click(function () {
+                $('#callback').modal('toggle');
+            });
+
+        });
+
+
+        $(document).ready(function () {
+            var flag = false;
+                setTimeout(function () {
+                    setInterval(function () {
+                        if (doscript) {
+                            $(".glyphicon-earphone").css("color", flag ? "black" : "rgba(117, 235, 80, 0.5)");
+                            $(".glyphicon-earphone").css("font-size", flag ? "18px" : "21px")
+                            $(".head__phone").css("font-weight", flag ? "none" : "bold");
+                            flag = !flag;
+                        }
+                    }, 700)
+                }, 3000);
+
+
+
+            //$('.glyphicon-earphone').css('color', 'yellow');
+        });
+
+        $(".head__phone span").hover(function () {
+            //alert('hover');
+            doscript = false;
+            $(".glyphicon-earphone").css("color", "rgba(117, 235, 80, 0.5)");
+            $(".head__phone").css("padding-top", "5px");
+            $(".glyphicon-earphone").css("font-size", "26px");
+            //alert(doscript);
+        },
+        function () {
+            //alert('hover');
+            doscript = true;
+            $(".head__phone").css("padding-top", "11px");
+            //alert(doscript);
+        }
+        );
+
+
+    $(document).ready(function(){
+        $('a[href*=#]').not($('.noscroll')).bind("click", function(e){
+            var anchor = $(this);
+            $('html, body').stop().animate({
+            scrollTop: $(anchor.attr('href')).offset().top
+            }, 1000);
+            e.preventDefault();
+        });
+        return false;
+    }); 
+
+
+
+    $(document).ready(function () {
+    $(window).scroll(function(){
+            var window_top = $(window).scrollTop() + 12; 
+           // the "12" should equal the margin-top value for nav.stickydiv
+
+        });  
+
+  $(document).on("scroll", onScroll);
+
+    $('a[href^="#"]').not($('.noscroll')).on('click', function (e) {
+          e.preventDefault();
+            $(document).off("scroll");
+             $('a').each(function () {
+                $(this).removeClass('active');
+            })
+            $(this).addClass('active');
+             var target = this.hash,
+             menu = target;
+             $target = $(target);
+           $('html, body').stop().animate({
+                'scrollTop': $target.offset().top-100
+            }, 600, 'swing', function () {
+                $(document).on("scroll", onScroll);
+            });
+        });
+    });
+
+    function onScroll(event){
+        var scrollPos = $(document).scrollTop();
+        $('#sidebar a').not($('.noscroll')).each(function () {
+            var currLink = $(this);
+           var refElement = $(currLink.attr("href"));
+           if (currLink.position().top <= scrollPos && currLink.position().top + currLink.height() > scrollPos) {
+                $('#sidebar ul li a').removeClass("active");
+                currLink.addClass("active");
+            }
+            else{
+                currLink.removeClass("active");
+            }
+        });
+    }
+    </script>
+    <div class="modal fade" tabindex="-1" role="dialog" id="succesModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Спасибо за закакз</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Наши специалисты перезвонят вам</p>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+    <!-- BEGIN JIVOSITE CODE {literal} -->
+    <script type='text/javascript'>
+(function(){ var widget_id = 'haGfNZBWrg';var d=document;var w=window;function l(){
+    var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
+    <!-- {/literal} END JIVOSITE CODE -->
+</body>
+</html>
+

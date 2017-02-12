@@ -212,16 +212,6 @@ $(document).ready(function() {
 
 	$('a[rel*=leanModal]').leanModal({ top : 125, closeButton: ".modal_close" });	
 
-	$(".fancybox").fancybox({
-		openEffect  : 'fade',
-		closeEffect : 'fade',
-
-		helpers : {
-			title : {
-				type : 'over'
-			}
-		}
-	});
 
 	$('.complete a').click(function () {
 		$('.complete').fadeOut('slow', function () {

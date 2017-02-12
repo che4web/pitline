@@ -1,7 +1,7 @@
 ﻿body {
  
-    padding-top: 50px;
-    padding-bottom: 20px;
+#    padding-top: 50px;
+#    padding-bottom: 20px;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -47,7 +47,7 @@ input[type="checkbox"].input-validation-error {
     float:right;
     height:50px;
     text-align:center;
-    padding-top: 15px;
+  padding-top: 15px;
    -moz-padding-top: 0px;
     padding-bottom: 15px;
     margin-left:5px;
@@ -122,8 +122,12 @@ input[type="checkbox"].input-validation-error {
     width:100%;
 }
 .body-content-main {
-    margin-top:50px;
+    margin-top:120px;
     background-image:none!important;
+}
+.body-content-main.body-content__mobile{
+    
+    margin-top:-120px;
 }
 
 .body-content-main .main{
@@ -285,6 +289,7 @@ background: #e5e5e5;
     /*margin-left:30px;*/
     margin-right:30px;
     margin-top:10px;
+    float:left;
     font-size:14px;
     /*padding-left:15px;
     padding-right:15px;*/
