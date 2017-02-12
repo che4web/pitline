@@ -24,3 +24,16 @@ D:\VS_Projects\python\pitline_test2\pitline\bin\Microsoft.PythonTools.AzureSetup
 D:\VS_Projects\python\pitline_test2\pitline\bin\wfastcgi.py
 D:\VS_Projects\python\pitline_test2\pitline\obj\Debug\web.config
 D:\VS_Projects\python\pitline_test2\pitline\obj\Debug\web.debug.config
+C:\test\pitline_test2\pitline\bin\Microsoft.PythonTools.WebRole.dll
+C:\test\pitline_test2\pitline\obj\Debug\attach_server.py
+C:\test\pitline_test2\pitline\obj\Debug\visualstudio_py_debugger.py
+C:\test\pitline_test2\pitline\obj\Debug\visualstudio_py_repl.py
+C:\test\pitline_test2\pitline\obj\Debug\visualstudio_py_util.py
+C:\test\pitline_test2\pitline\obj\Debug\__init__.py
+C:\test\pitline_test2\pitline\obj\Debug\__main__.py
+C:\test\pitline_test2\pitline\bin\AzureSetup.cfg
+C:\test\pitline_test2\pitline\bin\Microsoft.PythonTools.AzureSetup.exe
+C:\test\pitline_test2\pitline\bin\Microsoft.PythonTools.AzureSetup.exe.config
+C:\test\pitline_test2\pitline\bin\wfastcgi.py
+C:\test\pitline_test2\pitline\obj\Debug\web.config
+C:\test\pitline_test2\pitline\obj\Debug\web.debug.config

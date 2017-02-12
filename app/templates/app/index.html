@@ -1084,5 +1084,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     });
 
 
+    $(document).ready(function () {
+        //$('.timer_block.left').animate({
+        //    transform: 'scale(2,.5)'
+        //});
+        $('.timer_block.left').delay(3000).fadeIn();
+
+        setTimeout(function () {
+            $('.timer_block.left').delay(6000).css('transform', 'scale(1,1)');
+        }, 3000);
+
+
+        //$('.timer_block.left').delay(6000).css('transform', 'scale(1.1,1.1)');
+        //$('.timer_block.left').delay(3800).css('transform', 'scale(1,1)');
+
+        //$('.timer_block.left').delay(3000).fadeIn();
+        //alert('1');
+        //setTimeout(function () {
+        //    $('.timer_block.left').animate({
+        //        transform: 'scale(2,.5)'
+        //    });
+        //    $('.timer_block.left').animate({
+        //        transform: 'skewX(35deg) skewY(15deg)'
+        //    });
+
+        //},
+        //3500);
+        //alert('2');
+    });
+
+
     </script>
     {%endblock%}
