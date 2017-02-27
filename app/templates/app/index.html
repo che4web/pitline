@@ -106,22 +106,22 @@
             <!--<span>У нас нет фиксированной цены за деталь, наше основное отличие - индивидуальный подход к клиенту<br><b>Ждем всех по адресу: ул. Шоссе Космонавтов 310Г</b>
             </span>-->
         </h1>
-        <div class="timer_block left first_timer">
+        <div class="timer_block left first_timer" style="overflow:scroll">
             <div class="row">
-                <div class="col-sm-2">
+                <div class="col-sm-2 col-xs-2">
                     <img class="logo-img" alt="сервисный центр pitline" title="ервисный центр pitline" src="/static/app/images/logo_new.png">
                 </div>
-                <div class="col-sm-10 text" >
+                <div class="col-sm-10 text col-xs-2" >
                     {{text_reasons.text}}
                 </div>
             </div>
             <div class="row">
                 <div class="inner__text">
-                    <ul>
+                    <ol class="resons-list">
                         {%for res in text_reasons.maintext_set.all%}
-                        <li>{{res.text}}</li>
+                        <li><span2>{{res.text}}</span2></li>
                         {%endfor%}
-                    </ul>
+                    </ol>
                 </div>
             </div>
         </div>
@@ -1085,32 +1085,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
     $(document).ready(function () {
-        //$('.timer_block.left').animate({
-        //    transform: 'scale(2,.5)'
-        //});
+        console.log($(window).width());
+         if($(window).width() < 1024){              
+$('.head__contcts__mobilehide').hide() 
+               }
+;
         $('.timer_block.left').delay(3000).fadeIn();
 
         setTimeout(function () {
             $('.timer_block.left').delay(6000).css('transform', 'scale(1,1)');
         }, 3000);
 
-
-        //$('.timer_block.left').delay(6000).css('transform', 'scale(1.1,1.1)');
-        //$('.timer_block.left').delay(3800).css('transform', 'scale(1,1)');
-
-        //$('.timer_block.left').delay(3000).fadeIn();
-        //alert('1');
-        //setTimeout(function () {
-        //    $('.timer_block.left').animate({
-        //        transform: 'scale(2,.5)'
-        //    });
-        //    $('.timer_block.left').animate({
-        //        transform: 'skewX(35deg) skewY(15deg)'
-        //    });
-
-        //},
-        //3500);
-        //alert('2');
     });
 
 

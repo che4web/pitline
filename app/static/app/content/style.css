@@ -1,3 +1,7 @@
+@-ms-viewport       { width: device-width; }
+@-o-viewport        { width: device-width; }
+@viewport           { width: device-width; }
+
 * {
 	margin:0;
 	padding:0;
@@ -13,6 +17,7 @@
 .navbar__iner{
 max-width: 1300px;
 margin: 0 auto;
+min-width: 980px;
 }
 
 html, body {
@@ -74,7 +79,6 @@ p {
 	min-width:960px;
 	overflow:hidden;
 	margin:0 auto;
-    margin-top: 120px;
 
 }
 /*
@@ -2250,6 +2254,7 @@ margin: 0px 0px 0 0;
 }
 .navbar-inverse {
  background-color: #ffffff;
+ min-width:960px
 }
 
 .navbar-inverse .navbar-nav>li>a{
@@ -2470,7 +2475,6 @@ padding: 0px 35px 7px 35px;
     text-align:center;
     margin-top: 10px;
     text-align: center;
-    margin-left: -40px;
 }
 
 .timer_block.left .inner__text 
@@ -2479,11 +2483,36 @@ padding: 0px 35px 7px 35px;
     margin-left:40px;
     max-height: 400px;
     text-align:left;
+    font-family:"Helvetica Neue";
+    padding-left:10px
 }
 .timer_block.left .inner__text li:first-letter {
-    color: red; /* Красный цвет текста */
+    #color: red; /* Красный цвет текста */
    }
 .carousel-inner {
        height: 400px;
 }
 
+.timer_block .row{
+	margin:0px
+}
+
+
+.resons-list{
+    list-style:  decimal 
+}
+.resons-list li {
+    color:red;
+}
+.resons-list li span2 {
+    color:#000;
+ 
+}
+.head__contcts__mobilehide{
+    font-weight: bold;
+}
+.contact__main{
+text-align: center;
+font-size: 24pt;
+font-weight: bold;
+}

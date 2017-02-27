@@ -36,10 +36,9 @@
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="navbar__iner">
-            <div class="">
+            <div class="navbar ">
                 <div class="schedule ">
-                    <div class="col-md-7 col-sm-7">
-                        {#<a href="/" class="navbar-brand"><img src="{%static 'app/images/logo.png'%}"></a>#}
+                    <div class="col-md-7 col-xs-7">
 
                         <a href="/" class="navbar-brand">
                             <img class="logo-img" alt="сервисный центр pitline" title="ервисный центр pitline" src="{%static 'app/images/logo_new.png'%}">
@@ -49,22 +48,21 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col-md-5 col-sm-5" style="color:black; font-family: 'Dosis', sans-serif;">
+                    <div class="col-md-5 col-xs-5" style="color:black; font-family: 'Dosis', sans-serif;">
                         График работы <br />
                         <label style="font-weight:bold; padding-top:2px; padding-bottom:2px">9:00-20:00</label><br />
                         без выходных
                     </div>
                 </div>
-            </div>
-            <div class="navbar ">
                 <ul class="nav navbar-nav ">
                     <li><a href="{% url 'home' %}">Кузовные работы</a></li>
-                    <li><a href="{% url 'locksmith-index' %}">Слесарные работы</a></li>
+                    <li class="sr-only"><a href="{% url 'locksmith-index' %}">Слесарные работы</a></li>
                     {#<li><a href="{% url 'action-index' %}">Акции</a></li>#}
                     <li><a href="{% url 'contact' %}">Контакты</a></li>
                 </ul>
                 <div class="head__contcts ">
-                    <a href="viber://chats" target="_blank" title="мы в viber">
+                    <div class="head__contcts__mobilehide">
+                    <a href="#"  title="мы в viber"  id="viber__a">
                         <div class="icons_viber">
 
                             <!--<i class="fa fa-phone fa-1x" aria-hidden="true"></i>-->
@@ -72,7 +70,7 @@
                     </a>
 
                     <div class="icons_wa">
-                        <a href="whatsapp://+79223013933" target="_blank" title="мы в watsapp">
+                        <a href="#"  title="мы в watsapp" id="watsapp__a">
                             <i class="fa fa-whatsapp fa-1x" aria-hidden="true"></i>
                         </a>
                     </div>
@@ -81,10 +79,11 @@
                             <i class="fa fa-skype fa-1x" aria-hidden="true"></i>
                         </a>
                     </div>
+                    </div>
                     <div class="head__phone">
-                        <a href="#" id="popup__toggle" onclick="return false;"><div class="circlephone" style="transform-origin: center;"></div><div class="circle-fill" style="transform-origin: center;"></div><div class="img-circle" style="transform-origin: center;"><div class="img-circleblock" style="transform-origin: center;"></div></div></a>
+                        <a href="tel:+73422881191" id="popup__toggle" onclick="return false;"><div class="circlephone" style="transform-origin: center;"></div><div class="circle-fill" style="transform-origin: center;"></div><div class="img-circle" style="transform-origin: center;"><div class="img-circleblock" style="transform-origin: center;"></div></div></a>
 
-                        <div> +7(342) 288 11 91</div>
+                        <div class="head__contcts__mobilehide"> +7(342) 288 11 91</div>
 
                         <!--<span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>-->
                     </div>
@@ -107,13 +106,24 @@
 
     <script src="{% static 'app/scripts/bootstrap.js' %}"></script>
     <script >
+        $('#viber__a').click(function(){
+          $('#viberModal').modal('toggle');
+            });
+        $('#watsapp__a').click(function(){
+        $('#watsappModal').modal('toggle')
+        return false
+        })
+
+
+
+
 var doscript;
         $(document).ready(function () {
             doscript = true;
             if($(window).width() < 1024){
-                  $('.navbar').removeClass('navbar-fixed-top');
-                 $('.head__contcts').hide() ;
-                $('.body-content-main').addClass('body-content__mobile');
+                //  $('.navbar').removeClass('navbar-fixed-top');
+            //     $('.head__contcts__mobilehide').hide() ;
+              //  $('.body-content-main').addClass('body-content__mobile');
               }
 
             $("#popup__toggle").click(function () {
@@ -123,23 +133,6 @@ var doscript;
         });
 
 
-        $(document).ready(function () {
-            var flag = false;
-                setTimeout(function () {
-                    setInterval(function () {
-                        if (doscript) {
-                            $(".glyphicon-earphone").css("color", flag ? "black" : "rgba(117, 235, 80, 0.5)");
-                            $(".glyphicon-earphone").css("font-size", flag ? "18px" : "21px")
-                            $(".head__phone").css("font-weight", flag ? "none" : "bold");
-                            flag = !flag;
-                        }
-                    }, 700)
-                }, 3000);
-
-
-
-            //$('.glyphicon-earphone').css('color', 'yellow');
-        });
 
         $(".head__phone span").hover(function () {
             //alert('hover');
@@ -220,7 +213,7 @@ var doscript;
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title">Спасибо за закакз</h4>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body ">
                     <p>Наши специалисты перезвонят вам</p>
                 </div>
                 <div class="modal-footer">
@@ -229,12 +222,52 @@ var doscript;
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
-
+      <div class="modal fade" tabindex="-1" role="dialog" id="watsappModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Мы в Watsapp</h4>
+                </div>
+                <div class="modal-body contact__main">
+                    <p >+79223013933</p>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+      <div class="modal fade" tabindex="-1" role="dialog" id="viberModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Мы в Viber</h4>
+                </div>
+                <div class="modal-body contact__main">
+                    <p>+79223013933</p>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
     <!-- BEGIN JIVOSITE CODE {literal} -->
     <script type='text/javascript'>
 (function(){ var widget_id = 'haGfNZBWrg';var d=document;var w=window;function l(){
     var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
     <!-- {/literal} END JIVOSITE CODE -->
+<script>
+    if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+  var msViewportStyle = document.createElement('style')
+  msViewportStyle.appendChild(
+    document.createTextNode(
+      '@-ms-viewport{width:auto!important}'
+    )
+  )
+  document.querySelector('head').appendChild(msViewportStyle)
+  }
+  </script>
 </body>
 </html>
 
