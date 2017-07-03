@@ -453,19 +453,6 @@
 
 
         <div class="car_classes">
-            <h3>выберите размер вашего автомобиля</h3>
-            <div class="row">
-                <input type="radio" class="car_classes_class" name="car_classes_class" id="Aclass" title="Extra Small (daewoo Matiz, Kia Picanto, Suzuki Splash, итд)" onclick="cbCarClass_click('ExtraSmall')" checked/>
-                <label for="Aclass" title="Extra Small (daewoo Matiz, Kia Picanto, Suzuki Splash, итд)" onclick="cbCarClass_click('ExtraSmall')">Extra Small</label>
-                <input type="radio" class="car_classes_class" name="car_classes_class" id="Bclass" title="Small( Mazda2, Opel Corsa, Citroen C3 и др.)" onclick="cbCarClass_click('Small')"  />
-                <label for="Bclass" title="Small( Mazda2, Opel Corsa, Citroen C3 и др.)" onclick="cbCarClass_click('Small')">Small</label>
-                <input type="radio" class="car_classes_class" name="car_classes_class" id="Cclass" title="Standart (Volkswagen Golf, Toyota Corolla, Shkoda Oktavia, Subaru impreza и др.)"  onclick="cbCarClass_click('Standart')" />
-                <label for="Cclass" title="Standart (Volkswagen Golf, Toyota Corolla, Shkoda Oktavia, Subaru impreza и др.)" onclick="cbCarClass_click('Standart')">Standart</label>
-                <input type="radio" class="car_classes_class" name="car_classes_class" id="Dclass" title="Maxi (Kia Sportage, Audi Q3, BMW X3, Mitsubishi ASX, и др.)" onclick="cbCarClass_click('Maxi')" />
-                <label for="Dclass" title="Maxi (Kia Sportage, Audi Q3, BMW X3, Mitsubishi ASX, и др.)" onclick="cbCarClass_click('Maxi')">Maxi</label>
-                <input type="radio" class="car_classes_class" name="car_classes_class" id="Eclass" title="Long( Chevrolet tacho, VW Toureg, Toyota Tundra и тд.)" onclick="cbCarClass_click('Long')" />
-                <label for="Eclass" title="Long( Chevrolet tacho, VW Toureg, Toyota Tundra и тд.)" onclick="cbCarClass_click('Long')">Long</label>
-            </div>
         </div>
 
 
@@ -578,6 +565,38 @@
             </div>
         </div>
         </section>
+<div id="photo_order1" class="modal photo_order1">
+    <div class="modal-box">
+        <div class="modal-title">
+                 Узнать точную стоимость работ
+                </div>
+                    <form method="POST" enctype="multipart/form-data" action="/sender">
+                            <div class="order_block_photo__left">
+                                {%csrf_token%}
+                                <input type="hidden" class="formname" name="message" value="">
+                                <input type="hidden" class="add_message" name="add_message" value="типа пусто">
+                                <input type="hidden" name="referer" value="http://pitline59.ru/">
+                                <div class="error_field name_error ">  </div>
+                                <label class="name left required"><input type="text" name="name" class="input_name" placeholder="ваше имя" /></label>
+                                <div class="error_field phone_error ">  </div>
+                                <label class="phone left required"><input type="text" name="phone" class="input_phone" placeholder="ваш телефон" /></label>
+                                <div class="error_field email_error ">  </div>
+                                <label class="email left"><input type="text" name="email" class="input_email" placeholder="ваш e-mail" /></label>
+                                <div class="error_field email_error ">  </div>
+                                <label class="email left"><input type="text" name="add_message" class="input_email" placeholder="комментарий" /></label>
+
+                                <input class="bttn button-send" type="button" name="sender" value="Оставить заявку" />
+                            </div>       
+                            <div class="order_block_photo__right">
+                                {{form_foto.img4}}
+                                {{form_foto.img5}}
+                                {{form_foto.img6}}
+                                <div style="display:none"> гаршочек не вари</div>
+                            </div>       
+                        </div>
+                    </form>
+    </div>
+    </div>
         <a name="kak"></a>
 
         <a name="reviews1"></a>
@@ -881,6 +900,56 @@
             </div>
         </div>
         </section>
+        <section class="order">
+        
+        <div class="">
+            <div class="wrap">
+                <div class="order_img"></div>
+                <div class="timer_block">
+                    <span>Оставьте заявку</span>
+                    и получите<br><b>скидку 1 000 руб.</b><br>на любые виды услуг
+                    <div class="timer">
+                        <div class="pt-contain">
+                            <div class="days">
+                                <span class="flip day1Play">0</span>
+                                <span class="flip dayPlay">0</span>
+                                <em>&nbsp;дней</em>
+                            </div>
+                            <div class="hours">
+                                <span class="flip hour2Play"></span>
+                                <span class="flip hourPlay"></span>
+                                <em>&nbsp;часов</em>
+                            </div>
+                            <div class="minutes">
+                                <span class="flip minute6Play"></span>
+                                <span class="flip minutePlay"></span>
+                                <em>&nbsp;минут</em>
+                            </div>
+                            <div class="seconds">
+                                <span class="flip second6Play"></span>
+                                <span class="flip secondPlay"></span>
+                                <em>&nbsp;секунд</em>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order_block">
+                    <!--
+                    <span>Оставьте заявку</span>
+                    и получите <b>бесплатную полировку</b><br />фар вашего автомобиля!
+                    -->
+                    <form id="callbacks" name="callbacks" action="/sender.php">
+                        <input type="hidden" class="formname" name="name" value="">
+                        <input type="hidden" name="referer" value="../index.html">
+                        <label class="name left required"><input type="text" name="name" class="input_name" placeholder="имя" /></label>
+                        <label class="phone left required"><input type="text" name="phone" class="input_phone" placeholder="телефон" /></label>
+                        <label class="email left"><input type="text" name="email" class="input_email" placeholder="e-mail" /></label>
+                        <input type="button" class="bttn button" name="request" value="Отправить заявку" />
+                    </form>
+                </div>
+            </div>
+        </div>
+        </section>
         <section class="maps">
         <div class="contact-page__map">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4485.771887504383!2d56.10516595103162!3d57.9539143346363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43e8bed36d1d3bd3%3A0xd569357004c36fa1!2sPit+Line!5e0!3m2!1sru!2sru!4v1484070492428" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
@@ -945,14 +1014,18 @@
     <div id="akcii"></div>
     <script type="text/javascript">
         window.onload = function () {
-            $(".hood_desc").html('<b>7800р.</b><br /><div class="pd"></div>');
-            $(".roof_desc").html('<b>10200р.</b><br /><div class="pd"></div>');
-            $(".wing1_desc").html('<b>5400р.</b><br /><div class="pd"></div>');
-            $(".door_desc").html('<b>6000р.</b><br /><div class="pd"></div>');
-            $(".wing2_desc").html('<b>6000р.</b><br /><div class="pd"></div>');
+            $(".hood_desc").html(' подготовка/окрас целиком <b>6000</b>, <br> расходные материалы<b> 3250</b>, <br> локальная покраска от<b> 2700</b><br />  <a>узнать точную стоимость</a><div class="pd"></div>');
+            $(".roof_desc").html( 'подготовка/окрас целиком <b>10000</b>, <br> расходные материалы <b>3750</b>, <br> локальная покраска от <b>2700 </b><br /> <a>узнать точную стоимость</a><div class="pd"> </div>');
+            $(".wing1_desc").html(' подготовка/окрас целиком <b>4500</b>, <br> расходные материалы <b>2500</b>, <br> локальная покраска от <b>2700</b><br /> <a>узнать точную стоимость</a><div class="pd"> </div>');
+            $(".door_desc").html(' подготовка/окрас целиком <b>5000</b>, <br> расходные материалы <b>2500</b>, <br> локальная покраска от <b>2700</b><br /> <a>узнать точную стоимость</a><div class="pd"> </div>');
+            $(".wing2_desc").html(' подготовка/окрас целиком <b>5000</b>, <br> расходные материалы <b>2500</b>, <br> локальная покраска от <b>2700</b><br /> <a>узнать точную стоимость</a><div class="pd"></div>');
             $(".lights_desc").html('<b>6000р.</b><br /><div class="pd"></div>');
-            $(".bumper1_desc").html('<b>6000р.</b><br /><div class="pd"></div>');
-            $(".bumper2_desc").html('<b>5700р.</b><br /><div class="pd"></div>');
+            $(".bumper1_desc").html('подготовка/окрас целиком <b>5000</b>, <br> расходные материалы <b>2500</b>, <br> локальная покраска от <b>2700</b><br /> <a>узнать точную стоимость</a><div class="pd"></div>');
+            $(".bumper2_desc").html('подготовка/окрас целиком <b>5000</b>, <br> расходные материалы <b>2500</b>, <br> локальная покраска от <b>2700</b><br /> <a>узнать точную стоимость</a><div class="pd"> </div>');
+                        
+        $('.price a').click(function () {
+            $('#photo_order1').modal('toggle');
+        });
         }
 function cbCarClass_click(type) {
     switch (type)
@@ -966,46 +1039,6 @@ function cbCarClass_click(type) {
             $(".lights_desc").html('<b>6000р.</b><br /><div class="pd"></div>');
             $(".bumper1_desc").html('<b>6000р.</b><br /><div class="pd"></div>');
             $(".bumper2_desc").html('<b>5700р.</b><br /><div class="pd"></div>');
-            break;
-        case 'Small':
-            $(".hood_desc").html('<b>8775р.</b><br /><div class="pd"></div>');
-            $(".roof_desc").html('<b>11475р.</b><br /><div class="pd"></div>');
-            $(".wing1_desc").html('<b>6075р.</b><br /><div class="pd"></div>');
-            $(".door_desc").html('<b>6750р.</b><br /><div class="pd"></div>');
-            $(".wing2_desc").html('<b>6750р.</b><br /><div class="pd"></div>');
-            $(".lights_desc").html('<b>6750р.</b><br /><div class="pd"></div>');
-            $(".bumper1_desc").html('<b>6750р.</b><br /><div class="pd"></div>');
-            $(".bumper2_desc").html('<b>6412,5р.</b><br /><div class="pd"></div>');
-            break;
-        case 'Standart':
-            $(".hood_desc").html('<b>11050р.</b><br /><div class="pd"></div>');
-            $(".roof_desc").html('<b>12750р.</b><br /><div class="pd"></div>');
-            $(".wing1_desc").html('<b>6750р.</b><br /><div class="pd"></div>');
-            $(".door_desc").html('<b>7500р.</b><br /><div class="pd"></div>');
-            $(".wing2_desc").html('<b>7500р.</b><br /><div class="pd"></div>');
-            $(".lights_desc").html('<b>7500р.</b><br /><div class="pd"></div>');
-            $(".bumper1_desc").html('<b>7500р.</b><br /><div class="pd"></div>');
-            $(".bumper2_desc").html('<b>7125р.</b><br /><div class="pd"></div>');
-            break;
-        case 'Maxi':
-            $(".hood_desc").html('<b>11700р.</b><br /><div class="pd"></div>');
-            $(".roof_desc").html('<b>15300р.</b><br /><div class="pd"></div>');
-            $(".wing1_desc").html('<b>8100р.</b><br /><div class="pd"></div>');
-            $(".door_desc").html('<b>9000р.</b><br /><div class="pd"></div>');
-            $(".wing2_desc").html('<b>9000р.</b><br /><div class="pd"></div>');
-            $(".lights_desc").html('<b>9000р.</b><br /><div class="pd"></div>');
-            $(".bumper1_desc").html('<b>9000р.</b><br /><div class="pd"></div>');
-            $(".bumper2_desc").html('<b>8550р.</b><br /><div class="pd"></div>');
-            break;
-        case 'Long':
-            $(".hood_desc").html('<b>13650р.</b><br /><div class="pd"></div>');
-            $(".roof_desc").html('<b>17850р.</b><br /><div class="pd"></div>');
-            $(".wing1_desc").html('<b>9450р.</b><br /><div class="pd"></div>');
-            $(".door_desc").html('<b>9000р.</b><br /><div class="pd"></div>');
-            $(".wing2_desc").html('<b>10500р.</b><br /><div class="pd"></div>');
-            $(".lights_desc").html('<b>10500р.</b><br /><div class="pd"></div>');
-            $(".bumper1_desc").html('<b>10500р.</b><br /><div class="pd"></div>');
-            $(".bumper2_desc").html('<b>9975р.</b><br /><div class="pd"></div>');
             break;
     }
 }
@@ -1057,7 +1090,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         $('#car-projects').click(function () {
             $('#projects-modal').modal('toggle')
-        })
+            })
+
 
         $('.offer_one').hover(function(){
             $(this).children('.product__desc').removeClass('product__desc-hide')
@@ -1069,19 +1103,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     </script>
     <script >
+        function showForoForm(cls){
         $(":file").filestyle({buttonText: ' <i class="fa fa-upload" aria-hidden="true"></i>',
-        iconName: "",
-        placeholder: "Выберите файл"});
-    var fileFormQuery=$(".bootstrap-filestyle");
-    fileFormQuery.hide();
-    fileFormQuery.first().show();
-    $("#id_img1").filestyle('disabled', false);
-    var iter=0;
-    $("input:file").change(function (){
-        iter++;
-        fileFormQuery[iter].style.display = 'table';;
-
-    });
+                              iconName: "",
+                              placeholder: "Выберите файл"});
+         var fileFormQuery=$(cls+" .bootstrap-filestyle");
+        fileFormQuery.hide();
+        fileFormQuery.first().show();
+        $(cls+" #id_img1").filestyle('disabled', false);
+        var iter=0;
+        $(cls+" input:file").change(function (){
+            iter++;
+            fileFormQuery[iter].style.display = 'table';;
+        });
+        };
+        showForoForm('.modal')
+        showForoForm('.order')
 
 
     $(document).ready(function () {

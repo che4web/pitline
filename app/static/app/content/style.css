@@ -6,12 +6,6 @@
 	margin:0;
 	padding:0;
 }
-@media (max-width: 1024px) {
-    .body-content-main {
-        
-        margin-top: -120px;
-    }
-}
 
 
 .navbar__iner{
@@ -695,7 +689,26 @@ h2 {
 	text-shadow:0px 1px 0px #a86f05;
 	text-align:center;
 }
-
+.price a {
+	display:block;
+	width:274px;
+	height:56px;
+	line-height:51px;
+	background:url(../images/oo_a.png) no-repeat 0px 0px;
+	box-shadow:none;
+	border:none;
+	padding:0;
+	font-size:15px;
+	font-family:'pt_bold';
+	text-transform:uppercase;
+	letter-spacing:1px;
+	color:#fff;
+	text-shadow:0px 1px 0px #a86f05;
+	text-align:center;
+}
+.price a:hover{
+text-decoration: none;
+}
 .offer_one a:hover {
 	color:#661616;
 }
@@ -848,8 +861,8 @@ h2 {
 }
 
 .price_descr a {
-	border-bottom:#065c99 dashed 1px;
-	color:#065c99;
+/*	border-bottom:#065c99 dashed 1px;
+	color:#065c99;*/
 	-webkit-transition: all 0.4s;
 	-moz-transition: all 0.4s;
 	transition: all 0.4s;
@@ -909,6 +922,7 @@ h2 {
 	height:61px;
 	top:-61px;
 	right: -105px;
+    left: 142px;
 	background:url(../images/pd5.png) no-repeat center;
 }
 
@@ -971,56 +985,56 @@ h2 {
 }
 /*//////////////////////*/
 .pr1 .price_descr {
-	width:225px;
+	width:320px;
 	top:-75px;
 	left: 12px;
 	display: none;
 }
 
 .pr2 .price_descr {
-	width:225px;
+	width:320px;
 	top: -53px;
 	left: 382px;
 	display: none;
 }
 
 .pr3 .price_descr {
-	width:305px;
+	width:330px;
 	top:264px;
 	left:-104px;
 	display: none;
 }
 
 .pr4 .price_descr {
-	width:270px;
+	width:320px;
 	top:330px;
 	left:65px;
 	display: none;
 }
 
 .pr5 .price_descr {
-	width:280px;
+	width:320px;
 	top: 367px;
 	left: 172px;
 	display: none;
 }
 
 .pr6 .price_descr {
-	width:230px;
+	width:320px;
 	top: -30px;
 	left: -138px;
 	display: none;
 }
 
 .pr7 .price_descr {
-	width:230px;
+	width:320px;
 	top: -12px;
 	left: -135px;
 	display: none;
 }
 
 .pr8 .price_descr {
-	width:230px;
+	width:320px;
 	top: 466px;
 	left: 398px;
 	display: none;
@@ -2515,4 +2529,17 @@ padding: 0px 35px 7px 35px;
 text-align: center;
 font-size: 24pt;
 font-weight: bold;
+}
+
+.modal .order_block_photo__left{
+    float:left;
+        width: 280px;
+}
+.modal .order_block_photo__right {
+    float: right;
+    width: 325px;
+}
+.photo_order1 .modal-box{
+        width: 650px;
+        height:450px;
 }

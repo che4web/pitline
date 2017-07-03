@@ -36,6 +36,10 @@ class ContactForm(forms.Form):
     img1 = forms.ImageField(required=False)
     img2 = forms.ImageField(required=False)
     img3 = forms.ImageField(required=False)
+    
+    img4 = forms.ImageField(required=False)
+    img5 = forms.ImageField(required=False)
+    img6 = forms.ImageField(required=False)
 
     def send_email(self):
         # send email using the self.cleaned_data dictionary
@@ -55,6 +59,7 @@ class ContactForm(forms.Form):
 
         email.attach_alternative(message_body, "text/html")
         file_list=[self.cleaned_data['img1'],self.cleaned_data['img2'],self.cleaned_data['img3']]
+        file_list=[self.cleaned_data['img4'],self.cleaned_data['img5'],self.cleaned_data['img6']]
         for f in file_list:
             if f:
                 email.attach(f.name,f.read(),'application/img')
